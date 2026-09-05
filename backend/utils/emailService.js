@@ -17,13 +17,13 @@ const sendPropertyAlert = async (users, property) => {
   if (!users || users.length === 0) return;
 
   const propertyImage =
-    property.images?.[0] || "https://estatera.onrender.com/og-image.png";
+    property.images?.[0] || "https://estatera-hjnn.onrender.com/og-image.png";
   const propertyTitle = property.title || "New Property";
   const propertyPrice = property.price
     ? `₹${property.price.toLocaleString()}`
     : "Upon Request";
   const frontendUrl =
-    process.env.FRONTEND_URL || "https://estatera.onrender.com";
+    process.env.FRONTEND_URL || "https://estatera-hjnn.onrender.com";
 
   const emailPromises = users.map((user) => {
     // 🛡️ PRIMARY INBOX LOGIC: Use the user's name
@@ -172,7 +172,7 @@ const sendPropertyAlert = async (users, property) => {
 };
 
 const sendSavedSearchAlert = async (user, property, searchName) => {
-  const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+  const frontendUrl = process.env.FRONTEND_URL || "https://estatera-hjnn.onrender.com";
   const price = property.price ? `₹${Number(property.price).toLocaleString("en-IN")}` : "Price on request";
   await axios.post("https://api.brevo.com/v3/smtp/email", {
     sender: { name: "Estatera", email: "estatera.team@gmail.com" },

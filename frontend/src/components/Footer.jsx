@@ -8,11 +8,13 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#10241d] py-16 text-stone-300">
-      <div className="mx-auto grid max-w-[76rem] grid-cols-1 gap-12 px-5 md:grid-cols-3">
+      <div className="mx-auto grid max-w-304 grid-cols-1 gap-12 px-5 md:grid-cols-3">
         {/* Brand */}
         <div>
           <p className="editorial-label mb-4 text-[#e7c47e]">Estatera</p>
-          <h3 className="display-face mb-4 text-4xl font-bold text-white">Places made meaningful.</h3>
+          <h3 className="display-face mb-4 text-4xl font-bold text-white">
+            Places made meaningful.
+          </h3>
           <p className="text-sm leading-relaxed">
             {t`Discover verified premium lands and architecturally stunning homes designed for your future.`}
           </p>
@@ -64,14 +66,14 @@ export default function Footer() {
 
           <div className="space-y-2 text-sm">
             <p>{t`Office Address`}: Pudupattinam, Kalpakkam</p>
-            <p>{t`Email Us`}: estatera@gmail.com</p>
+            <p>{t`Email Us`}: estatera.team@gmail.com</p>
             <p>{t`Call Us`}: +91 97916 74849</p>
           </div>
         </div>
       </div>
 
       {/* Bottom */}
-      <div className="mx-auto mt-12 max-w-[76rem] border-t border-white/15 px-5 pt-6 text-center text-xs text-stone-500">
+      <div className="mx-auto mt-12 max-w-304 border-t border-white/15 px-5 pt-6 text-center text-xs text-stone-500">
         © {new Date().getFullYear()} Estatera. {t`Luxury Living`} {t`Redefined`}
       </div>
     </footer>
