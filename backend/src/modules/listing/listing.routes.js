@@ -1,0 +1,14 @@
+const router = require("express").Router();
+const multer = require("multer");
+const { storage } = require("../../../config/cloudinary");
+const controller = require("./listing.controller");
+const { requireAuth, requireAdmin } = require("../../middleware/auth");
+const upload = multer({ storage });
+router.post("/", requireAuth, requireAdmin, upload.fields([{ name: "images", maxCount: 10 }, { name: "videos", maxCount: 2 }]), controller.create);
+router.get("/admin/inventory", requireAuth, requireAdmin, controller.findInventory);
+router.patch("/:id/status", requireAuth, requireAdmin, controller.updateStatus); router.get("/", controller.findAll); router.get("/:id", controller.findById);
+router.patch("/:id/lifecycle", requireAuth, requireAdmin, controller.setLifecycle);
+router.patch("/:id/archive", requireAuth, requireAdmin, controller.setArchived);
+router.patch("/:id", requireAuth, requireAdmin, upload.fields([{ name: "images", maxCount: 10 }, { name: "videos", maxCount: 2 }]), controller.update);
+router.patch("/:id/view", controller.incrementViews); router.patch("/:id/like", controller.toggleLike); router.delete("/:id", requireAuth, requireAdmin, controller.remove);
+module.exports = router;

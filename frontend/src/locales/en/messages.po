@@ -1,0 +1,1100 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-03-11 13:02+0530\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. placeholder {0}: property.amenities.join(" • ")
+#: frontend/src/pages/PropertyDetails.jsx:240
+msgid ""
+"\n"
+"\n"
+"{0}\n"
+""
+msgstr ""
+"\n"
+"\n"
+"{0}\n"
+""
+
+#: frontend/src/pages/PropertyDetails.jsx:237
+msgid ""
+"\n"
+"\n"
+"PREMIUM AMENITIES\n"
+""
+msgstr ""
+"\n"
+"\n"
+"PREMIUM AMENITIES\n"
+""
+
+#: frontend/src/pages/AdminDashboard.jsx:312
+#~ msgid "{0}"
+#~ msgstr "{0}"
+
+#: frontend/src/components/Testimonials.jsx:48
+#: frontend/src/pages/Home.jsx:162
+msgid "10k+ Happy Clients"
+msgstr "10k+ Happy Clients"
+
+#: frontend/src/pages/Login.jsx:39
+msgid "Access granted. Welcome back."
+msgstr "Access granted. Welcome back."
+
+#: frontend/src/pages/Login.jsx:165
+msgid "Access Key"
+msgstr "Access Key"
+
+#: frontend/src/pages/Signup.jsx:39
+msgid "Account created successfully! Welcome."
+msgstr "Account created successfully! Welcome."
+
+#: frontend/src/components/PropertyCard.jsx:16
+#: frontend/src/pages/PropertyDetails.jsx:71
+msgid "Account created! Please login."
+msgstr "Account created! Please login."
+
+#: frontend/src/pages/Profile.jsx:279
+msgid "Account Tier"
+msgstr "Account Tier"
+
+#: frontend/src/pages/AdminDashboard.jsx:668
+msgid "Active"
+msgstr "Active"
+
+#: frontend/src/pages/AdminDashboard.jsx:125
+#~ msgid "Add Listing"
+#~ msgstr "Add Listing"
+
+#: frontend/src/pages/AdminDashboard.jsx:581
+msgid "Add Property"
+msgstr "Add Property"
+
+#: frontend/src/pages/AdminDashboard.jsx:86
+#: frontend/src/pages/AdminDashboard.jsx:104
+#~ msgid "AdminPanel"
+#~ msgstr "AdminPanel"
+
+#: frontend/src/pages/Listings.jsx:191
+msgid "All Properties"
+msgstr "All Properties"
+
+#: frontend/src/pages/Listings.jsx:167
+#~ msgid "All Types"
+#~ msgstr "All Types"
+
+#: frontend/src/pages/Signup.jsx:98
+#~ msgid "Already have an account?"
+#~ msgstr "Already have an account?"
+
+#: frontend/src/pages/Signup.jsx:226
+msgid "Already part of the inner circle?"
+msgstr "Already part of the inner circle?"
+
+#: frontend/src/pages/PropertyDetails.jsx:462
+msgid "Amenities"
+msgstr "Amenities"
+
+#: frontend/src/pages/AdminDashboard.jsx:981
+msgid "Amenities (comma separated)"
+msgstr "Amenities (comma separated)"
+
+#: frontend/src/pages/AdminDashboard.jsx:572
+msgid "Analytics"
+msgstr "Analytics"
+
+#: frontend/src/pages/Home.jsx:108
+msgid "Apartment"
+msgstr "Apartment"
+
+#: frontend/src/pages/Listings.jsx:194
+msgid "Apartments"
+msgstr "Apartments"
+
+#: frontend/src/pages/PropertyDetails.jsx:225
+#~ msgid "Approved"
+#~ msgstr "Approved"
+
+#: frontend/src/components/PropertyCard.jsx:74
+msgid "Asking Price"
+msgstr "Asking Price"
+
+#: frontend/src/pages/Login.jsx:42
+msgid "Authentication failed. Check your access keys."
+msgstr "Authentication failed. Check your access keys."
+
+#: frontend/src/pages/Profile.jsx:296
+msgid "Authorized Capabilities"
+msgstr "Authorized Capabilities"
+
+#: frontend/src/components/Footer.jsx:38
+msgid "Available Listings"
+msgstr "Available Listings"
+
+#: frontend/src/pages/PropertyDetails.jsx:315
+msgid "Back"
+msgstr "Back"
+
+#: frontend/src/pages/Login.jsx:124
+#: frontend/src/pages/Signup.jsx:137
+msgid "Back to exploration"
+msgstr "Back to exploration"
+
+#: frontend/src/pages/PropertyDetails.jsx:323
+msgid "Brochure"
+msgstr "Brochure"
+
+#: frontend/src/pages/PropertyDetails.jsx:256
+msgid "Brochure downloaded!"
+msgstr "Brochure downloaded!"
+
+#: frontend/src/components/Footer.jsx:22
+#: frontend/src/components/Navbar.jsx:45
+#: frontend/src/pages/Home.jsx:223
+msgid "Browse Properties"
+msgstr "Browse Properties"
+
+#: frontend/src/pages/PropertyDetails.jsx:539
+#~ msgid "By clicking, you agree to our terms of service and privacy policy."
+#~ msgstr "By clicking, you agree to our terms of service and privacy policy."
+
+#: frontend/src/components/Footer.jsx:46
+#: frontend/src/components/Footer.jsx:67
+#: frontend/src/pages/Contact.jsx:57
+msgid "Call Us"
+msgstr "Call Us"
+
+#: frontend/src/pages/Listings.jsx:183
+msgid "Category"
+msgstr "Category"
+
+#: frontend/src/pages/AdminDashboard.jsx:970
+msgid "Commission (%)"
+msgstr "Commission (%)"
+
+#: frontend/src/pages/AdminDashboard.jsx:662
+msgid "Commission Revenue"
+msgstr "Commission Revenue"
+
+#: frontend/src/pages/AdminDashboard.jsx:599
+msgid "Community"
+msgstr "Community"
+
+#: frontend/src/components/Navbar.jsx:46
+msgid "Contact"
+msgstr "Contact"
+
+#: frontend/src/pages/Home.jsx:229
+msgid "Contact Agent"
+msgstr "Contact Agent"
+
+#: frontend/src/components/Footer.jsx:62
+#: frontend/src/pages/Contact.jsx:38
+msgid "Contact Our Experts"
+msgstr "Contact Our Experts"
+
+#: frontend/src/pages/PropertyDetails.jsx:249
+msgid "Contact us at support@estatera@gmail.com for more information regarding this property."
+msgstr "Contact us at support@estatera@gmail.com for more information regarding this property."
+
+#: frontend/src/pages/AdminDashboard.jsx:680
+msgid "Conversion"
+msgstr "Conversion"
+
+#: frontend/src/pages/AdminDashboard.jsx:451
+msgid "Could not publish property."
+msgstr "Could not publish property."
+
+#: frontend/src/pages/Login.jsx:91
+#: frontend/src/pages/Signup.jsx:49
+#~ msgid "Create Account"
+#~ msgstr "Create Account"
+
+#: frontend/src/pages/Signup.jsx:151
+msgid "Create your membership to access the world's most prestigious property portfolio."
+msgstr "Create your membership to access the world's most prestigious property portfolio."
+
+#: frontend/src/pages/Signup.jsx:92
+#~ msgid "Creating Account..."
+#~ msgstr "Creating Account..."
+
+#: frontend/src/pages/Profile.jsx:249
+#~ msgid "Current Role"
+#~ msgstr "Current Role"
+
+#: frontend/src/pages/AdminDashboard.jsx:114
+#~ msgid "Delete permanently?"
+#~ msgstr "Delete permanently?"
+
+#: frontend/src/pages/AdminDashboard.jsx:200
+msgid "Delete User?"
+msgstr "Delete User?"
+
+#: frontend/src/pages/AdminDashboard.jsx:1088
+#: frontend/src/pages/PropertyDetails.jsx:453
+msgid "Description"
+msgstr "Description"
+
+#: frontend/src/pages/PropertyDetails.jsx:224
+msgid "DESCRIPTION"
+msgstr "DESCRIPTION"
+
+#: frontend/src/pages/Profile.jsx:316
+msgid "Direct Chat"
+msgstr "Direct Chat"
+
+#: frontend/src/components/Footer.jsx:16
+#: frontend/src/pages/Home.jsx:79
+msgid "Discover verified premium lands and architecturally stunning homes designed for your future."
+msgstr "Discover verified premium lands and architecturally stunning homes designed for your future."
+
+#: frontend/src/pages/Listings.jsx:202
+#~ msgid "Distance Radius"
+#~ msgstr "Distance Radius"
+
+#: frontend/src/pages/PropertyDetails.jsx:563
+msgid "Download Brochure"
+msgstr "Download Brochure"
+
+#: frontend/src/pages/AdminDashboard.jsx:1055
+msgid "e.g. 1500 Sq Ft or 0.5 Acres"
+msgstr "e.g. 1500 Sq Ft or 0.5 Acres"
+
+#: frontend/src/pages/Signup.jsx:110
+msgid "Early Access"
+msgstr "Early Access"
+
+#: frontend/src/components/Footer.jsx:54
+#: frontend/src/components/Navbar.jsx:171
+#: frontend/src/pages/Profile.jsx:212
+#: frontend/src/pages/Profile.jsx:220
+#: frontend/src/pages/Profile.jsx:482
+msgid "Edit Profile"
+msgstr "Edit Profile"
+
+#: frontend/src/pages/Profile.jsx:230
+#: frontend/src/pages/Profile.jsx:503
+#: frontend/src/pages/PropertyDetails.jsx:535
+msgid "Email"
+msgstr "Email"
+
+#: frontend/src/pages/Contact.jsx:117
+#: frontend/src/pages/Signup.jsx:170
+msgid "Email Address"
+msgstr "Email Address"
+
+#: frontend/src/components/Footer.jsx:66
+#: frontend/src/pages/Contact.jsx:73
+msgid "Email Us"
+msgstr "Email Us"
+
+#: frontend/src/pages/PropertyDetails.jsx:478
+msgid "EMI Calculator"
+msgstr "EMI Calculator"
+
+#: frontend/src/pages/Login.jsx:108
+msgid "Encrypted Session"
+msgstr "Encrypted Session"
+
+#: frontend/src/pages/Profile.jsx:242
+#: frontend/src/pages/Profile.jsx:512
+msgid "English"
+msgstr "English"
+
+#: frontend/src/pages/AdminDashboard.jsx:364
+msgid "Enter a location to search!"
+msgstr "Enter a location to search!"
+
+#: frontend/src/pages/AdminDashboard.jsx:955
+msgid "Enter price"
+msgstr "Enter price"
+
+#: frontend/src/pages/Signup.jsx:106
+msgid "Every listing is verified by our internal legal team."
+msgstr "Every listing is verified by our internal legal team."
+
+#: frontend/src/pages/Login.jsx:58
+#~ msgid "example@gmail.com"
+#~ msgstr "example@gmail.com"
+
+#: frontend/src/pages/Listings.jsx:272
+msgid "Exclusive Collections"
+msgstr "Exclusive Collections"
+
+#: frontend/src/pages/PropertyDetails.jsx:259
+msgid "Failed to generate PDF"
+msgstr "Failed to generate PDF"
+
+#: frontend/src/pages/Contact.jsx:26
+#: frontend/src/pages/Profile.jsx:90
+msgid "Failed to send message"
+msgstr "Failed to send message"
+
+#: frontend/src/pages/PropertyDetails.jsx:113
+#~ msgid "Failed to send visit request"
+#~ msgstr "Failed to send visit request"
+
+#: frontend/src/pages/PropertyDetails.jsx:123
+msgid "Failed to send visit request, Try again"
+msgstr "Failed to send visit request, Try again"
+
+#: frontend/src/pages/AdminDashboard.jsx:385
+msgid "Failed to sync location."
+msgstr "Failed to sync location."
+
+#: frontend/src/pages/AdminDashboard.jsx:49
+#~ msgid "Failed to update status: {0}"
+#~ msgstr "Failed to update status: {0}"
+
+#: frontend/src/pages/AdminDashboard.jsx:329
+msgid "Failed to update status."
+msgstr "Failed to update status."
+
+#: frontend/src/pages/Listings.jsx:288
+msgid "Featured"
+msgstr "Featured"
+
+#: frontend/src/pages/AdminDashboard.jsx:1107
+msgid "Featured Property"
+msgstr "Featured Property"
+
+#: frontend/src/pages/AdminDashboard.jsx:406
+msgid "Fill required fields!"
+msgstr "Fill required fields!"
+
+#: frontend/src/pages/Listings.jsx:150
+msgid "Filters"
+msgstr "Filters"
+
+#: frontend/src/pages/Profile.jsx:309
+msgid "Financial Logs"
+msgstr "Financial Logs"
+
+#: frontend/src/components/Testimonials.jsx:18
+msgid "Finding the perfect land was so easy with Estatera. Highly recommended!"
+msgstr "Finding the perfect land was so easy with Estatera. Highly recommended!"
+
+#: frontend/src/pages/Profile.jsx:301
+msgid "Full Access"
+msgstr "Full Access"
+
+#: frontend/src/components/Navbar.jsx:99
+#: frontend/src/pages/Contact.jsx:109
+#: frontend/src/pages/Profile.jsx:224
+#: frontend/src/pages/Profile.jsx:494
+#: frontend/src/pages/Signup.jsx:157
+msgid "Full Name"
+msgstr "Full Name"
+
+#: frontend/src/pages/PropertyDetails.jsx:156
+msgid "Generating high-quality brochure..."
+msgstr "Generating high-quality brochure..."
+
+#: frontend/src/pages/Signup.jsx:111
+msgid "Get notified about prime locations before they hit the public market."
+msgstr "Get notified about prime locations before they hit the public market."
+
+#: frontend/src/pages/Login.jsx:101
+msgid "Global Portfolios"
+msgstr "Global Portfolios"
+
+#: frontend/src/pages/Home.jsx:186
+msgid "Hand-picked properties just for you"
+msgstr "Hand-picked properties just for you"
+
+#: frontend/src/pages/Profile.jsx:239
+#: frontend/src/pages/Profile.jsx:513
+msgid "Hindi"
+msgstr "Hindi"
+
+#: frontend/src/components/Footer.jsx:30
+#: frontend/src/components/Navbar.jsx:44
+msgid "Home"
+msgstr "Home"
+
+#: frontend/src/components/Testimonials.jsx:25
+msgid "Homeowner"
+msgstr "Homeowner"
+
+#: frontend/src/pages/Home.jsx:107
+msgid "House"
+msgstr "House"
+
+#: frontend/src/pages/Listings.jsx:193
+msgid "Houses"
+msgstr "Houses"
+
+#: frontend/src/pages/Contact.jsx:132
+msgid "How can we help you?"
+msgstr "How can we help you?"
+
+#: frontend/src/pages/Login.jsx:146
+msgid "Identity"
+msgstr "Identity"
+
+#: frontend/src/pages/AdminDashboard.jsx:227
+#~ msgid "Images"
+#~ msgstr "Images"
+
+#: frontend/src/pages/Login.jsx:218
+#: frontend/src/pages/Signup.jsx:216
+msgid "Initialize Membership"
+msgstr "Initialize Membership"
+
+#: frontend/src/pages/PropertyDetails.jsx:492
+msgid "Interest Rate"
+msgstr "Interest Rate"
+
+#: frontend/src/pages/Login.jsx:26
+#~ msgid "Invalid Credentials"
+#~ msgstr "Invalid Credentials"
+
+#: frontend/src/pages/AdminDashboard.jsx:590
+msgid "Inventory"
+msgstr "Inventory"
+
+#: frontend/src/pages/Profile.jsx:307
+msgid "Inventory Control"
+msgstr "Inventory Control"
+
+#: frontend/src/pages/Home.jsx:213
+msgid "Invest in Your Future Today"
+msgstr "Invest in Your Future Today"
+
+#: frontend/src/components/Testimonials.jsx:19
+msgid "Investor"
+msgstr "Investor"
+
+#: frontend/src/components/Testimonials.jsx:17
+msgid "John Doe"
+msgstr "John Doe"
+
+#: frontend/src/pages/Signup.jsx:53
+#~ msgid "Join our community to find your perfect home."
+#~ msgstr "Join our community to find your perfect home."
+
+#: frontend/src/pages/Signup.jsx:148
+msgid "Join the Elite."
+msgstr "Join the Elite."
+
+#: frontend/src/pages/Home.jsx:216
+msgid "Join thousands of investors securing premium land and homes through our verified platform."
+msgstr "Join thousands of investors securing premium land and homes through our verified platform."
+
+#: frontend/src/pages/Home.jsx:106
+msgid "Land"
+msgstr "Land"
+
+#: frontend/src/pages/Signup.jsx:105
+msgid "Legal Protection"
+msgstr "Legal Protection"
+
+#: frontend/src/pages/AdminDashboard.jsx:618
+msgid "Live Stats Connected"
+msgstr "Live Stats Connected"
+
+#: frontend/src/pages/PropertyDetails.jsx:483
+msgid "Loan Amount"
+msgstr "Loan Amount"
+
+#: frontend/src/components/PropertyCard.jsx:67
+#: frontend/src/pages/Home.jsx:93
+#: frontend/src/pages/PropertyDetails.jsx:208
+msgid "Location"
+msgstr "Location"
+
+#: frontend/src/pages/AdminDashboard.jsx:992
+msgid "Location & Coordinates"
+msgstr "Location & Coordinates"
+
+#: frontend/src/pages/AdminDashboard.jsx:379
+msgid "Location not found. Try a different query."
+msgstr "Location not found. Try a different query."
+
+#: frontend/src/pages/AdminDashboard.jsx:377
+msgid "Location synced!"
+msgstr "Location synced!"
+
+#: frontend/src/components/Navbar.jsx:108
+#: frontend/src/components/Navbar.jsx:191
+msgid "Login"
+msgstr "Login"
+
+#: frontend/src/pages/Login.jsx:169
+msgid "Lost Key?"
+msgstr "Lost Key?"
+
+#: frontend/src/pages/AdminDashboard.jsx:944
+msgid "Luxurious 3BHK in Downtown"
+msgstr "Luxurious 3BHK in Downtown"
+
+#: frontend/src/components/Footer.jsx:74
+#: frontend/src/pages/Home.jsx:67
+msgid "Luxury Living"
+msgstr "Luxury Living"
+
+#: frontend/src/pages/Home.jsx:55
+msgid "Luxury property"
+msgstr "Luxury property"
+
+#: frontend/src/components/Navbar.jsx:140
+msgid "Manage All"
+msgstr "Manage All"
+
+#: frontend/src/pages/Profile.jsx:463
+msgid "Manage Dashboard"
+msgstr "Manage Dashboard"
+
+#: frontend/src/pages/AdminDashboard.jsx:269
+#~ msgid "Manage Listings"
+#~ msgstr "Manage Listings"
+
+#: frontend/src/pages/Listings.jsx:199
+msgid "Max Budget"
+msgstr "Max Budget"
+
+#: frontend/src/pages/Home.jsx:121
+msgid "Max Price"
+msgstr "Max Price"
+
+#: frontend/src/pages/PropertyDetails.jsx:286
+msgid "Media"
+msgstr "Media"
+
+#: frontend/src/pages/Contact.jsx:22
+#: frontend/src/pages/Profile.jsx:87
+msgid "Message sent successfully!"
+msgstr "Message sent successfully!"
+
+#: frontend/src/components/Testimonials.jsx:29
+msgid "Michael Ross"
+msgstr "Michael Ross"
+
+#: frontend/src/pages/Home.jsx:113
+msgid "Min Price"
+msgstr "Min Price"
+
+#: frontend/src/pages/PropertyDetails.jsx:544
+msgid "Mobile Number"
+msgstr "Mobile Number"
+
+#: frontend/src/pages/PropertyDetails.jsx:510
+msgid "Monthly EMI"
+msgstr "Monthly EMI"
+
+#: frontend/src/pages/AdminDashboard.jsx:333
+#~ msgid "Monthly Visit Requests"
+#~ msgstr "Monthly Visit Requests"
+
+#: frontend/src/pages/PropertyDetails.jsx:170
+#~ msgid "More"
+#~ msgstr "More"
+
+#: frontend/src/pages/Listings.jsx:333
+msgid "New Arrivals"
+msgstr "New Arrivals"
+
+#: frontend/src/pages/Login.jsx:86
+#~ msgid "New here?"
+#~ msgstr "New here?"
+
+#: frontend/src/components/PropertyCard.jsx:63
+msgid "New Property"
+msgstr "New Property"
+
+#: frontend/src/pages/Login.jsx:213
+msgid "New to the network?"
+msgstr "New to the network?"
+
+#: frontend/src/pages/Home.jsx:132
+msgid "Newest"
+msgstr "Newest"
+
+#: frontend/src/pages/Listings.jsx:372
+msgid "No deals currently available."
+msgstr "No deals currently available."
+
+#: frontend/src/pages/Profile.jsx:430
+#: frontend/src/pages/Profile.jsx:449
+msgid "No properties found."
+msgstr "No properties found."
+
+#: frontend/src/pages/Listings.jsx:234
+#~ msgid "No properties matching your criteria."
+#~ msgstr "No properties matching your criteria."
+
+#: frontend/src/pages/AdminDashboard.jsx:706
+msgid "No Reviews"
+msgstr "No Reviews"
+
+#: frontend/src/components/Footer.jsx:65
+#: frontend/src/pages/Contact.jsx:89
+msgid "Office Address"
+msgstr "Office Address"
+
+#: frontend/src/pages/Home.jsx:133
+msgid "Oldest"
+msgstr "Oldest"
+
+#: frontend/src/pages/Login.jsx:72
+#~ msgid "pass123"
+#~ msgstr "pass123"
+
+#: frontend/src/pages/Login.jsx:67
+#: frontend/src/pages/Signup.jsx:81
+#~ msgid "Password"
+#~ msgstr "Password"
+
+#: frontend/src/pages/AdminDashboard.jsx:54
+#~ msgid "Permanent Delete?"
+#~ msgstr "Permanent Delete?"
+
+#: frontend/src/pages/Profile.jsx:246
+#~ msgid "Permissions"
+#~ msgstr "Permissions"
+
+#: frontend/src/pages/AdminDashboard.jsx:1116
+msgid "Photos"
+msgstr "Photos"
+
+#: frontend/src/pages/Login.jsx:139
+msgid "Please authenticate your identity to access your private real estate collection."
+msgstr "Please authenticate your identity to access your private real estate collection."
+
+#: frontend/src/pages/PropertyDetails.jsx:106
+msgid "Please enter your mobile number."
+msgstr "Please enter your mobile number."
+
+#: frontend/src/pages/PropertyDetails.jsx:105
+msgid "Please login to request a visit."
+msgstr "Please login to request a visit."
+
+#: frontend/src/pages/AdminDashboard.jsx:124
+#~ msgid "Please type an address first"
+#~ msgstr "Please type an address first"
+
+#: frontend/src/pages/Listings.jsx:192
+msgid "Plots & Land"
+msgstr "Plots & Land"
+
+#: frontend/src/pages/AdminDashboard.jsx:982
+msgid "Pool, Parking, Garden"
+msgstr "Pool, Parking, Garden"
+
+#: frontend/src/pages/AdminDashboard.jsx:839
+msgid "Popularity Analytics (Views)"
+msgstr "Popularity Analytics (Views)"
+
+#: frontend/src/pages/Profile.jsx:236
+#: frontend/src/pages/Profile.jsx:506
+msgid "Preferred Language"
+msgstr "Preferred Language"
+
+#: frontend/src/pages/Home.jsx:183
+msgid "Premium Collection"
+msgstr "Premium Collection"
+
+#: frontend/src/pages/PropertyDetails.jsx:528
+msgid "Price"
+msgstr "Price"
+
+#: frontend/src/pages/AdminDashboard.jsx:954
+msgid "Price (₹)"
+msgstr "Price (₹)"
+
+#: frontend/src/pages/Home.jsx:135
+msgid "Price High → Low"
+msgstr "Price High → Low"
+
+#: frontend/src/pages/Home.jsx:134
+msgid "Price Low → High"
+msgstr "Price Low → High"
+
+#: frontend/src/pages/Listings.jsx:116
+#~ msgid "Price: High → Low"
+#~ msgstr "Price: High → Low"
+
+#: frontend/src/pages/Listings.jsx:115
+#~ msgid "Price: Low → High"
+#~ msgstr "Price: Low → High"
+
+#: frontend/src/pages/Home.jsx:158
+msgid "Prime Locations"
+msgstr "Prime Locations"
+
+#: frontend/src/pages/Profile.jsx:120
+msgid "Profile update failed"
+msgstr "Profile update failed"
+
+#: frontend/src/pages/AdminDashboard.jsx:72
+#~ msgid "Property Added!"
+#~ msgstr "Property Added!"
+
+#: frontend/src/pages/Profile.jsx:303
+msgid "Property Management"
+msgstr "Property Management"
+
+#: frontend/src/pages/PropertyDetails.jsx:129
+msgid "Property not found"
+msgstr "Property not found"
+
+#: frontend/src/pages/AdminDashboard.jsx:449
+msgid "Property Published Successfully!"
+msgstr "Property Published Successfully!"
+
+#: frontend/src/pages/Profile.jsx:313
+msgid "Property Tours"
+msgstr "Property Tours"
+
+#: frontend/src/pages/Home.jsx:105
+#: frontend/src/pages/PropertyDetails.jsx:208
+msgid "Property Type"
+msgstr "Property Type"
+
+#: frontend/src/pages/AdminDashboard.jsx:934
+#: frontend/src/pages/AdminDashboard.jsx:1168
+msgid "Publish Property"
+msgstr "Publish Property"
+
+#: frontend/src/pages/Listings.jsx:218
+msgid "Radius"
+msgstr "Radius"
+
+#: frontend/src/pages/Profile.jsx:379
+msgid "Rate your experience"
+msgstr "Rate your experience"
+
+#: frontend/src/pages/AdminDashboard.jsx:686
+msgid "Rating"
+msgstr "Rating"
+
+#: frontend/src/components/Footer.jsx:74
+#: frontend/src/pages/Home.jsx:69
+msgid "Redefined"
+msgstr "Redefined"
+
+#: frontend/src/pages/AdminDashboard.jsx:1181
+msgid "Registered members"
+msgstr "Registered members"
+
+#: frontend/src/pages/Signup.jsx:33
+#~ msgid "Registration failed"
+#~ msgstr "Registration failed"
+
+#: frontend/src/pages/Signup.jsx:43
+msgid "Registration failed. Please try again."
+msgstr "Registration failed. Please try again."
+
+#: frontend/src/components/Testimonials.jsx:22
+#~ msgid "Regular Client"
+#~ msgstr "Regular Client"
+
+#: frontend/src/components/Testimonials.jsx:31
+msgid "Repeat Client"
+msgstr "Repeat Client"
+
+#: frontend/src/pages/PropertyDetails.jsx:557
+msgid "Request Visit"
+msgstr "Request Visit"
+
+#: frontend/src/pages/Profile.jsx:314
+msgid "Request Visits"
+msgstr "Request Visits"
+
+#: frontend/src/pages/Listings.jsx:216
+#~ msgid "Requires location text (e.g., Chennai)"
+#~ msgstr "Requires location text (e.g., Chennai)"
+
+#: frontend/src/pages/AdminDashboard.jsx:705
+msgid "Reviews"
+msgstr "Reviews"
+
+#: frontend/src/components/Testimonials.jsx:23
+msgid "Sarah Jenkins"
+msgstr "Sarah Jenkins"
+
+#: frontend/src/pages/Profile.jsx:418
+#: frontend/src/pages/Profile.jsx:523
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#: frontend/src/pages/Profile.jsx:315
+msgid "Save Favorites"
+msgstr "Save Favorites"
+
+#: frontend/src/pages/Profile.jsx:523
+msgid "Saving..."
+msgstr "Saving..."
+
+#: frontend/src/pages/Profile.jsx:333
+msgid "Schedule a Visit"
+msgstr "Schedule a Visit"
+
+#: frontend/src/pages/Home.jsx:142
+msgid "Search"
+msgstr "Search"
+
+#: frontend/src/pages/Listings.jsx:137
+msgid "Search by city, area or project..."
+msgstr "Search by city, area or project..."
+
+#: frontend/src/pages/Listings.jsx:81
+#~ msgid "Search by location..."
+#~ msgstr "Search by location..."
+
+#: frontend/src/pages/AdminDashboard.jsx:1193
+msgid "Search by name or email..."
+msgstr "Search by name or email..."
+
+#: frontend/src/pages/Listings.jsx:116
+#~ msgid "Search city or neighborhood..."
+#~ msgstr "Search city or neighborhood..."
+
+#: frontend/src/pages/AdminDashboard.jsx:998
+msgid "Search Location..."
+msgstr "Search Location..."
+
+#: frontend/src/pages/Listings.jsx:248
+msgid "Search Results"
+msgstr "Search Results"
+
+#: frontend/src/pages/Login.jsx:102
+msgid "Secure Assets"
+msgstr "Secure Assets"
+
+#: frontend/src/pages/Login.jsx:203
+msgid "Secure Login"
+msgstr "Secure Login"
+
+#: frontend/src/pages/Profile.jsx:259
+msgid "Security & Access"
+msgstr "Security & Access"
+
+#: frontend/src/pages/Signup.jsx:183
+msgid "Security Password"
+msgstr "Security Password"
+
+#: frontend/src/pages/Contact.jsx:141
+msgid "Send Message"
+msgstr "Send Message"
+
+#: frontend/src/pages/Signup.jsx:231
+msgid "Sign In"
+msgstr "Sign In"
+
+#: frontend/src/pages/Login.jsx:45
+#~ msgid "Sign in to manage your properties"
+#~ msgstr "Sign in to manage your properties"
+
+#: frontend/src/components/Navbar.jsx:182
+#: frontend/src/pages/Profile.jsx:469
+msgid "Sign Out"
+msgstr "Sign Out"
+
+#: frontend/src/pages/Signup.jsx:92
+#~ msgid "Sign Up"
+#~ msgstr "Sign Up"
+
+#: frontend/src/pages/PropertyDetails.jsx:208
+#: frontend/src/pages/PropertyDetails.jsx:439
+msgid "Size"
+msgstr "Size"
+
+#: frontend/src/pages/AdminDashboard.jsx:188
+#~ msgid "Size (sqft/acre)"
+#~ msgstr "Size (sqft/acre)"
+
+#: frontend/src/pages/AdminDashboard.jsx:1054
+msgid "Size (sqft/Acres)"
+msgstr "Size (sqft/Acres)"
+
+#: frontend/src/pages/AdminDashboard.jsx:655
+msgid "Sold Value"
+msgstr "Sold Value"
+
+#: frontend/src/pages/PropertyDetails.jsx:447
+msgid "Status"
+msgstr "Status"
+
+#: frontend/src/pages/AdminDashboard.jsx:149
+msgid "Status updated to {newStatus}"
+msgstr "Status updated to {newStatus}"
+
+#: frontend/src/pages/PropertyDetails.jsx:219
+#~ msgid "Structure"
+#~ msgstr "Structure"
+
+#: frontend/src/pages/Contact.jsx:125
+msgid "Subject"
+msgstr "Subject"
+
+#: frontend/src/pages/AdminDashboard.jsx:185
+#~ msgid "Success! Property Published."
+#~ msgstr "Success! Property Published."
+
+#: frontend/src/pages/PropertyDetails.jsx:386
+msgid "Swipe to explore"
+msgstr "Swipe to explore"
+
+#: frontend/src/pages/Profile.jsx:262
+msgid "System Identity"
+msgstr "System Identity"
+
+#: frontend/src/pages/Profile.jsx:241
+#: frontend/src/pages/Profile.jsx:514
+msgid "Tamil"
+msgstr "Tamil"
+
+#: frontend/src/pages/PropertyDetails.jsx:501
+msgid "Tenure (Years)"
+msgstr "Tenure (Years)"
+
+#: frontend/src/pages/PropertyDetails.jsx:232
+#~ msgid "The Property"
+#~ msgstr "The Property"
+
+#: frontend/src/components/Testimonials.jsx:24
+msgid "The team helped me find my dream home in a prime location. Excellent service!"
+msgstr "The team helped me find my dream home in a prime location. Excellent service!"
+
+#: frontend/src/pages/AdminDashboard.jsx:201
+msgid "This action is permanent and will remove all user data."
+msgstr "This action is permanent and will remove all user data."
+
+#: frontend/src/pages/AdminDashboard.jsx:943
+msgid "Title"
+msgstr "Title"
+
+#: frontend/src/pages/AdminDashboard.jsx:897
+msgid "Top Property Insights"
+msgstr "Top Property Insights"
+
+#: frontend/src/pages/PropertyDetails.jsx:214
+#~ msgid "Total Area"
+#~ msgstr "Total Area"
+
+#: frontend/src/pages/PropertyDetails.jsx:515
+msgid "Total Interest"
+msgstr "Total Interest"
+
+#: frontend/src/pages/AdminDashboard.jsx:674
+#: frontend/src/pages/AdminDashboard.jsx:886
+msgid "Total Views"
+msgstr "Total Views"
+
+#: frontend/src/pages/Listings.jsx:316
+msgid "Trending Now"
+msgstr "Trending Now"
+
+#: frontend/src/pages/AdminDashboard.jsx:1065
+#: frontend/src/pages/PropertyDetails.jsx:442
+msgid "Type"
+msgstr "Type"
+
+#: frontend/src/pages/Listings.jsx:364
+msgid "Under Market Deals"
+msgstr "Under Market Deals"
+
+#: frontend/src/pages/AdminDashboard.jsx:321
+msgid "Updating status..."
+msgstr "Updating status..."
+
+#: frontend/src/pages/AdminDashboard.jsx:431
+msgid "Uploading property and media..."
+msgstr "Uploading property and media..."
+
+#: frontend/src/pages/AdminDashboard.jsx:1168
+msgid "Uploading..."
+msgstr "Uploading..."
+
+#: frontend/src/pages/AdminDashboard.jsx:1179
+msgid "User Directory"
+msgstr "User Directory"
+
+#: frontend/src/pages/AdminDashboard.jsx:360
+#~ msgid "Value Share (₹)"
+#~ msgstr "Value Share (₹)"
+
+#: frontend/src/pages/PropertyDetails.jsx:224
+#~ msgid "Verification"
+#~ msgstr "Verification"
+
+#: frontend/src/pages/Profile.jsx:271
+#: frontend/src/pages/PropertyDetails.jsx:448
+msgid "Verified"
+msgstr "Verified"
+
+#: frontend/src/pages/Home.jsx:154
+msgid "Verified Assets"
+msgstr "Verified Assets"
+
+#: frontend/src/components/Testimonials.jsx:30
+msgid "Verified properties and professional guidance. My future is secure."
+msgstr "Verified properties and professional guidance. My future is secure."
+
+#: frontend/src/pages/AdminDashboard.jsx:1148
+msgid "Videos"
+msgstr "Videos"
+
+#: frontend/src/components/MapSearch.jsx:62
+#: frontend/src/pages/Home.jsx:195
+msgid "View All"
+msgstr "View All"
+
+#: frontend/src/pages/PropertyDetails.jsx:419
+msgid "View All Media"
+msgstr "View All Media"
+
+#: frontend/src/pages/Listings.jsx:347
+msgid "View All Properties"
+msgstr "View All Properties"
+
+#: frontend/src/pages/AdminDashboard.jsx:857
+msgid "Views"
+msgstr "Views"
+
+#: frontend/src/pages/PropertyDetails.jsx:110
+#~ msgid "Visit request sent successfully!"
+#~ msgstr "Visit request sent successfully!"
+
+#: frontend/src/pages/PropertyDetails.jsx:116
+msgid "Visit request sent! We will contact you soon."
+msgstr "Visit request sent! We will contact you soon."
+
+#: frontend/src/pages/AdminDashboard.jsx:608
+msgid "Visits"
+msgstr "Visits"
+
+#: frontend/src/pages/Contact.jsx:42
+msgid "We are here to help you find your next big investment."
+msgstr "We are here to help you find your next big investment."
+
+#: frontend/src/pages/Login.jsx:41
+#~ msgid "Welcome Back"
+#~ msgstr "Welcome Back"
+
+#: frontend/src/pages/Login.jsx:136
+msgid "Welcome Back."
+msgstr "Welcome Back."
+
+#: frontend/src/pages/Profile.jsx:339
+msgid "Wishlist"
+msgstr "Wishlist"
+
+#: frontend/src/pages/AdminDashboard.jsx:205
+msgid "Yes, delete"
+msgstr "Yes, delete"
+
+#: frontend/src/pages/Profile.jsx:406
+msgid "Your Message..."
+msgstr "Your Message..."

@@ -1,0 +1,1 @@
+export default function PropertyCardSkeleton() { return <div className="animate-pulse overflow-hidden rounded-[1.4rem] border border-stone-200 bg-white"><div className="h-64 bg-stone-200" /><div className="space-y-3 p-5"><div className="h-3 w-20 bg-stone-200" /><div className="h-6 w-4/5 bg-stone-200" /><div className="h-4 w-2/5 bg-stone-200" /></div></div>; }

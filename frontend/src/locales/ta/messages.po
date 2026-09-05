@@ -1,0 +1,1100 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-03-11 12:45+0530\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ta\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. placeholder {0}: property.amenities.join(" • ")
+#: frontend/src/pages/PropertyDetails.jsx:240
+msgid ""
+"\n"
+"\n"
+"{0}\n"
+""
+msgstr ""
+"\n"
+"\n"
+"{0}\n"
+""
+
+#: frontend/src/pages/PropertyDetails.jsx:237
+msgid ""
+"\n"
+"\n"
+"PREMIUM AMENITIES\n"
+""
+msgstr ""
+"\n"
+"\n"
+"பிரீமியம் வசதிகள்\n"
+""
+
+#: frontend/src/pages/AdminDashboard.jsx:312
+#~ msgid "{0}"
+#~ msgstr "{0}"
+
+#: frontend/src/components/Testimonials.jsx:48
+#: frontend/src/pages/Home.jsx:162
+msgid "10k+ Happy Clients"
+msgstr "10,000+ மகிழ்ச்சியான வாடிக்கையாளர்கள்"
+
+#: frontend/src/pages/Login.jsx:39
+msgid "Access granted. Welcome back."
+msgstr ""
+
+#: frontend/src/pages/Login.jsx:165
+msgid "Access Key"
+msgstr ""
+
+#: frontend/src/pages/Signup.jsx:39
+msgid "Account created successfully! Welcome."
+msgstr ""
+
+#: frontend/src/components/PropertyCard.jsx:16
+#: frontend/src/pages/PropertyDetails.jsx:71
+msgid "Account created! Please login."
+msgstr "கணக்கு உருவாக்கப்பட்டது! தயவுசெய்து உள்நுழையவும்."
+
+#: frontend/src/pages/Profile.jsx:279
+msgid "Account Tier"
+msgstr "கணக்கு நிலை (Tier)"
+
+#: frontend/src/pages/AdminDashboard.jsx:668
+msgid "Active"
+msgstr "செயலில் உள்ளது"
+
+#: frontend/src/pages/AdminDashboard.jsx:125
+#~ msgid "Add Listing"
+#~ msgstr "பட்டியலைச் சேர்க்கவும்"
+
+#: frontend/src/pages/AdminDashboard.jsx:581
+msgid "Add Property"
+msgstr "சொத்தைச் சேர்க்கவும்"
+
+#: frontend/src/pages/AdminDashboard.jsx:86
+#: frontend/src/pages/AdminDashboard.jsx:104
+#~ msgid "AdminPanel"
+#~ msgstr "நிர்வாகக் குழு"
+
+#: frontend/src/pages/Listings.jsx:191
+msgid "All Properties"
+msgstr "அனைத்து சொத்துக்கள்"
+
+#: frontend/src/pages/Listings.jsx:167
+#~ msgid "All Types"
+#~ msgstr "அனைத்து வகைகள்"
+
+#: frontend/src/pages/Signup.jsx:98
+#~ msgid "Already have an account?"
+#~ msgstr "ஏற்கனவே கணக்கு உள்ளதா?"
+
+#: frontend/src/pages/Signup.jsx:226
+msgid "Already part of the inner circle?"
+msgstr ""
+
+#: frontend/src/pages/PropertyDetails.jsx:462
+msgid "Amenities"
+msgstr "வசதிகள்"
+
+#: frontend/src/pages/AdminDashboard.jsx:981
+msgid "Amenities (comma separated)"
+msgstr "வசதிகள் (கற்புள்ளியால் பிரிக்கவும்)"
+
+#: frontend/src/pages/AdminDashboard.jsx:572
+msgid "Analytics"
+msgstr "பகுப்பாய்வு"
+
+#: frontend/src/pages/Home.jsx:108
+msgid "Apartment"
+msgstr "அடுக்குமாடி குடியிருப்பு"
+
+#: frontend/src/pages/Listings.jsx:194
+msgid "Apartments"
+msgstr "அடுக்குமாடி குடியிருப்புகள்"
+
+#: frontend/src/pages/PropertyDetails.jsx:225
+#~ msgid "Approved"
+#~ msgstr "அங்கீகரிக்கப்பட்டது"
+
+#: frontend/src/components/PropertyCard.jsx:74
+msgid "Asking Price"
+msgstr "கேட்கப்படும் விலை"
+
+#: frontend/src/pages/Login.jsx:42
+msgid "Authentication failed. Check your access keys."
+msgstr ""
+
+#: frontend/src/pages/Profile.jsx:296
+msgid "Authorized Capabilities"
+msgstr "அங்கீகரிக்கப்பட்ட திறன்கள்"
+
+#: frontend/src/components/Footer.jsx:38
+msgid "Available Listings"
+msgstr "கிடைக்கக்கூடிய பட்டியல்கள்"
+
+#: frontend/src/pages/PropertyDetails.jsx:315
+msgid "Back"
+msgstr "பின்செல்"
+
+#: frontend/src/pages/Login.jsx:124
+#: frontend/src/pages/Signup.jsx:137
+msgid "Back to exploration"
+msgstr ""
+
+#: frontend/src/pages/PropertyDetails.jsx:323
+msgid "Brochure"
+msgstr "சிற்றேடு (Brochure)"
+
+#: frontend/src/pages/PropertyDetails.jsx:256
+msgid "Brochure downloaded!"
+msgstr "சிற்றேடு பதிவிறக்கம் செய்யப்பட்டது!"
+
+#: frontend/src/components/Footer.jsx:22
+#: frontend/src/components/Navbar.jsx:45
+#: frontend/src/pages/Home.jsx:223
+msgid "Browse Properties"
+msgstr "சொத்துக்களைத் தேடுக"
+
+#: frontend/src/pages/PropertyDetails.jsx:539
+#~ msgid "By clicking, you agree to our terms of service and privacy policy."
+#~ msgstr "கிளிக் செய்வதன் மூலம், எங்கள் சேவை விதிமுறைகள் மற்றும் தனியுரிமைக் கொள்கையை ஏற்கிறீர்கள்."
+
+#: frontend/src/components/Footer.jsx:46
+#: frontend/src/components/Footer.jsx:67
+#: frontend/src/pages/Contact.jsx:57
+msgid "Call Us"
+msgstr "அழைக்கவும்"
+
+#: frontend/src/pages/Listings.jsx:183
+msgid "Category"
+msgstr "வகை"
+
+#: frontend/src/pages/AdminDashboard.jsx:970
+msgid "Commission (%)"
+msgstr "கம்மிஷன் (%)"
+
+#: frontend/src/pages/AdminDashboard.jsx:662
+msgid "Commission Revenue"
+msgstr "கம்மிஷன் வருவாய்"
+
+#: frontend/src/pages/AdminDashboard.jsx:599
+msgid "Community"
+msgstr "சமூகம்"
+
+#: frontend/src/components/Navbar.jsx:46
+msgid "Contact"
+msgstr "தொடர்பு"
+
+#: frontend/src/pages/Home.jsx:229
+msgid "Contact Agent"
+msgstr "முகவரைத் தொடர்பு கொள்ளவும்"
+
+#: frontend/src/components/Footer.jsx:62
+#: frontend/src/pages/Contact.jsx:38
+msgid "Contact Our Experts"
+msgstr "எங்கள் நிபுணர்களைத் தொடர்பு கொள்ளவும்"
+
+#: frontend/src/pages/PropertyDetails.jsx:249
+msgid "Contact us at support@estatera@gmail.com for more information regarding this property."
+msgstr "இந்தச் சொத்து குறித்த கூடுதல் தகவலுக்கு support@estatera@gmail.com இல் எங்களைத் தொடர்பு கொள்ளவும்."
+
+#: frontend/src/pages/AdminDashboard.jsx:680
+msgid "Conversion"
+msgstr "மாற்றம் (Conversion)"
+
+#: frontend/src/pages/AdminDashboard.jsx:451
+msgid "Could not publish property."
+msgstr "சொத்தை வெளியிட முடியவில்லை."
+
+#: frontend/src/pages/Login.jsx:91
+#: frontend/src/pages/Signup.jsx:49
+#~ msgid "Create Account"
+#~ msgstr "கணக்கை உருவாக்கவும்"
+
+#: frontend/src/pages/Signup.jsx:151
+msgid "Create your membership to access the world's most prestigious property portfolio."
+msgstr ""
+
+#: frontend/src/pages/Signup.jsx:92
+#~ msgid "Creating Account..."
+#~ msgstr "கணக்கு உருவாக்கப்படுகிறது..."
+
+#: frontend/src/pages/Profile.jsx:249
+#~ msgid "Current Role"
+#~ msgstr "தற்போதைய பங்கு"
+
+#: frontend/src/pages/AdminDashboard.jsx:114
+#~ msgid "Delete permanently?"
+#~ msgstr "நிரந்தரமாக நீக்கவா?"
+
+#: frontend/src/pages/AdminDashboard.jsx:200
+msgid "Delete User?"
+msgstr "பயனரை நீக்கவா?"
+
+#: frontend/src/pages/AdminDashboard.jsx:1088
+#: frontend/src/pages/PropertyDetails.jsx:453
+msgid "Description"
+msgstr "விளக்கம்"
+
+#: frontend/src/pages/PropertyDetails.jsx:224
+msgid "DESCRIPTION"
+msgstr "விளக்கம்"
+
+#: frontend/src/pages/Profile.jsx:316
+msgid "Direct Chat"
+msgstr "நேரடி அரட்டை"
+
+#: frontend/src/components/Footer.jsx:16
+#: frontend/src/pages/Home.jsx:79
+msgid "Discover verified premium lands and architecturally stunning homes designed for your future."
+msgstr "உங்கள் எதிர்காலத்திற்காக வடிவமைக்கப்பட்ட சரிபார்க்கப்பட்ட பிரீமியம் நிலங்கள் மற்றும் பிரம்மாண்டமான வீடுகளைக் கண்டறியவும்."
+
+#: frontend/src/pages/Listings.jsx:202
+#~ msgid "Distance Radius"
+#~ msgstr "தொலைவு ஆரம்"
+
+#: frontend/src/pages/PropertyDetails.jsx:563
+msgid "Download Brochure"
+msgstr "சிற்றேட்டைப் பதிவிறக்கவும்"
+
+#: frontend/src/pages/AdminDashboard.jsx:1055
+msgid "e.g. 1500 Sq Ft or 0.5 Acres"
+msgstr "உதாரணமாக: 1500 சதுர அடி அல்லது 0.5 ஏக்கர்"
+
+#: frontend/src/pages/Signup.jsx:110
+msgid "Early Access"
+msgstr ""
+
+#: frontend/src/components/Footer.jsx:54
+#: frontend/src/components/Navbar.jsx:171
+#: frontend/src/pages/Profile.jsx:212
+#: frontend/src/pages/Profile.jsx:220
+#: frontend/src/pages/Profile.jsx:482
+msgid "Edit Profile"
+msgstr "சுயவிவரத்தைத் திருத்தவும்"
+
+#: frontend/src/pages/Profile.jsx:230
+#: frontend/src/pages/Profile.jsx:503
+#: frontend/src/pages/PropertyDetails.jsx:535
+msgid "Email"
+msgstr "மின்னஞ்சல்"
+
+#: frontend/src/pages/Contact.jsx:117
+#: frontend/src/pages/Signup.jsx:170
+msgid "Email Address"
+msgstr "மின்னஞ்சல் முகவரி"
+
+#: frontend/src/components/Footer.jsx:66
+#: frontend/src/pages/Contact.jsx:73
+msgid "Email Us"
+msgstr "மின்னஞ்சல் அனுப்பவும்"
+
+#: frontend/src/pages/PropertyDetails.jsx:478
+msgid "EMI Calculator"
+msgstr "EMI கால்குலேட்டர்"
+
+#: frontend/src/pages/Login.jsx:108
+msgid "Encrypted Session"
+msgstr ""
+
+#: frontend/src/pages/Profile.jsx:242
+#: frontend/src/pages/Profile.jsx:512
+msgid "English"
+msgstr "ஆங்கிலம்"
+
+#: frontend/src/pages/AdminDashboard.jsx:364
+msgid "Enter a location to search!"
+msgstr "தேடுவதற்கு ஒரு இடத்தை உள்ளிடவும்!"
+
+#: frontend/src/pages/AdminDashboard.jsx:955
+msgid "Enter price"
+msgstr "விலையை உள்ளிடவும்"
+
+#: frontend/src/pages/Signup.jsx:106
+msgid "Every listing is verified by our internal legal team."
+msgstr ""
+
+#: frontend/src/pages/Login.jsx:58
+#~ msgid "example@gmail.com"
+#~ msgstr "example@gmail.com"
+
+#: frontend/src/pages/Listings.jsx:272
+msgid "Exclusive Collections"
+msgstr "பிரத்யேக தொகுப்புகள்"
+
+#: frontend/src/pages/PropertyDetails.jsx:259
+msgid "Failed to generate PDF"
+msgstr "PDF-ஐ உருவாக்க முடியவில்லை"
+
+#: frontend/src/pages/Contact.jsx:26
+#: frontend/src/pages/Profile.jsx:90
+msgid "Failed to send message"
+msgstr "செய்தியை அனுப்ப முடியவில்லை"
+
+#: frontend/src/pages/PropertyDetails.jsx:113
+#~ msgid "Failed to send visit request"
+#~ msgstr "பார்வையிடல் கோரிக்கையை அனுப்ப முடியவில்லை"
+
+#: frontend/src/pages/PropertyDetails.jsx:123
+msgid "Failed to send visit request, Try again"
+msgstr "பார்வையிடல் கோரிக்கையை அனுப்ப முடியவில்லை, மீண்டும் முயற்சிக்கவும்"
+
+#: frontend/src/pages/AdminDashboard.jsx:385
+msgid "Failed to sync location."
+msgstr "இடத்தை ஒத்திசைக்க முடியவில்லை."
+
+#: frontend/src/pages/AdminDashboard.jsx:49
+#~ msgid "Failed to update status: {0}"
+#~ msgstr "நிலையைப் புதுப்பிக்க முடியவில்லை: {0}"
+
+#: frontend/src/pages/AdminDashboard.jsx:329
+msgid "Failed to update status."
+msgstr "நிலையைப் புதுப்பிக்க முடியவில்லை."
+
+#: frontend/src/pages/Listings.jsx:288
+msgid "Featured"
+msgstr "சிறப்பு"
+
+#: frontend/src/pages/AdminDashboard.jsx:1107
+msgid "Featured Property"
+msgstr "சிறப்புச் சொத்து"
+
+#: frontend/src/pages/AdminDashboard.jsx:406
+msgid "Fill required fields!"
+msgstr "தேவையான இடங்களை நிரப்பவும்!"
+
+#: frontend/src/pages/Listings.jsx:150
+msgid "Filters"
+msgstr "வடிகட்டிகள்"
+
+#: frontend/src/pages/Profile.jsx:309
+msgid "Financial Logs"
+msgstr "நிதிப் பதிவுகள்"
+
+#: frontend/src/components/Testimonials.jsx:18
+msgid "Finding the perfect land was so easy with Estatera. Highly recommended!"
+msgstr "Estatera மூலம் சரியான நிலத்தைக் கண்டுபிடிப்பது மிகவும் எளிதாக இருந்தது. மிகவும் பரிந்துரைக்கிறேன்!"
+
+#: frontend/src/pages/Profile.jsx:301
+msgid "Full Access"
+msgstr "முழு அணுகல்"
+
+#: frontend/src/components/Navbar.jsx:99
+#: frontend/src/pages/Contact.jsx:109
+#: frontend/src/pages/Profile.jsx:224
+#: frontend/src/pages/Profile.jsx:494
+#: frontend/src/pages/Signup.jsx:157
+msgid "Full Name"
+msgstr "முழு பெயர்"
+
+#: frontend/src/pages/PropertyDetails.jsx:156
+msgid "Generating high-quality brochure..."
+msgstr "உயர்தர சிற்றேடு உருவாக்கப்படுகிறது..."
+
+#: frontend/src/pages/Signup.jsx:111
+msgid "Get notified about prime locations before they hit the public market."
+msgstr ""
+
+#: frontend/src/pages/Login.jsx:101
+msgid "Global Portfolios"
+msgstr ""
+
+#: frontend/src/pages/Home.jsx:186
+msgid "Hand-picked properties just for you"
+msgstr "உங்களுக்காகத் தேர்ந்தெடுக்கப்பட்ட சொத்துக்கள்"
+
+#: frontend/src/pages/Profile.jsx:239
+#: frontend/src/pages/Profile.jsx:513
+msgid "Hindi"
+msgstr "இந்தி"
+
+#: frontend/src/components/Footer.jsx:30
+#: frontend/src/components/Navbar.jsx:44
+msgid "Home"
+msgstr "முகப்பு"
+
+#: frontend/src/components/Testimonials.jsx:25
+msgid "Homeowner"
+msgstr "வீட்டு உரிமையாளர்"
+
+#: frontend/src/pages/Home.jsx:107
+msgid "House"
+msgstr "வீடு"
+
+#: frontend/src/pages/Listings.jsx:193
+msgid "Houses"
+msgstr "வீடுகள்"
+
+#: frontend/src/pages/Contact.jsx:132
+msgid "How can we help you?"
+msgstr "நாங்கள் உங்களுக்கு எப்படி உதவ முடியும்?"
+
+#: frontend/src/pages/Login.jsx:146
+msgid "Identity"
+msgstr ""
+
+#: frontend/src/pages/AdminDashboard.jsx:227
+#~ msgid "Images"
+#~ msgstr "படங்கள்"
+
+#: frontend/src/pages/Login.jsx:218
+#: frontend/src/pages/Signup.jsx:216
+msgid "Initialize Membership"
+msgstr ""
+
+#: frontend/src/pages/PropertyDetails.jsx:492
+msgid "Interest Rate"
+msgstr "வட்டி விகிதம்"
+
+#: frontend/src/pages/Login.jsx:26
+#~ msgid "Invalid Credentials"
+#~ msgstr "தவறான உள்நுழைவு விவரங்கள்"
+
+#: frontend/src/pages/AdminDashboard.jsx:590
+msgid "Inventory"
+msgstr "சரக்கு (Inventory)"
+
+#: frontend/src/pages/Profile.jsx:307
+msgid "Inventory Control"
+msgstr "சரக்குக் கட்டுப்பாடு"
+
+#: frontend/src/pages/Home.jsx:213
+msgid "Invest in Your Future Today"
+msgstr "இன்றே உங்கள் எதிர்காலத்தில் முதலீடு செய்யுங்கள்"
+
+#: frontend/src/components/Testimonials.jsx:19
+msgid "Investor"
+msgstr "முதலீட்டாளர்"
+
+#: frontend/src/components/Testimonials.jsx:17
+msgid "John Doe"
+msgstr "ஜான் டோ"
+
+#: frontend/src/pages/Signup.jsx:53
+#~ msgid "Join our community to find your perfect home."
+#~ msgstr "உங்கள் சரியான வீட்டைக் கண்டறிய எங்கள் சமூகத்தில் இணையுங்கள்."
+
+#: frontend/src/pages/Signup.jsx:148
+msgid "Join the Elite."
+msgstr ""
+
+#: frontend/src/pages/Home.jsx:216
+msgid "Join thousands of investors securing premium land and homes through our verified platform."
+msgstr "எங்கள் சரிபார்க்கப்பட்ட தளம் மூலம் பிரீமியம் நிலம் மற்றும் வீடுகளைப் பாதுகாக்கும் ஆயிரக்கணக்கான முதலீட்டாளர்களுடன் இணையுங்கள்."
+
+#: frontend/src/pages/Home.jsx:106
+msgid "Land"
+msgstr "நிலம்"
+
+#: frontend/src/pages/Signup.jsx:105
+msgid "Legal Protection"
+msgstr ""
+
+#: frontend/src/pages/AdminDashboard.jsx:618
+msgid "Live Stats Connected"
+msgstr "நேரலை புள்ளிவிவரங்கள் இணைக்கப்பட்டுள்ளன"
+
+#: frontend/src/pages/PropertyDetails.jsx:483
+msgid "Loan Amount"
+msgstr "கடன் தொகை"
+
+#: frontend/src/components/PropertyCard.jsx:67
+#: frontend/src/pages/Home.jsx:93
+#: frontend/src/pages/PropertyDetails.jsx:208
+msgid "Location"
+msgstr "இடம்"
+
+#: frontend/src/pages/AdminDashboard.jsx:992
+msgid "Location & Coordinates"
+msgstr "இடம் மற்றும் ஒருங்கிணைப்புகள்"
+
+#: frontend/src/pages/AdminDashboard.jsx:379
+msgid "Location not found. Try a different query."
+msgstr "இடம் காணப்படவில்லை. வேறு ஒரு இடத்தை முயற்சிக்கவும்."
+
+#: frontend/src/pages/AdminDashboard.jsx:377
+msgid "Location synced!"
+msgstr "இடம் ஒத்திசைக்கப்பட்டது!"
+
+#: frontend/src/components/Navbar.jsx:108
+#: frontend/src/components/Navbar.jsx:191
+msgid "Login"
+msgstr "உள்நுழை"
+
+#: frontend/src/pages/Login.jsx:169
+msgid "Lost Key?"
+msgstr ""
+
+#: frontend/src/pages/AdminDashboard.jsx:944
+msgid "Luxurious 3BHK in Downtown"
+msgstr "டவுன்டவுனில் ஆடம்பரமான 3BHK"
+
+#: frontend/src/components/Footer.jsx:74
+#: frontend/src/pages/Home.jsx:67
+msgid "Luxury Living"
+msgstr "ஆடம்பர வாழ்க்கை"
+
+#: frontend/src/pages/Home.jsx:55
+msgid "Luxury property"
+msgstr "ஆடம்பரச் சொத்து"
+
+#: frontend/src/components/Navbar.jsx:140
+msgid "Manage All"
+msgstr "அனைத்தையும் நிர்வகி"
+
+#: frontend/src/pages/Profile.jsx:463
+msgid "Manage Dashboard"
+msgstr "டாஷ்போர்டை நிர்வகி"
+
+#: frontend/src/pages/AdminDashboard.jsx:269
+#~ msgid "Manage Listings"
+#~ msgstr "பட்டியல்களை நிர்வகி"
+
+#: frontend/src/pages/Listings.jsx:199
+msgid "Max Budget"
+msgstr "அதிகபட்ச பட்ஜெட்"
+
+#: frontend/src/pages/Home.jsx:121
+msgid "Max Price"
+msgstr "அதிகபட்ச விலை"
+
+#: frontend/src/pages/PropertyDetails.jsx:286
+msgid "Media"
+msgstr "ஊடகம் (Media)"
+
+#: frontend/src/pages/Contact.jsx:22
+#: frontend/src/pages/Profile.jsx:87
+msgid "Message sent successfully!"
+msgstr "செய்தி வெற்றிகரமாக அனுப்பப்பட்டது!"
+
+#: frontend/src/components/Testimonials.jsx:29
+msgid "Michael Ross"
+msgstr "மைக்கேல் ராஸ்"
+
+#: frontend/src/pages/Home.jsx:113
+msgid "Min Price"
+msgstr "குறைந்தபட்ச விலை"
+
+#: frontend/src/pages/PropertyDetails.jsx:544
+msgid "Mobile Number"
+msgstr "கைப்பேசி எண்"
+
+#: frontend/src/pages/PropertyDetails.jsx:510
+msgid "Monthly EMI"
+msgstr "மாதாந்திர EMI"
+
+#: frontend/src/pages/AdminDashboard.jsx:333
+#~ msgid "Monthly Visit Requests"
+#~ msgstr "மாதாந்திர வருகை கோரிக்கைகள்"
+
+#: frontend/src/pages/PropertyDetails.jsx:170
+#~ msgid "More"
+#~ msgstr "மேலும்"
+
+#: frontend/src/pages/Listings.jsx:333
+msgid "New Arrivals"
+msgstr "புதிய வரவுகள்"
+
+#: frontend/src/pages/Login.jsx:86
+#~ msgid "New here?"
+#~ msgstr "இங்கே புதியவரா?"
+
+#: frontend/src/components/PropertyCard.jsx:63
+msgid "New Property"
+msgstr "புதிய சொத்து"
+
+#: frontend/src/pages/Login.jsx:213
+msgid "New to the network?"
+msgstr ""
+
+#: frontend/src/pages/Home.jsx:132
+msgid "Newest"
+msgstr "மிகப் புதியவை"
+
+#: frontend/src/pages/Listings.jsx:372
+msgid "No deals currently available."
+msgstr "தற்போது ஒப்பந்தங்கள் ஏதுமில்லை."
+
+#: frontend/src/pages/Profile.jsx:430
+#: frontend/src/pages/Profile.jsx:449
+msgid "No properties found."
+msgstr "சொத்துக்கள் எதுவும் காணப்படவில்லை."
+
+#: frontend/src/pages/Listings.jsx:234
+#~ msgid "No properties matching your criteria."
+#~ msgstr "உங்கள் தேடலுக்கு ஏற்ற சொத்துக்கள் இல்லை."
+
+#: frontend/src/pages/AdminDashboard.jsx:706
+msgid "No Reviews"
+msgstr "மதிப்புரைகள் இல்லை"
+
+#: frontend/src/components/Footer.jsx:65
+#: frontend/src/pages/Contact.jsx:89
+msgid "Office Address"
+msgstr "அலுவலக முகவரி"
+
+#: frontend/src/pages/Home.jsx:133
+msgid "Oldest"
+msgstr "மிகப் பழையவை"
+
+#: frontend/src/pages/Login.jsx:72
+#~ msgid "pass123"
+#~ msgstr "pass123"
+
+#: frontend/src/pages/Login.jsx:67
+#: frontend/src/pages/Signup.jsx:81
+#~ msgid "Password"
+#~ msgstr "கடவுச்சொல்"
+
+#: frontend/src/pages/AdminDashboard.jsx:54
+#~ msgid "Permanent Delete?"
+#~ msgstr "நிரந்தரமாக நீக்கவா?"
+
+#: frontend/src/pages/Profile.jsx:246
+#~ msgid "Permissions"
+#~ msgstr "அனுமதிகள்"
+
+#: frontend/src/pages/AdminDashboard.jsx:1116
+msgid "Photos"
+msgstr "புகைப்படங்கள்"
+
+#: frontend/src/pages/Login.jsx:139
+msgid "Please authenticate your identity to access your private real estate collection."
+msgstr ""
+
+#: frontend/src/pages/PropertyDetails.jsx:106
+msgid "Please enter your mobile number."
+msgstr "தயவுசெய்து உங்கள் கைப்பேசி எண்ணை உள்ளிடவும்."
+
+#: frontend/src/pages/PropertyDetails.jsx:105
+msgid "Please login to request a visit."
+msgstr "பார்வையிடக் கோர தயவுசெய்து உள்நுழையவும்."
+
+#: frontend/src/pages/AdminDashboard.jsx:124
+#~ msgid "Please type an address first"
+#~ msgstr "முதலில் ஒரு முகவரியைத் தட்டச்சு செய்யவும்"
+
+#: frontend/src/pages/Listings.jsx:192
+msgid "Plots & Land"
+msgstr "பிளாட்கள் மற்றும் நிலம்"
+
+#: frontend/src/pages/AdminDashboard.jsx:982
+msgid "Pool, Parking, Garden"
+msgstr "நீச்சல் குளம், பார்க்கிங், தோட்டம்"
+
+#: frontend/src/pages/AdminDashboard.jsx:839
+msgid "Popularity Analytics (Views)"
+msgstr "பிரபல பகுப்பாய்வு (பார்வைகள்)"
+
+#: frontend/src/pages/Profile.jsx:236
+#: frontend/src/pages/Profile.jsx:506
+msgid "Preferred Language"
+msgstr "விருப்பமான மொழி"
+
+#: frontend/src/pages/Home.jsx:183
+msgid "Premium Collection"
+msgstr "பிரீமியம் தொகுப்பு"
+
+#: frontend/src/pages/PropertyDetails.jsx:528
+msgid "Price"
+msgstr "விலை"
+
+#: frontend/src/pages/AdminDashboard.jsx:954
+msgid "Price (₹)"
+msgstr "விலை (₹)"
+
+#: frontend/src/pages/Home.jsx:135
+msgid "Price High → Low"
+msgstr "விலை அதிகம் → குறைவு"
+
+#: frontend/src/pages/Home.jsx:134
+msgid "Price Low → High"
+msgstr "விலை குறைவு → அதிகம்"
+
+#: frontend/src/pages/Listings.jsx:116
+#~ msgid "Price: High → Low"
+#~ msgstr "விலை: அதிகம் → குறைவு"
+
+#: frontend/src/pages/Listings.jsx:115
+#~ msgid "Price: Low → High"
+#~ msgstr "விலை: குறைவு → அதிகம்"
+
+#: frontend/src/pages/Home.jsx:158
+msgid "Prime Locations"
+msgstr "முக்கிய இடங்கள்"
+
+#: frontend/src/pages/Profile.jsx:120
+msgid "Profile update failed"
+msgstr "சுயவிவரப் புதுப்பிப்பு தோல்வியடைந்தது"
+
+#: frontend/src/pages/AdminDashboard.jsx:72
+#~ msgid "Property Added!"
+#~ msgstr "சொத்து சேர்க்கப்பட்டது!"
+
+#: frontend/src/pages/Profile.jsx:303
+msgid "Property Management"
+msgstr "சொத்து மேலாண்மை"
+
+#: frontend/src/pages/PropertyDetails.jsx:129
+msgid "Property not found"
+msgstr "சொத்து காணப்படவில்லை"
+
+#: frontend/src/pages/AdminDashboard.jsx:449
+msgid "Property Published Successfully!"
+msgstr "சொத்து வெற்றிகரமாக வெளியிடப்பட்டது!"
+
+#: frontend/src/pages/Profile.jsx:313
+msgid "Property Tours"
+msgstr "சொத்து சுற்றுப்பயணங்கள்"
+
+#: frontend/src/pages/Home.jsx:105
+#: frontend/src/pages/PropertyDetails.jsx:208
+msgid "Property Type"
+msgstr "சொத்து வகை"
+
+#: frontend/src/pages/AdminDashboard.jsx:934
+#: frontend/src/pages/AdminDashboard.jsx:1168
+msgid "Publish Property"
+msgstr "சொத்தை வெளியிடவும்"
+
+#: frontend/src/pages/Listings.jsx:218
+msgid "Radius"
+msgstr "ஆரம் (Radius)"
+
+#: frontend/src/pages/Profile.jsx:379
+msgid "Rate your experience"
+msgstr "உங்கள் அனுபவத்தை மதிப்பிடவும்"
+
+#: frontend/src/pages/AdminDashboard.jsx:686
+msgid "Rating"
+msgstr "மதிப்பீடு"
+
+#: frontend/src/components/Footer.jsx:74
+#: frontend/src/pages/Home.jsx:69
+msgid "Redefined"
+msgstr "மறுவரையறை செய்யப்பட்டது"
+
+#: frontend/src/pages/AdminDashboard.jsx:1181
+msgid "Registered members"
+msgstr "பதிவுசெய்யப்பட்ட உறுப்பினர்கள்"
+
+#: frontend/src/pages/Signup.jsx:33
+#~ msgid "Registration failed"
+#~ msgstr "பதிவு தோல்வியடைந்தது"
+
+#: frontend/src/pages/Signup.jsx:43
+msgid "Registration failed. Please try again."
+msgstr ""
+
+#: frontend/src/components/Testimonials.jsx:22
+#~ msgid "Regular Client"
+#~ msgstr "வழக்கமான வாடிக்கையாளர்"
+
+#: frontend/src/components/Testimonials.jsx:31
+msgid "Repeat Client"
+msgstr "மீண்டும் வரும் வாடிக்கையாளர்"
+
+#: frontend/src/pages/PropertyDetails.jsx:557
+msgid "Request Visit"
+msgstr "பார்வையிடக் கோரிக்கை"
+
+#: frontend/src/pages/Profile.jsx:314
+msgid "Request Visits"
+msgstr "பார்வையிடல்களைக் கோரவும்"
+
+#: frontend/src/pages/Listings.jsx:216
+#~ msgid "Requires location text (e.g., Chennai)"
+#~ msgstr "இடத்தின் பெயர் தேவை (உதாரணமாக: சென்னை)"
+
+#: frontend/src/pages/AdminDashboard.jsx:705
+msgid "Reviews"
+msgstr "மதிப்புரைகள்"
+
+#: frontend/src/components/Testimonials.jsx:23
+msgid "Sarah Jenkins"
+msgstr "சாரா ஜென்கின்ஸ்"
+
+#: frontend/src/pages/Profile.jsx:418
+#: frontend/src/pages/Profile.jsx:523
+msgid "Save Changes"
+msgstr "மாற்றங்களைச் சேமிக்கவும்"
+
+#: frontend/src/pages/Profile.jsx:315
+msgid "Save Favorites"
+msgstr "விருப்பங்களைச் சேமிக்கவும்"
+
+#: frontend/src/pages/Profile.jsx:523
+msgid "Saving..."
+msgstr "சேமிக்கப்படுகிறது..."
+
+#: frontend/src/pages/Profile.jsx:333
+msgid "Schedule a Visit"
+msgstr "வருகையைத் திட்டமிடவும்"
+
+#: frontend/src/pages/Home.jsx:142
+msgid "Search"
+msgstr "தேடு"
+
+#: frontend/src/pages/Listings.jsx:137
+msgid "Search by city, area or project..."
+msgstr "நகரம், பகுதி அல்லது திட்டம் மூலம் தேடுங்கள்..."
+
+#: frontend/src/pages/Listings.jsx:81
+#~ msgid "Search by location..."
+#~ msgstr "இடம் வாரியாக தேடுங்கள்..."
+
+#: frontend/src/pages/AdminDashboard.jsx:1193
+msgid "Search by name or email..."
+msgstr "பெயர் அல்லது மின்னஞ்சல் மூலம் தேடுங்கள்..."
+
+#: frontend/src/pages/Listings.jsx:116
+#~ msgid "Search city or neighborhood..."
+#~ msgstr "நகரம் அல்லது அக்கம் பக்கத்தைத் தேடுங்கள்..."
+
+#: frontend/src/pages/AdminDashboard.jsx:998
+msgid "Search Location..."
+msgstr "இடத்தைத் தேடுங்கள்..."
+
+#: frontend/src/pages/Listings.jsx:248
+msgid "Search Results"
+msgstr "தேடல் முடிவுகள்"
+
+#: frontend/src/pages/Login.jsx:102
+msgid "Secure Assets"
+msgstr ""
+
+#: frontend/src/pages/Login.jsx:203
+msgid "Secure Login"
+msgstr ""
+
+#: frontend/src/pages/Profile.jsx:259
+msgid "Security & Access"
+msgstr "பாதுகாப்பு மற்றும் அணுகல்"
+
+#: frontend/src/pages/Signup.jsx:183
+msgid "Security Password"
+msgstr ""
+
+#: frontend/src/pages/Contact.jsx:141
+msgid "Send Message"
+msgstr "செய்தி அனுப்பவும்"
+
+#: frontend/src/pages/Signup.jsx:231
+msgid "Sign In"
+msgstr ""
+
+#: frontend/src/pages/Login.jsx:45
+#~ msgid "Sign in to manage your properties"
+#~ msgstr "உங்கள் சொத்துக்களை நிர்வகிக்க உள்நுழையவும்"
+
+#: frontend/src/components/Navbar.jsx:182
+#: frontend/src/pages/Profile.jsx:469
+msgid "Sign Out"
+msgstr "வெளியேறு"
+
+#: frontend/src/pages/Signup.jsx:92
+#~ msgid "Sign Up"
+#~ msgstr "பதிவு செய்க"
+
+#: frontend/src/pages/PropertyDetails.jsx:208
+#: frontend/src/pages/PropertyDetails.jsx:439
+msgid "Size"
+msgstr "அளவு"
+
+#: frontend/src/pages/AdminDashboard.jsx:188
+#~ msgid "Size (sqft/acre)"
+#~ msgstr "அளவு (சதுர அடி/ஏக்கர்)"
+
+#: frontend/src/pages/AdminDashboard.jsx:1054
+msgid "Size (sqft/Acres)"
+msgstr "அளவு (சதுர அடி/ஏக்கர்)"
+
+#: frontend/src/pages/AdminDashboard.jsx:655
+msgid "Sold Value"
+msgstr "விற்பனை மதிப்பு"
+
+#: frontend/src/pages/PropertyDetails.jsx:447
+msgid "Status"
+msgstr "நிலை"
+
+#: frontend/src/pages/AdminDashboard.jsx:149
+msgid "Status updated to {newStatus}"
+msgstr "நிலை {newStatus} எனப் புதுப்பிக்கப்பட்டது"
+
+#: frontend/src/pages/PropertyDetails.jsx:219
+#~ msgid "Structure"
+#~ msgstr "கட்டமைப்பு"
+
+#: frontend/src/pages/Contact.jsx:125
+msgid "Subject"
+msgstr "பொருள்"
+
+#: frontend/src/pages/AdminDashboard.jsx:185
+#~ msgid "Success! Property Published."
+#~ msgstr "வெற்றி! சொத்து வெளியிடப்பட்டது."
+
+#: frontend/src/pages/PropertyDetails.jsx:386
+msgid "Swipe to explore"
+msgstr ""
+
+#: frontend/src/pages/Profile.jsx:262
+msgid "System Identity"
+msgstr "அமைப்பு அடையாளம் (System Identity)"
+
+#: frontend/src/pages/Profile.jsx:241
+#: frontend/src/pages/Profile.jsx:514
+msgid "Tamil"
+msgstr "தமிழ்"
+
+#: frontend/src/pages/PropertyDetails.jsx:501
+msgid "Tenure (Years)"
+msgstr "கால அளவு (ஆண்டுகள்)"
+
+#: frontend/src/pages/PropertyDetails.jsx:232
+#~ msgid "The Property"
+#~ msgstr "சொத்து"
+
+#: frontend/src/components/Testimonials.jsx:24
+msgid "The team helped me find my dream home in a prime location. Excellent service!"
+msgstr "முக்கியமான இடத்தில் எனது கனவு இல்லத்தைக் கண்டுபிடிக்க குழு உதவியது. சிறந்த சேவை!"
+
+#: frontend/src/pages/AdminDashboard.jsx:201
+msgid "This action is permanent and will remove all user data."
+msgstr "இந்தச் செயல் நிரந்தரமானது மற்றும் அனைத்து பயனர் தரவையும் நீக்கும்."
+
+#: frontend/src/pages/AdminDashboard.jsx:943
+msgid "Title"
+msgstr "தலைப்பு"
+
+#: frontend/src/pages/AdminDashboard.jsx:897
+msgid "Top Property Insights"
+msgstr "முக்கிய சொத்து தகவல்கள்"
+
+#: frontend/src/pages/PropertyDetails.jsx:214
+#~ msgid "Total Area"
+#~ msgstr "மொத்த பரப்பளவு"
+
+#: frontend/src/pages/PropertyDetails.jsx:515
+msgid "Total Interest"
+msgstr "மொத்த வட்டி"
+
+#: frontend/src/pages/AdminDashboard.jsx:674
+#: frontend/src/pages/AdminDashboard.jsx:886
+msgid "Total Views"
+msgstr "மொத்த பார்வைகள்"
+
+#: frontend/src/pages/Listings.jsx:316
+msgid "Trending Now"
+msgstr "தற்போது பிரபலமானது"
+
+#: frontend/src/pages/AdminDashboard.jsx:1065
+#: frontend/src/pages/PropertyDetails.jsx:442
+msgid "Type"
+msgstr "வகை"
+
+#: frontend/src/pages/Listings.jsx:364
+msgid "Under Market Deals"
+msgstr "சந்தை விலைக்குக் குறைவான ஒப்பந்தங்கள்"
+
+#: frontend/src/pages/AdminDashboard.jsx:321
+msgid "Updating status..."
+msgstr "நிலை புதுப்பிக்கப்படுகிறது..."
+
+#: frontend/src/pages/AdminDashboard.jsx:431
+msgid "Uploading property and media..."
+msgstr "சொத்து மற்றும் ஊடகங்கள் பதிவேற்றப்படுகின்றன..."
+
+#: frontend/src/pages/AdminDashboard.jsx:1168
+msgid "Uploading..."
+msgstr "பதிவேற்றப்படுகிறது..."
+
+#: frontend/src/pages/AdminDashboard.jsx:1179
+msgid "User Directory"
+msgstr "பயனர் அடைவு"
+
+#: frontend/src/pages/AdminDashboard.jsx:360
+#~ msgid "Value Share (₹)"
+#~ msgstr "மதிப்புப் பங்கு (₹)"
+
+#: frontend/src/pages/PropertyDetails.jsx:224
+#~ msgid "Verification"
+#~ msgstr "சரிபார்ப்பு"
+
+#: frontend/src/pages/Profile.jsx:271
+#: frontend/src/pages/PropertyDetails.jsx:448
+msgid "Verified"
+msgstr "சரிபார்க்கப்பட்டது"
+
+#: frontend/src/pages/Home.jsx:154
+msgid "Verified Assets"
+msgstr "சரிபார்க்கப்பட்ட சொத்துக்கள்"
+
+#: frontend/src/components/Testimonials.jsx:30
+msgid "Verified properties and professional guidance. My future is secure."
+msgstr "சரிபார்க்கப்பட்ட சொத்துக்கள் மற்றும் தொழில்முறை வழிகாட்டல். எனது எதிர்காலம் பாதுகாப்பானது."
+
+#: frontend/src/pages/AdminDashboard.jsx:1148
+msgid "Videos"
+msgstr "வீடியோக்கள்"
+
+#: frontend/src/components/MapSearch.jsx:62
+#: frontend/src/pages/Home.jsx:195
+msgid "View All"
+msgstr "அனைத்தையும் காண்க"
+
+#: frontend/src/pages/PropertyDetails.jsx:419
+msgid "View All Media"
+msgstr ""
+
+#: frontend/src/pages/Listings.jsx:347
+msgid "View All Properties"
+msgstr "அனைத்து சொத்துக்களையும் காண்க"
+
+#: frontend/src/pages/AdminDashboard.jsx:857
+msgid "Views"
+msgstr "பார்வைகள்"
+
+#: frontend/src/pages/PropertyDetails.jsx:110
+#~ msgid "Visit request sent successfully!"
+#~ msgstr "பார்வையிடல் கோரிக்கை வெற்றிகரமாக அனுப்பப்பட்டது!"
+
+#: frontend/src/pages/PropertyDetails.jsx:116
+msgid "Visit request sent! We will contact you soon."
+msgstr "பார்வையிடல் கோரிக்கை அனுப்பப்பட்டது! நாங்கள் உங்களை விரைவில் தொடர்பு கொள்வோம்."
+
+#: frontend/src/pages/AdminDashboard.jsx:608
+msgid "Visits"
+msgstr "வருகைகள்"
+
+#: frontend/src/pages/Contact.jsx:42
+msgid "We are here to help you find your next big investment."
+msgstr "உங்கள் அடுத்த பெரிய முதலீட்டைக் கண்டறிய நாங்கள் உங்களுக்கு உதவ இங்கே இருக்கிறோம்."
+
+#: frontend/src/pages/Login.jsx:41
+#~ msgid "Welcome Back"
+#~ msgstr "நல்வரவு"
+
+#: frontend/src/pages/Login.jsx:136
+msgid "Welcome Back."
+msgstr ""
+
+#: frontend/src/pages/Profile.jsx:339
+msgid "Wishlist"
+msgstr "விருப்பப் பட்டியல்"
+
+#: frontend/src/pages/AdminDashboard.jsx:205
+msgid "Yes, delete"
+msgstr "ஆம், நீக்கு"
+
+#: frontend/src/pages/Profile.jsx:406
+msgid "Your Message..."
+msgstr "உங்கள் செய்தி..."

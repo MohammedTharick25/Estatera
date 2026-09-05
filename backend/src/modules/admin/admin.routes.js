@@ -1,0 +1,1 @@
+const router = require("express").Router(); const controller = require("./admin.controller"); const { requireAuth, requireAdmin } = require("../../middleware/auth"); router.get("/stats", requireAuth, requireAdmin, controller.getStats); module.exports = router;

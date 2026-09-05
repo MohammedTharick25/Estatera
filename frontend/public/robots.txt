@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block the Admin Dashboard from appearing in Google Searches
+Disallow: /admin
+Disallow: /login
+Disallow: /signup
+Disallow: /profile
+Disallow: /forgot-password
+Disallow: /reset-password
+
+Sitemap: https://estatera.onrender.com/sitemap.xml
