@@ -13,7 +13,7 @@ const server = http.createServer(app); // Create HTTP server
 const allowedOrigins = [
   "http://localhost:5173",
   "https://estatera.onrender.com",
-  "https://estatera-mdxp.onrender.com",
+  "https://estatera-hjnn.onrender.com",
 ];
 
 const io = new Server(server, {

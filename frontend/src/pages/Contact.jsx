@@ -20,6 +20,7 @@ export default function Contact() {
       });
     } catch (error) {
       toast.error(t`Failed to send message`);
+      console.error(error);
       return;
     }
 
@@ -88,7 +89,7 @@ export default function Contact() {
                 </h4>
 
                 <p className="text-slate-600 dark:text-slate-400">
-                  estatera@gmail.com
+                  estatera.team@gmail.com
                 </p>
               </div>
             </div>
@@ -111,7 +112,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="luxury-surface rounded-[2rem] p-8 lg:col-span-2 transition-colors">
+          <div className="luxury-surface rounded-4xl p-8 lg:col-span-2 transition-colors">
             <form
               ref={form}
               onSubmit={sendEmail}
@@ -159,7 +160,7 @@ export default function Contact() {
         </div>
 
         {/* Map */}
-        <div className="mt-16 h-96 overflow-hidden rounded-[2rem] border border-stone-200 shadow-inner grayscale transition-all duration-700 hover:grayscale-0 dark:border-stone-700">
+        <div className="mt-16 h-96 overflow-hidden rounded-4xl border border-stone-200 shadow-inner grayscale transition-all duration-700 hover:grayscale-0 dark:border-stone-700">
           <iframe
             src="https://www.google.com/maps?q=Chennai,Tamil%20Nadu&output=embed"
             className="w-full h-full border-0"
