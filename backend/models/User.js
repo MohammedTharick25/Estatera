@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const sessionSchema = new mongoose.Schema({
   sessionId: { type: String, required: true },
   userAgent: { type: String, default: "Unknown device" },
+  deviceLabel: { type: String, default: "" },
   ip: { type: String, default: "" },
   createdAt: { type: Date, default: Date.now },
   lastActiveAt: { type: Date, default: Date.now },

@@ -7,9 +7,11 @@ const cors = require("cors");
 const {
   sendDueDigests,
 } = require("./src/modules/savedSearch/savedSearchAlert.service");
+const { sendUpcomingReminders } = require("./src/modules/visit/visit.service");
 
 const app = express();
 const server = http.createServer(app);
+setInterval(() => sendUpcomingReminders(app).catch((err) => console.error("Visit reminder error:", err.message)), 60 * 60 * 1000);
 
 const allowedOrigins = [
   "http://localhost:5173",

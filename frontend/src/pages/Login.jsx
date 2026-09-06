@@ -28,11 +28,21 @@ export default function Login() {
     e.preventDefault();
     setIsLoading(true);
     try {
+      const hints = await navigator.userAgentData?.getHighEntropyValues?.(["model", "platform", "platformVersion", "architecture", "bitness", "fullVersionList"]).catch(() => ({}));
+      const browser = hints?.fullVersionList?.find((entry) => /Chrome|Edge|Firefox/i.test(entry.brand));
+      const platform = hints?.platform || "";
+      const version = hints?.platformVersion ? ` ${hints.platformVersion}` : "";
+      const architecture = hints?.architecture && hints?.bitness ? ` · ${hints.architecture} ${hints.bitness}-bit` : "";
+      const browserLabel = browser ? ` · ${browser.brand} ${browser.version}` : "";
+      // Mobile Chrome may provide a real model. Desktop browsers intentionally
+      // withhold the PC manufacturer/model for privacy, so retain honest system details.
+      const deviceLabel = hints?.model ? `${hints.model} · ${platform}${browserLabel}` : platform ? `${platform}${version}${architecture}${browserLabel}` : "";
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/auth/login`,
         {
           email,
           password,
+          deviceLabel,
         },
       );
       login(res.data);

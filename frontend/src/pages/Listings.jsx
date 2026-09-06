@@ -61,10 +61,7 @@ export default function Listings() {
         .slice(0, 4),
     [properties],
   );
-  const hotDeals = useMemo(
-    () => properties.filter((p) => p.price < 5000000).slice(0, 4),
-    [properties],
-  );
+  const hotDeals = useMemo(() => properties.slice(0, 4), [properties]);
   // Now looks specifically for the 'featured' flag from your Admin Dashboard
   const premium = useMemo(
     () => properties.filter((p) => p.featured === true).slice(0, 4),
@@ -166,7 +163,7 @@ export default function Listings() {
               >
                 <SlidersHorizontal size={20} /> {t`Filters`}
               </button>
-              <button onClick={saveSearch} className="hidden rounded-xl border border-stone-200 bg-white px-4 py-3 text-xs font-black text-emerald-900 transition hover:bg-emerald-50 dark:border-stone-700 dark:bg-slate-900 dark:text-emerald-200 md:block">Save Search</button>
+              <button onClick={saveSearch} className="rounded-xl border border-stone-200 bg-white px-3 py-3 text-xs font-black text-emerald-900 transition hover:bg-emerald-50 dark:border-stone-700 dark:bg-slate-900 dark:text-emerald-200 sm:px-4">Save<span className="hidden sm:inline"> Search</span></button>
               <div className="flex bg-slate-100 dark:bg-slate-900 p-1 rounded-2xl">
                 <button
                   onClick={() => setViewMode("list")}
@@ -214,8 +211,8 @@ export default function Listings() {
                 </div>
                 <div>
                   <label className="block text-xs font-black uppercase text-slate-400 mb-3">
-                    {t`Max Budget`}:{" "}
-                    <span className="text-blue-600">
+                    Private availability
+                    <span className="hidden text-blue-600">
                       ₹{(filter.maxPrice / 100000).toFixed(0)}L
                     </span>
                   </label>
@@ -228,7 +225,7 @@ export default function Listings() {
                     onChange={(e) =>
                       setFilter({ ...filter, maxPrice: e.target.value })
                     }
-                    className="w-full h-1.5 bg-blue-100 rounded-lg appearance-none accent-blue-600"
+                    className="hidden w-full h-1.5 bg-blue-100 rounded-lg appearance-none accent-blue-600"
                   />
                 </div>
                 <div>
@@ -308,9 +305,7 @@ export default function Listings() {
                               {p.title}
                             </h3>
                             <div className="flex justify-between items-center">
-                              <p className="text-amber-400 font-black text-xl">
-                                ₹{(p.price / 10000000).toFixed(2)} Cr
-                              </p>
+                              <p className="text-amber-300 font-black text-sm">Private pricing · Contact us</p>
                               <button
                                 onClick={() => navigate(`/property/${p._id}`)}
                                 className="p-4 bg-white/10 backdrop-blur-md rounded-2xl text-white hover:bg-white hover:text-black transition-all"
@@ -379,7 +374,7 @@ export default function Listings() {
                       <div className="p-3 bg-red-500 rounded-2xl text-white shadow-lg animate-pulse">
                         <Flame size={24} />
                       </div>
-                      <h2 className="text-3xl font-black text-white tracking-tight">{t`Under Market Deals`}</h2>
+                      <h2 className="text-3xl font-black text-white tracking-tight">Selected opportunities</h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                       {hotDeals.length > 0 ? (

@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   Calculator,
   Phone,
+  MessageCircle,
   FileText,
   Download,
   Scale,
@@ -288,7 +289,7 @@ export default function PropertyDetails() {
     try {
       const doc = new jsPDF({ unit: "mm", format: "a4" });
       const ink = [13, 44, 36], gold = [184, 138, 69], paper = [253, 251, 246], muted = [95, 107, 101];
-      const price = `INR ${Number(property.price || 0).toLocaleString("en-IN")}`;
+      const price = "Private pricing on request";
       let imageData = null;
       if (property.images?.[0]) { try { imageData = await getBase64ImageFromURL(property.images[0]); } catch (error) { console.warn("Brochure image unavailable", error); } }
 
@@ -315,7 +316,7 @@ export default function PropertyDetails() {
       doc.setTextColor(...muted); doc.setFont("helvetica", "normal"); doc.setFontSize(10); const description = doc.splitTextToSize(property.description || "Details available on request.", 180); doc.text(description, 15, 54);
       const descriptionEnd = 54 + description.length * 5;
       doc.setTextColor(...gold); doc.setFont("helvetica", "bold"); doc.setFontSize(8); doc.text("PROPERTY SPECIFICATION", 15, descriptionEnd + 15);
-      autoTable(doc, { startY: descriptionEnd + 20, body: [["Location", property.location || "—"], ["Property type", property.propertyType || "—"], ["Size", property.size || "—"], ["Guide price", price], ["Availability", property.status || "Available"]], theme: "plain", styles: { fontSize: 10, cellPadding: 4, textColor: ink }, columnStyles: { 0: { fontStyle: "bold", textColor: muted, cellWidth: 55 }, 1: { cellWidth: 125 } }, alternateRowStyles: { fillColor: [244, 241, 233] }, margin: { left: 15, right: 15 } });
+      autoTable(doc, { startY: descriptionEnd + 20, body: [["Location", property.location || "—"], ["Property type", property.propertyType || "—"], ["Size", property.size || "—"], ["Commercial guidance", price], ["Availability", property.status || "Available"]], theme: "plain", styles: { fontSize: 10, cellPadding: 4, textColor: ink }, columnStyles: { 0: { fontStyle: "bold", textColor: muted, cellWidth: 55 }, 1: { cellWidth: 125 } }, alternateRowStyles: { fillColor: [244, 241, 233] }, margin: { left: 15, right: 15 } });
       const amenitiesY = doc.lastAutoTable.finalY + 17; doc.setTextColor(...gold); doc.setFont("helvetica", "bold"); doc.setFontSize(8); doc.text("FEATURES & AMENITIES", 15, amenitiesY);
       doc.setTextColor(...ink); doc.setFontSize(10); const amenities = property.amenities?.length ? property.amenities.map((item) => `• ${item}`).join("     ") : "• Verified property details     • Private viewing available"; doc.text(doc.splitTextToSize(amenities, 180), 15, amenitiesY + 9);
       doc.setFillColor(...ink); doc.roundedRect(15, 239, 180, 31, 3, 3, "F"); doc.setTextColor(230, 203, 154); doc.setFontSize(8); doc.text("PRIVATE VIEWING", 23, 250); doc.setTextColor(255, 255, 255); doc.setFontSize(12); doc.text("Arrange a conversation with Estatera", 23, 260); doc.setFont("helvetica", "normal"); doc.setFontSize(8); doc.text("estatera.team@gmail.com  ·  Explore and request a visit online", 23, 266);
@@ -327,7 +328,7 @@ export default function PropertyDetails() {
 
   const propertyPath = `/property/${property._id}`;
   const propertyDescription = `${property.title} — verified ${property.propertyType?.toLowerCase() || "property"} in ${property.location}. ${property.size ? `${property.size}. ` : ""}${property.description?.slice(0, 120) || "Explore details and request a viewing."}`;
-  const propertySchema = { "@context": "https://schema.org", "@type": "Product", name: property.title, description: property.description, image: property.images?.[0], url: `${siteUrl}${propertyPath}`, category: property.propertyType, offers: { "@type": "Offer", priceCurrency: "INR", price: property.price, availability: property.status === "Sold" ? "https://schema.org/SoldOut" : "https://schema.org/InStock", url: `${siteUrl}${propertyPath}` }, address: { "@type": "PostalAddress", addressLocality: property.location, addressCountry: "IN" } };
+  const propertySchema = { "@context": "https://schema.org", "@type": "Product", name: property.title, description: property.description, image: property.images?.[0], url: `${siteUrl}${propertyPath}`, category: property.propertyType, offers: { "@type": "Offer", availability: property.status === "Sold" ? "https://schema.org/SoldOut" : "https://schema.org/InStock", url: `${siteUrl}${propertyPath}` }, address: { "@type": "PostalAddress", addressLocality: property.location, addressCountry: "IN" } };
 
   return <>
     <Seo title={property.title} description={propertyDescription} path={propertyPath} image={property.images?.[0] || `${siteUrl}/og-whatsapp.png`} type="product" schema={propertySchema} />
@@ -387,7 +388,7 @@ export default function PropertyDetails() {
         </button>
         <div className="flex gap-2">
           <button
-            onClick={downloadBrochure}
+            onClick={downloadPremiumBrochure}
             className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-white rounded-full shadow-md hover:bg-blue-50 dark:hover:bg-slate-700 transition-all font-bold text-sm"
           >
             <FileText size={18} className="text-blue-600" />
@@ -547,6 +548,10 @@ export default function PropertyDetails() {
           )}
 
           <div className="luxury-surface rounded-[2rem] p-8">
+            <h3 className="text-xl font-black dark:text-white">Private pricing consultation</h3>
+            <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">Contact our advisor for current availability, market guidance, and a private commercial discussion tailored to this property.</p>
+          </div>
+          <div className="hidden">
             <h3 className="text-xl font-black mb-6 flex items-center gap-2 dark:text-white">
               <Calculator className="text-blue-600" /> {t`EMI Calculator`}
             </h3>
@@ -598,10 +603,12 @@ export default function PropertyDetails() {
         {/* SIDEBAR FORM */}
         <div className="lg:col-span-1">
           <div className="luxury-surface sticky top-24 rounded-[2rem] p-8">
-            <p className="text-xs font-bold text-slate-400 uppercase mb-1">{t`Price`}</p>
-            <h2 className="display-face mb-8 text-5xl font-bold text-emerald-900 dark:text-emerald-300">
-              ₹{property.price.toLocaleString()}
-            </h2>
+            <p className="mb-1 text-xs font-bold uppercase text-slate-400">Private availability</p>
+            <h2 className="display-face mb-8 text-3xl font-bold text-emerald-900 dark:text-emerald-300">Best-in-market guidance</h2>
+            <div className="mb-5 grid gap-3 sm:grid-cols-2">
+              <a href="tel:+919791674849" className="flex items-center justify-center gap-2 rounded-xl bg-emerald-950 px-4 py-3 text-sm font-black text-white transition hover:bg-emerald-800"><Phone size={18}/> Call for details</a>
+              <a href={`https://wa.me/919791674849?text=${encodeURIComponent(`Hello Estatera team,\n\nI am interested in *${property.title}*.\n\nPlease share the current availability, private pricing guidance, and suitable viewing times.\n\nMy details:\nName: ${user?.user?.name || "Interested customer"}\nEmail: ${user?.user?.email || "I will share this shortly"}${phone ? `\nPhone: ${phone}` : ""}\n\nThank you.`)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-emerald-900 px-4 py-3 text-sm font-black text-emerald-900 transition hover:bg-emerald-50 dark:border-emerald-300 dark:text-emerald-300 dark:hover:bg-emerald-950/30"><MessageCircle size={18}/> WhatsApp our advisor</a>
+            </div>
             <form onSubmit={handleRequestVisit} className="space-y-4">
               {/* Form fields... (your existing code) */}
               <div className="space-y-1">

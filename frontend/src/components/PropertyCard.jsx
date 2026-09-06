@@ -70,11 +70,7 @@ export default function PropertyCard({ property }) {
           </p>
 
           <div className="flex justify-between items-center mt-4">
-            <span className="text-xl font-extrabold text-emerald-900 dark:text-emerald-300">
-              {typeof property?.price === "number"
-                ? `₹${property.price.toLocaleString()}`
-                : t`Asking Price`}
-            </span>
+            <span className="text-sm font-extrabold text-emerald-900 dark:text-emerald-300">Private pricing · Contact us</span>
             {property?.size && (
               <span className="flex items-center text-slate-600 dark:text-slate-400 text-sm">
                 <Maximize size={16} className="mr-1" /> {property.size}

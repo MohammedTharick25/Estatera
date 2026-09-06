@@ -60,6 +60,7 @@ export default function Profile() {
   const [showSessions, setShowSessions] = useState(false);
   const [sessions, setSessions] = useState([]);
   const [currentSessionId, setCurrentSessionId] = useState(null);
+  const [purchaseCelebration, setPurchaseCelebration] = useState(null);
 
   const fileInputRef = useRef(null);
 
@@ -92,6 +93,13 @@ export default function Profile() {
       console.error(err);
     }
   };
+
+  useEffect(() => {
+    const confirmedPurchase = myVisits.find((visit) => visit.status === "purchased");
+    if (!confirmedPurchase) return;
+    const key = `estatera-purchase-celebrated-${confirmedPurchase._id}`;
+    if (!sessionStorage.getItem(key)) { sessionStorage.setItem(key, "true"); setPurchaseCelebration(confirmedPurchase); }
+  }, [myVisits]);
 
   const fetchFavorites = async () => {
     try {
@@ -195,6 +203,8 @@ export default function Profile() {
         return "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400";
       case "visited":
         return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400";
+      case "purchased":
+        return "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300";
       case "cancelled":
         return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400";
       default:
@@ -219,6 +229,7 @@ export default function Profile() {
         animate={{ opacity: 1, y: 0 }}
         className="mx-auto max-w-5xl px-4 py-10 sm:px-5 sm:py-20"
       >
+        <AnimatePresence>{purchaseCelebration && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[1300] flex items-center justify-center bg-emerald-950/80 p-5 backdrop-blur-md"><motion.div initial={{ scale: .8, y: 24 }} animate={{ scale: 1, y: 0 }} className="relative w-full max-w-md overflow-hidden rounded-[2rem] bg-[#fdfbf6] p-8 text-center shadow-2xl dark:bg-slate-900"><div className="pointer-events-none absolute inset-x-0 top-3 flex justify-around text-2xl"><span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span></div><div className="mx-auto mt-5 flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-3xl">🏡</div><p className="editorial-label mt-6 text-amber-700">A new beginning</p><h2 className="display-face mt-3 text-4xl font-bold text-emerald-950 dark:text-white">Congratulations!</h2><p className="mt-4 text-sm leading-6 text-stone-600 dark:text-slate-300">Your purchase of {purchaseCelebration.propertyId?.title || "your property"} has been confirmed. Welcome to your next chapter.</p><button onClick={() => setPurchaseCelebration(null)} className="mt-7 w-full rounded-xl bg-emerald-950 py-3 text-sm font-black text-white">Celebrate this moment</button></motion.div></motion.div>}</AnimatePresence>
         <div className="luxury-surface overflow-hidden rounded-[2rem]">
           <div className="h-36 bg-[linear-gradient(110deg,#0d2c24,#285645_55%,#b88a45)]" />
 
@@ -356,7 +367,7 @@ export default function Profile() {
                           <button onClick={() => setShowPasswordForm((show) => !show)} className="w-full rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-left text-xs font-black text-blue-700 transition hover:bg-blue-100 dark:border-blue-900/50 dark:bg-blue-950/30 dark:text-blue-300">{showPasswordForm ? "Cancel password change" : "Change password"}</button>
                           {showPasswordForm && <form onSubmit={changePassword} className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><p className="text-xs font-bold text-slate-500">Use at least 8 characters with uppercase, lowercase, and a number.</p><input type="password" autoComplete="current-password" required value={passwordData.currentPassword} onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })} placeholder="Current password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><input type="password" autoComplete="new-password" required value={passwordData.password} onChange={(e) => setPasswordData({ ...passwordData, password: e.target.value })} placeholder="New password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><input type="password" autoComplete="new-password" required value={passwordData.confirmPassword} onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })} placeholder="Confirm new password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><button disabled={isChangingPassword} className="w-full rounded-xl bg-emerald-950 py-3 text-sm font-black text-white disabled:opacity-50">{isChangingPassword ? "Updating…" : "Update password"}</button></form>}
                           <button onClick={toggleSessions} className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-left text-xs font-black text-stone-700 transition hover:bg-stone-100 dark:border-slate-700 dark:bg-slate-800 dark:text-stone-200">{showSessions ? "Hide active sessions" : "Manage active sessions"}</button>
-                          {showSessions && <div className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><div className="flex items-center justify-between gap-3"><p className="text-xs font-black text-slate-700 dark:text-white">Active devices</p>{sessions.length > 1 && <button onClick={revokeOtherSessions} className="text-xs font-black text-red-600 hover:underline">Sign out others</button>}</div>{sessions.length ? sessions.map((session) => <div key={session.sessionId} className="rounded-xl bg-stone-50 p-3 text-xs dark:bg-slate-800"><div className="flex justify-between gap-3"><p className="min-w-0 truncate font-bold text-slate-700 dark:text-white">{getDeviceName(session.userAgent)}</p>{session.sessionId === currentSessionId ? <span className="shrink-0 font-black text-emerald-700 dark:text-emerald-300">This device</span> : <button onClick={() => revokeSession(session.sessionId)} className="shrink-0 font-black text-red-600">Sign out</button>}</div><p className="mt-1 text-[10px] text-slate-400">Signed in {new Date(session.createdAt).toLocaleString()}</p></div>) : <p className="text-xs text-slate-500">No active sessions found.</p>}</div>}
+                          {showSessions && <div className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><div className="flex items-center justify-between gap-3"><p className="text-xs font-black text-slate-700 dark:text-white">Active devices</p>{sessions.length > 1 && <button onClick={revokeOtherSessions} className="text-xs font-black text-red-600 hover:underline">Sign out others</button>}</div>{sessions.length ? sessions.map((session) => <div key={session.sessionId} className="rounded-xl bg-stone-50 p-3 text-xs dark:bg-slate-800"><div className="flex justify-between gap-3"><p className="min-w-0 truncate font-bold text-slate-700 dark:text-white">{session.deviceLabel || getDeviceName(session.userAgent)}</p>{session.sessionId === currentSessionId ? <span className="shrink-0 font-black text-emerald-700 dark:text-emerald-300">This device</span> : <button onClick={() => revokeSession(session.sessionId)} className="shrink-0 font-black text-red-600">Sign out</button>}</div><p className="mt-1 text-[10px] text-slate-400">Signed in {new Date(session.createdAt).toLocaleString()}</p></div>) : <p className="text-xs text-slate-500">No active sessions found.</p>}</div>}
 
                           {/* Role Capabilities Summary - Professional Touch */}
                           <div className="pt-2 px-1">

@@ -6,6 +6,7 @@ const notificationSchema = new mongoose.Schema({
   title: { type: String, required: true, trim: true, maxlength: 160 },
   message: { type: String, required: true, maxlength: 1000 },
   link: { type: String, default: "/", maxlength: 500 },
+  eventAt: { type: Date, default: null },
   readAt: { type: Date, default: null },
 }, { timestamps: true });
 
