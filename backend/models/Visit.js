@@ -7,8 +7,10 @@ const visitSchema = new mongoose.Schema({
   email: { type: String, required: true, trim: true, lowercase: true },
   phone: { type: String, required: true, trim: true, maxlength: 30 },
   message: { type: String, default: "", maxlength: 1000 },
-  status: { type: String, enum: ["pending", "scheduled", "visited", "cancelled"], default: "pending" },
+  status: { type: String, enum: ["pending", "scheduled", "visited", "purchased", "cancelled"], default: "pending" },
   scheduledFor: { type: Date, default: null },
+  reminderSentAt: { type: Date, default: null },
+  purchaseConfirmedAt: { type: Date, default: null },
   assignedAgent: { type: String, default: "", maxlength: 80 },
   adminNote: { type: String, default: "", maxlength: 1000 },
   feedback: {

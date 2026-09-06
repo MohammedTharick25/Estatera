@@ -4,7 +4,7 @@ const crypto = require("crypto");
 const users = require("./auth.repository");
 const { sendPasswordResetOtp } = require("../../../utils/emailService");
 exports.signup = async ({ name, email, password }) => users.create({ name, email, password: await bcrypt.hash(password, 10) });
-exports.login = async ({ email, password }, device = {}) => { const user = await users.findByEmail(email); if (!user) return { error: "User not found", status: 404 }; if (user.isBlocked) return { error: "Your account has been suspended. Please contact the administrator for support.", status: 403 }; if (!(await bcrypt.compare(password, user.password))) return { error: "Invalid credentials", status: 400 }; const sessionId = crypto.randomBytes(24).toString("hex"); user.sessions = [...(user.sessions || []), { sessionId, userAgent: String(device.userAgent || "Unknown device").slice(0, 250), ip: String(device.ip || "").slice(0, 64), createdAt: new Date(), lastActiveAt: new Date() }].slice(-10); await user.save(); return { token: jwt.sign({ id: user._id, role: user.role, name: user.name, sessionId }, process.env.JWT_SECRET, { expiresIn: "1d" }), user: { name: user.name, role: user.role, id: user._id, _id: user._id, email: user.email, image: user.image } }; };
+exports.login = async ({ email, password }, device = {}) => { const user = await users.findByEmail(email); if (!user) return { error: "User not found", status: 404 }; if (user.isBlocked) return { error: "Your account has been suspended. Please contact the administrator for support.", status: 403 }; if (!(await bcrypt.compare(password, user.password))) return { error: "Invalid credentials", status: 400 }; const sessionId = crypto.randomBytes(24).toString("hex"); user.sessions = [...(user.sessions || []), { sessionId, userAgent: String(device.userAgent || "Unknown device").slice(0, 250), deviceLabel: String(device.deviceLabel || "").slice(0, 120), ip: String(device.ip || "").slice(0, 64), createdAt: new Date(), lastActiveAt: new Date() }].slice(-10); await user.save(); return { token: jwt.sign({ id: user._id, role: user.role, name: user.name, sessionId }, process.env.JWT_SECRET, { expiresIn: "1d" }), user: { name: user.name, role: user.role, id: user._id, _id: user._id, email: user.email, image: user.image } }; };
 
 const validatePassword = (password) => password.length >= 8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password);
 exports.requestPasswordReset = async (email) => {
@@ -39,7 +39,7 @@ exports.resetPassword = async (resetToken, password, confirmPassword) => {
     const user = await users.findById(payload.id);
     if (!user || !user.passwordResetSessionId || user.passwordResetSessionId !== payload.sessionId) return { error: "This password reset session is no longer valid.", status: 400 };
     user.password = await bcrypt.hash(password, 10); user.passwordResetOtpHash = null; user.passwordResetOtpExpires = null; user.passwordResetSessionId = null; user.passwordResetLastSentAt = null; await user.save();
-    return { message: "Your password has been reset successfully." };
+    return { message: "Your password has been reset successfully.", userId: user._id };
   } catch (_) { return { error: "This password reset session is invalid or expired.", status: 400 }; }
 };
 

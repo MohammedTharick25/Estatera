@@ -1132,9 +1132,9 @@ export default function AdminDashboard() {
                     <button
                       type="button"
                       onClick={handleSearchAddress}
-                      className="rounded-xl bg-blue-600 px-6 py-3 text-white transition hover:bg-blue-700 sm:py-0"
+                      className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-white transition hover:bg-blue-700 sm:py-0"
                     >
-                      <Search size={20} />
+                      <Search size={20} /><span className="sm:hidden">Search location</span>
                     </button>
                   </div>
 
@@ -1505,6 +1505,7 @@ export default function AdminDashboard() {
                     <option value="pending">Pending</option>
                     <option value="scheduled">Scheduled</option>
                     <option value="visited">Visited</option>
+                    <option value="purchased">Purchase confirmed</option>
                     <option value="cancelled">Cancelled</option>
                   </select>
                   <label className="mt-3 block text-[10px] font-black uppercase tracking-widest text-slate-400">Customer appointment date & time</label>

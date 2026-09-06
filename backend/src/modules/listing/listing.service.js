@@ -2,12 +2,16 @@ const repository = require("./listing.repository");
 const savedSearchAlerts = require("../savedSearch/savedSearchAlert.service");
 const User = require("../../../models/User");
 const { sendPropertyAlert } = require("../../../utils/emailService");
+const notifications = require("../notification/notification.service");
 
 const broadcastNewListing = (listing) => {
   User.find({ isBlocked: false })
     .then((users) => sendPropertyAlert(users, listing))
     .catch((err) => console.error("New-listing email broadcast failed:", err.response?.status, err.response?.data || err.message));
 };
+const notifyUsers = (app, users, data) => Promise.allSettled(users.map((user) => notifications.createAndEmit(app, { userId: user._id, ...data })));
+const notifyNewListing = (app, listing) => User.find({ isBlocked: false }).then((users) => notifyUsers(app, users, { type: "new_listing", title: "New verified property", message: `${listing.title} has just been added to the Estatera collection.`, link: `/property/${listing._id}` })).catch((err) => console.error("New-listing notification failed:", err.message));
+const notifyAvailabilityChange = (app, listing, lifecycle) => User.find({ isBlocked: false, favorites: listing._id }).then((users) => notifyUsers(app, users, { type: "property_update", title: "A saved property was updated", message: `${listing.title} is now ${lifecycle}.`, link: `/property/${listing._id}` })).catch((err) => console.error("Property-update notification failed:", err.message));
 
 exports.create = async (body, files, app) => {
   const lifecycle = ["draft", "published", "sold"].includes(body.lifecycle) ? body.lifecycle : "published";
@@ -24,7 +28,7 @@ exports.create = async (body, files, app) => {
     status: lifecycle === "sold" ? "Sold" : "Available",
     publishedAt: lifecycle === "published" ? new Date() : null,
   });
-  if (lifecycle === "published") { broadcastNewListing(listing); savedSearchAlerts.alertForNewListing(app, listing).catch((err) => console.error("Saved-search alert error:", err.message)); }
+  if (lifecycle === "published") { broadcastNewListing(listing); notifyNewListing(app, listing); savedSearchAlerts.alertForNewListing(app, listing).catch((err) => console.error("Saved-search alert error:", err.message)); }
   return listing;
 };
 
@@ -78,7 +82,8 @@ exports.setLifecycle = async (id, lifecycle, app) => {
   if (lifecycle === "sold") update.status = "Sold";
   if (lifecycle === "archived") { update.isArchived = true; update.archivedAt = new Date(); }
   const updated = await repository.updateById(id, update);
-  if (lifecycle === "published" && !wasPublished) { broadcastNewListing(updated); savedSearchAlerts.alertForNewListing(app, updated).catch((err) => console.error("Saved-search alert error:", err.message)); }
+  if (lifecycle === "published" && !wasPublished) { broadcastNewListing(updated); notifyNewListing(app, updated); savedSearchAlerts.alertForNewListing(app, updated).catch((err) => console.error("Saved-search alert error:", err.message)); }
+  if (["sold", "archived", "published"].includes(lifecycle)) notifyAvailabilityChange(app, updated, lifecycle);
   return updated;
 };
 exports.update = async (id, body, files) => {

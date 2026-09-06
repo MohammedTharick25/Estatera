@@ -1,292 +1,244 @@
 # Estatera
 
-Estatera is a full-stack real-estate platform for discovering verified land, homes, and apartments; managing customer visits; and operating inventory, customers, marketing alerts, and reporting from an admin dashboard.
+**Estatera** is a premium full-stack real-estate platform for discovering verified land, houses, and apartments in Tamil Nadu. It combines a customer-facing property experience with an operations-focused admin workspace for inventory, visits, customers, analytics, alerts, and property lifecycle management.
 
-## Contents
+## Highlights
 
-- [Technology](#technology)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Run locally](#run-locally)
-- [Configuration](#configuration)
-- [Key workflows](#key-workflows)
-- [API areas](#api-areas)
-- [SEO and deployment](#seo-and-deployment)
+- Premium responsive property discovery experience, including mobile/PWA support.
+- Private pricing model: customers contact an advisor for commercial guidance.
+- Secure customer accounts, password recovery, session management, and persistent notifications.
+- End-to-end property, customer, visit, enquiry, and purchase-confirmation management.
+- Real-time operational updates with Socket.IO and transactional emails through Brevo.
 
-## Technology
+## Technology stack
 
-| Area | Tools |
+| Area | Technologies |
 | --- | --- |
-| Frontend | React 19, Vite, Tailwind CSS, Framer Motion, Axios |
+| Frontend | React 19, Vite, React Router, Tailwind CSS 4 |
+| UI | Framer Motion, Lucide icons, React Hot Toast, SweetAlert2 |
+| Internationalisation | Lingui — English, Tamil, Hindi |
 | Backend | Node.js, Express 5, Socket.IO |
-| Database | MongoDB with Mongoose |
-| Authentication | JWT, bcryptjs |
-| Media | Cloudinary + Multer |
+| Database | MongoDB, Mongoose |
+| Authentication | JWT, bcryptjs, server-validated sessions |
+| Uploads | Multer, Cloudinary, multer-storage-cloudinary |
 | Email | Brevo transactional email |
-| Maps | Leaflet, React Leaflet, LocationIQ |
-| Reporting | jsPDF, jsPDF AutoTable, CSV export |
-| Charts | Recharts |
-| Languages | Lingui: English, Tamil, Hindi |
+| Maps | Leaflet, React Leaflet, LocationIQ / OpenStreetMap geocoding |
+| Reporting | Recharts, jsPDF, jsPDF AutoTable, CSV export |
+| PWA | Web App Manifest, Service Worker, offline app-shell caching |
 
 ## Features
 
-### Public property discovery
+### Customer property experience
 
-- Premium responsive home page and editorial property browsing experience.
-- Browse land, houses, and apartments.
-- Search by property name or location.
-- Filter by property type, price, geolocation radius, and sort order.
-- List/map discovery modes.
-- Property detail pages with image/video media, location, amenities, price, size, favorite, share, comparison, visit request, EMI calculator, and downloadable PDF brochure.
-- Related-property recommendations.
-- Recently viewed properties stored locally on the customer device.
-- Compare up to three properties side-by-side.
-- Public contact form; inquiries are stored for the admin team.
+- Editorial home page with verified-property trust indicators.
+- Browse land, houses, and apartments in list or interactive map view.
+- Search by locality or property title.
+- Filter by property type, location radius, and sort order.
+- Featured collections, trending listings, latest arrivals, and selected opportunities.
+- Property detail pages with photo/video galleries, amenities, size, location, share links, comparison, wishlist, and related properties.
+- Private commercial guidance instead of public price display.
+- Direct **Call for details** action and a property-specific WhatsApp enquiry with customer information prefilled when available.
+- Premium downloadable PDF brochure with private-pricing language.
+- Compare properties side-by-side by availability, location, property type, size, status, and amenities.
+- Recently viewed listings saved locally on the device.
 - Custom responsive 404 page.
-- Light/dark appearance mode and English/Tamil/Hindi interface support.
 
-### Customer accounts and security
+### Customer account and security
 
-- Signup and login with JWT authentication.
-- Protected account/profile pages.
-- Profile editing and Cloudinary profile-image upload.
-- Wishlist/favorites.
-- Password recovery with email OTP:
-  - six-digit cryptographically generated code;
+- Signup, login, logout, protected routes, and role-based admin access.
+- Profile editing with Cloudinary profile-image upload.
+- Wishlist/favourites and saved searches.
+- Email OTP password recovery:
+  - secure six-digit OTP;
   - hashed OTP storage;
-  - 10-minute expiry;
-  - resend cooldown;
+  - expiration and resend cooldown;
   - reset token required before changing a password.
-- Change password from Profile with current-password confirmation.
-- Password policy: at least 8 characters containing uppercase, lowercase, and a number.
-- Active-session management:
-  - view devices/sessions;
-  - sign out one other session;
-  - sign out all other sessions;
-  - revoked sessions lose API access.
-- Blocking a customer prevents account use.
+- Change password from Profile with password-strength validation.
+- Active-session management: view sessions, sign out another session, or sign out all other sessions.
+- Improved session names with device model on supported mobile browsers; Windows/browser/version details where browsers protect the physical PC model.
+- Account blocking for administrators.
 
-### Saved searches, alerts, and notifications
+### Saved searches and alerts
 
-- Save the current search filters from the listings page.
-- Saved searches are available in Profile and reopen as shareable filter URLs.
-- Every active, unblocked customer receives a Brevo email when an admin publishes a new property.
-- Saved-search preferences control personalised in-app matches and Daily/Weekly email digests.
-- Saved-search matching uses title/location, property type, and maximum price.
-- Persistent in-app notification center with unread count, history, links, and mark-all-read action.
-- Real-time Socket.IO notifications for visit changes and property-search matches.
+- Save the active discovery search from desktop or mobile.
+- Reopen saved searches from Profile.
+- Search matching based on listing title/location, type, and budget criteria.
+- Personalised immediate in-app saved-search matches.
+- Daily and weekly saved-search email digest preferences.
+- New-property email broadcast to active, unblocked customers when a property is published.
 
-### Visit management
+### Notification centre
 
-- Logged-in customers can request a visit for a property.
-- Admin workflow statuses: Pending, Scheduled, Visited, Cancelled.
-- Admin selects the customer appointment date/time and adds internal notes.
-- Customer receives a notification when the appointment/status changes.
-- Admin can mark a scheduled visit as completed and collect customer feedback/rating.
-- Admin visit calendar:
-  - month and week views;
-  - filter by visit status, property, and assigned team member;
-  - assign a team member;
-  - drag scheduled appointments to a new date while retaining their time;
-  - rescheduling notifies the customer.
+- Persistent notification history with unread count, read state, links, and mark-all-read action.
+- Real-time Socket.IO delivery for live users.
+- Notifications for:
+  - new verified properties;
+  - saved-search matches;
+  - favourite-property lifecycle changes;
+  - enquiry received and enquiry status changes;
+  - visit request status changes;
+  - scheduled visit with exact India date/time;
+  - 24-hour visit reminders;
+  - visit completion or cancellation;
+  - confirmed purchase;
+  - signup, sign-in, password reset, and password change security events.
 
-### Admin inventory and property lifecycle
+### Visit and purchase journey
 
-- Create, edit, and manage listings with multi-image/video upload to Cloudinary.
-- Edit a listing while retaining or removing existing photos/videos.
-- Inventory search and filters for status, type, lifecycle, and archive state.
-- Server-side inventory pagination (10 listings per page).
-- Bulk select and bulk status updates.
-- Bulk archive.
-- Archive and restore listings without permanent deletion.
-- Archived and draft listings are hidden from public discovery/property pages.
-- Property lifecycle:
-  - Draft;
-  - Published;
-  - Sold;
-  - Archived.
-- Private listing preview before publishing.
-- Publish/unpublish timestamps shown in inventory.
-- Publishing a newly eligible listing triggers matching saved-search alerts.
+- Customer visit requests with contact details and message.
+- Admin scheduling with a specific appointment date, time, assigned team member, and private note.
+- Visit statuses: Pending, Scheduled, Visited, Purchase Confirmed, and Cancelled.
+- Automatic customer notifications based on the exact status—not merely the presence of a scheduled date.
+- Calendar views for visit operations, including rescheduling support.
+- Customer feedback after a completed visit.
+- Purchase confirmation triggers a one-time celebratory customer experience and persistent notification.
 
-### Admin operations
+### Admin workspace
 
-- Business analytics dashboard with live KPI cards, inventory value, visit trends, popularity data, ratings, sales value, revenue, and conversion metrics.
-- Branded PDF executive intelligence report.
-- Detailed CSV business snapshot with KPIs, top properties, and visit trends.
-- User/community management:
-  - dashboard metrics for members, active/restricted access, and saved properties;
-  - search and filters;
-  - card or table directory view;
-  - 10 users per page pagination;
-  - block/unblock users;
-  - protected owner-account handling for `estatera.team@gmail.com`.
-- Contact inquiry queue with New, Contacted, and Closed states.
-- Mobile-responsive admin drawer, inventory cards, and notification behavior.
+- Protected AdminHub dashboard.
+- Create, edit, preview, publish, unpublish, sell, archive, and restore listings.
+- Property lifecycle: **Draft → Published → Sold → Archived**.
+- Media upload for photos and videos via Cloudinary.
+- Address search, map pin selection, and coordinate editing.
+- Inventory filtering, server-side pagination, bulk status updates, and bulk archive.
+- Responsive mobile inventory cards and responsive property creation form.
+- Customer directory with modern card/table views, search, pagination, export, account blocking, and protected administrator safeguards.
+- Enquiry management and visit operations.
+- Analytics dashboard with listing, visit, engagement, inventory, conversion, revenue, feedback, and chart insights.
+- CSV export and professionally formatted PDF report export.
 
-### SEO and PWA
+### SEO, quality, and PWA
 
-- Canonical URLs, page titles, descriptions, Open Graph tags, Twitter cards, and theme metadata.
-- Structured data for Estatera as a `RealEstateAgent`.
-- Dynamic property metadata and `Product`/`Offer` structured data in the browser.
-- `robots.txt` disallows private routes.
-- Static sitemap for public core pages.
-- Web app manifest, favicon, and service worker.
+- Page-specific SEO title, description, canonical URL, Open Graph, Twitter card, and structured data.
+- `robots.txt`, `sitemap.xml`, and responsive metadata.
+- Mobile-safe headers, Leaflet map stacking, modals, sidebars, notification panels, and text sizing.
+- Installable PWA manifest, app icon, standalone display mode, and Service Worker cache.
 
 ## Architecture
 
 ```text
-frontend/                       React + Vite client
-  src/pages/                    Public, account, and admin screens
-  src/components/               Navigation, SEO, property, map, shared UI
-  public/                       PWA assets, robots.txt, sitemap.xml
+frontend/                 React + Vite application
+  src/pages/              Public, account, and admin screens
+  src/components/         Reusable UI, maps, SEO, navigation
+  public/                 Manifest, service worker, robots, sitemap
 
 backend/
-  server.js                     Express, MongoDB, Socket.IO bootstrap
-  models/                       Mongoose schemas
-  src/modules/                  Feature modules
-    auth/                       Login, OTP reset, passwords, sessions
-    user/                       Profiles, favorites, admin user controls
-    listing/                    Listings, lifecycle, inventory
-    visit/                      Requests, status, scheduling
-    inquiry/                    Public contact inquiries
-    savedSearch/                Saved searches and email matching
-    notification/               Persistent notifications
-    admin/                      Analytics
-  src/middleware/auth.js        JWT, role, and ownership checks
+  src/modules/            Domain modules (auth, listing, visit, user, etc.)
+  models/                 Mongoose schemas
+  routes/                 Compatibility route adapters used by server.js
+  config/cloudinary.js    Shared Cloudinary/Multer storage configuration
+  utils/                  Email and supporting utilities
 ```
 
-## Run locally
+The modular backend owns business logic, controllers, routes, and repositories. The `models` and `routes` folders are required compatibility layers and must not be deleted.
 
-Requirements: Node.js 20+ and a MongoDB database.
+## Local setup
+
+### Prerequisites
+
+- Node.js 20+
+- MongoDB Atlas database or local MongoDB
+- Cloudinary account
+- Brevo account/API key for transactional emails
+
+### 1. Install dependencies
 
 ```powershell
-# Terminal 1
 cd backend
 npm install
-npm start
-```
 
-```powershell
-# Terminal 2
-cd frontend
+cd ..\frontend
 npm install
-npm run dev
 ```
 
-Open `http://localhost:5173`.
+### 2. Configure environment variables
 
-Build the frontend for production:
-
-```powershell
-cd frontend
-npm run build
-```
-
-## Configuration
-
-Create `backend/.env` with real values. Never commit this file.
+Create `backend/.env`:
 
 ```env
-MONGO_URI=mongodb_connection_string
-JWT_SECRET=long_random_secret
-CLOUDINARY_CLOUD_NAME=cloudinary_cloud_name
-CLOUDINARY_API_KEY=cloudinary_api_key
-CLOUDINARY_API_SECRET=cloudinary_api_secret
-BREVO_API_KEY=brevo_api_key
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=use_a_long_random_secret
 FRONTEND_URL=http://localhost:5173
-PORT=5000
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+BREVO_API_KEY=your_brevo_api_key
 ```
 
 Create `frontend/.env`:
 
 ```env
 VITE_API_URL=http://localhost:5000
-VITE_LOCATIONIQ_ACCESS_TOKEN=locationiq_public_key
-VITE_SITE_URL=https://your-production-domain.example
-VITE_EMAIL_SERVICE_ID=emailjs_service_id
-VITE_EMAIL_TEMPLATE_ID=emailjs_template_id
-VITE_EMAIL_PUBLIC_KEY=emailjs_public_key
+VITE_LOCATIONIQ_ACCESS_TOKEN=your_locationiq_public_token
+
+# Optional: only if the Contact form uses EmailJS in addition to API storage
+VITE_EMAIL_SERVICE_ID=your_service_id
+VITE_EMAIL_TEMPLATE_ID=your_template_id
+VITE_EMAIL_PUBLIC_KEY=your_public_key
 ```
 
-### Email setup notes
+Never commit `.env` files or API keys.
 
-- The sender currently configured in the code is `estatera.team@gmail.com`.
-- Brevo must have a valid API key, verified sender, and the current server IP in its authorized-IP settings when that security setting is enabled.
-- New-listing emails are broadcast to every active, unblocked customer whenever a property is published. Saved searches are used for personalised in-app matches and Daily/Weekly digests.
+### 3. Run locally
 
-### LocationIQ setup notes
+Open two terminals:
 
-- LocationIQ is used for admin location lookup/reverse geocoding and map selection.
-- The frontend only sends Estatera JWT headers to `VITE_API_URL`; it deliberately does not attach them to LocationIQ requests, preventing CORS preflight failures.
+```powershell
+cd backend
+npm start
+```
 
-## Key workflows
+```powershell
+cd frontend
+npm run dev
+```
 
-### Publish and alert a property
+Open the Vite URL shown in the terminal, normally `http://localhost:5173`.
 
-1. Admin creates a listing and optionally previews it.
-2. Save it as Draft or click Publish Property.
-3. Draft remains private; Published is visible publicly.
-4. On publish, every active customer receives the new-listing email.
-5. The system also finds enabled saved searches that match the listing and creates personalised in-app notifications; Daily/Weekly searches are included in their next digest.
+### 4. Production build
 
-### Customer password reset
+```powershell
+cd frontend
+npm run build
+```
 
-1. Customer chooses Forgot Password.
-2. Enters the registered email and receives an OTP.
-3. Enters the valid OTP before expiry.
-4. Creates a compliant new password.
-5. Signs in with the new password.
+## Deployment notes
 
-### Schedule a visit
+1. Deploy the backend first and set all backend environment variables.
+2. Set the deployed frontend origin in backend `FRONTEND_URL` and CORS configuration.
+3. Set the frontend `VITE_API_URL` to the backend origin **without a trailing slash**:
 
-1. Customer requests a visit from a property page.
-2. Admin sets the appointment date/time and optionally assigns a team member.
-3. Customer receives a notification.
-4. Admin can reschedule from the calendar by dragging the appointment.
-5. After the visit, admin marks it Visited and the customer can submit feedback.
+```env
+VITE_API_URL=https://your-backend.onrender.com
+```
+
+4. Rebuild/redeploy the frontend after changing any `VITE_*` variable.
+5. In Brevo, authorise your deployment IP if Brevo blocks an email request.
+6. HTTPS is required in production for PWA installation and reliable service-worker behaviour.
 
 ## API areas
 
-All API endpoints are served under `/api`.
+| Base path | Responsibility |
+| --- | --- |
+| `/api/auth` | Signup, login, OTP reset, password changes, sessions |
+| `/api/listings` | Public discovery, lifecycle, inventory, uploads, archive |
+| `/api/users` | Profile, favourites, customer directory, access control |
+| `/api/visits` | Requests, scheduling, status, feedback, purchase confirmation |
+| `/api/inquiries` | Customer contact enquiries and admin updates |
+| `/api/saved-searches` | Saved filters and alert preferences |
+| `/api/notifications` | Persistent customer notification centre |
+| `/api/admin` | Administrative analytics |
 
-| Area | Base path | Purpose |
-| --- | --- | --- |
-| Authentication | `/api/auth` | Signup, login, password reset, password change, sessions |
-| Listings | `/api/listings` | Public browsing, detail, favorites, admin CRUD/lifecycle/inventory |
-| Users | `/api/users` | Profiles, favorites, account status, admin user management |
-| Visits | `/api/visits` | Visit requests, scheduling, feedback |
-| Inquiries | `/api/inquiries` | Contact form and inquiry management |
-| Saved searches | `/api/saved-searches` | Saved filters and email preferences |
-| Notifications | `/api/notifications` | Notification history and read state |
-| Admin | `/api/admin` | Analytics KPIs |
+## Operational reminders
 
-Protected routes require:
+- Restart the backend after changing backend code or `.env` settings.
+- Sign out and sign in after the improved device-session label is deployed; existing sessions retain their old browser data.
+- A purchase celebration is only triggered when an admin selects **Purchase Confirmed** for the correct customer visit.
+- New notification records reflect current logic; historical records are intentionally preserved.
 
-```http
-Authorization: Bearer <jwt>
-```
+## Contact
 
-## SEO and deployment
+For property guidance, call or WhatsApp **Estatera** at **+91 97916 74849**.
 
-1. Set `VITE_SITE_URL` to the final public domain before building the frontend.
-2. Update the URLs in `frontend/public/sitemap.xml` and `frontend/public/robots.txt` if the domain changes.
-3. Submit `/sitemap.xml` to Google Search Console.
-4. Verify the deployed site serves SPA route fallbacks for `/listings`, `/property/:id`, and other frontend routes.
-5. The current app uses client-side metadata updates. Google can process this in many cases; for guaranteed per-property previews on WhatsApp/Facebook/LinkedIn, add server-side rendering or prerendering at deployment time.
-
-## Security notes
-
-- Keep all API keys and secrets only in environment files.
-- Rotate exposed keys immediately.
-- Do not use frontend environment variables for private service secrets; browser-exposed variables are public by design.
-- Use HTTPS in production.
-- Keep Brevo authorized IP addresses restricted to real deployment IPs rather than enabling unrestricted access.
-
-## Current limitations / future enhancements
-
-- Dynamic sitemap generation for every published property.
-- Server-side rendering/prerendering for guaranteed social preview crawlers.
-- Phone/SMS OTP and visit reminders.
-- Agent entities/permissions instead of free-text team-member assignment.
-- Date-range analytics and dedicated agent conversion KPIs.
