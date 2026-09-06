@@ -23,4 +23,12 @@ router.patch("/read-all", requireAuth, async (req, res) => {
   catch (err) { res.status(500).json({ error: err.message }); }
 });
 
+router.delete("/:id", requireAuth, async (req, res) => {
+  try {
+    const notification = await Notification.findOneAndDelete({ _id: req.params.id, userId: req.auth.id });
+    if (!notification) return res.status(404).json({ error: "Notification not found" });
+    res.json({ message: "Notification deleted" });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
 module.exports = router;
