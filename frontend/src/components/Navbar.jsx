@@ -74,6 +74,20 @@ export default function Navbar() {
   };
   useEffect(() => { loadNotifications(); const timer = setInterval(loadNotifications, 30000); return () => clearInterval(timer); }, [user?.user?.id]);
   const markAllRead = async () => { try { await axios.patch(`${import.meta.env.VITE_API_URL}/api/notifications/read-all`); setNotifications((items) => items.map((item) => ({ ...item, readAt: item.readAt || new Date().toISOString() }))); setUnreadCount(0); } catch (_) {} };
+  const markNotificationRead = async (id) => {
+    const item = notifications.find((notification) => notification._id === id);
+    if (!item || item.readAt) return;
+    setNotifications((items) => items.map((notification) => notification._id === id ? { ...notification, readAt: new Date().toISOString() } : notification));
+    setUnreadCount((count) => Math.max(0, count - 1));
+    try { await axios.patch(`${import.meta.env.VITE_API_URL}/api/notifications/${id}/read`); } catch (_) { loadNotifications(); }
+  };
+  const deleteNotification = async (event, id) => {
+    event.preventDefault(); event.stopPropagation();
+    const item = notifications.find((notification) => notification._id === id);
+    setNotifications((items) => items.filter((notification) => notification._id !== id));
+    if (item && !item.readAt) setUnreadCount((count) => Math.max(0, count - 1));
+    try { await axios.delete(`${import.meta.env.VITE_API_URL}/api/notifications/${id}`); } catch (_) { loadNotifications(); }
+  };
 
   // Links defined inside to catch translation updates
   const navLinks = [
@@ -118,7 +132,7 @@ export default function Navbar() {
             </button>
             {isNotificationsOpen && <div className="fixed left-4 right-4 top-20 z-[80] max-h-[calc(100dvh-6rem)] overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 md:absolute md:left-auto md:right-0 md:top-12 md:w-80 md:max-h-[30rem]">
               <div className="flex items-center justify-between border-b border-stone-100 px-4 py-3 dark:border-slate-800"><p className="font-black dark:text-white">Notifications</p>{unreadCount > 0 && <button onClick={markAllRead} className="text-xs font-bold text-emerald-700 dark:text-emerald-300">Mark all read</button>}</div>
-              <div className="max-h-96 overflow-y-auto">{notifications.length ? notifications.map((item) => <Link key={item._id} to={item.link || "/profile"} onClick={() => setIsNotificationsOpen(false)} className={`block border-b border-stone-100 px-4 py-3 transition hover:bg-stone-50 dark:border-slate-800 dark:hover:bg-slate-800 ${item.readAt ? "opacity-60" : "bg-emerald-50/50 dark:bg-emerald-950/20"}`}><p className="text-sm font-bold dark:text-white">{item.title}</p><p className="mt-1 text-xs leading-5 text-stone-600 dark:text-stone-300">{item.message}</p><p className="mt-1 text-[10px] text-stone-400">{item.eventAt ? `Scheduled for ${new Date(item.eventAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}` : `Sent ${new Date(item.createdAt).toLocaleString()}`}</p></Link>) : <p className="px-4 py-10 text-center text-sm text-stone-500">No notifications yet.</p>}</div>
+              <div className="max-h-96 overflow-y-auto">{notifications.length ? notifications.map((item) => <div key={item._id} className={`group relative border-b border-stone-100 transition hover:bg-stone-50 dark:border-slate-800 dark:hover:bg-slate-800 ${item.readAt ? "opacity-60" : "bg-emerald-50/50 dark:bg-emerald-950/20"}`}><Link to={item.link || "/profile"} onClick={() => { markNotificationRead(item._id); setIsNotificationsOpen(false); }} className="block px-4 py-3 pr-11"><p className="text-sm font-bold dark:text-white">{item.title}</p><p className="mt-1 text-xs leading-5 text-stone-600 dark:text-stone-300">{item.message}</p><p className="mt-1 text-[10px] text-stone-400">{item.eventAt ? `Scheduled for ${new Date(item.eventAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}` : `Sent ${new Date(item.createdAt).toLocaleString()}`}</p></Link><button onClick={(event) => deleteNotification(event, item._id)} aria-label={`Delete ${item.title} notification`} className="absolute right-2 top-2 rounded-full p-1.5 text-stone-400 opacity-100 transition hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/40 md:opacity-0 md:group-hover:opacity-100"><X size={14}/></button></div>) : <p className="px-4 py-10 text-center text-sm text-stone-500">No notifications yet.</p>}</div>
             </div>}
           </div>}
           <button
