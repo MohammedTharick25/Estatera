@@ -141,7 +141,7 @@ export default function Listings() {
   return (
     <div className="min-h-screen transition-colors duration-500" style={{ background: "var(--canvas)" }}>
       {/* 1. HEADER */}
-      <div className="sticky top-0 z-40 border-b border-stone-200/80 bg-[#fdfbf6]/90 backdrop-blur-xl dark:border-stone-700 dark:bg-[#101916]/90">
+      <div className="sticky top-0 z-[900] border-b border-stone-200/80 bg-[#fdfbf6]/90 backdrop-blur-xl dark:border-stone-700 dark:bg-[#101916]/90">
         <div className="mx-auto max-w-[76rem] px-5 py-5 md:py-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="relative flex-grow">
@@ -272,7 +272,7 @@ export default function Listings() {
                     )) : <div className="col-span-full py-10"><StatePanel title={t`No properties found`} message={t`Try broadening your location, type, budget, or radius to discover more opportunities.`} actionTo="/listings" actionLabel={t`Reset discovery`} /></div>}
                   </div>
                 ) : (
-                  <div className="h-[600px] rounded-[3rem] overflow-hidden shadow-2xl">
+                  <div className="leaflet-safe-layer h-[min(600px,68dvh)] overflow-hidden rounded-3xl shadow-2xl sm:h-[600px] sm:rounded-[3rem]">
                     <MapSearch properties={properties} />
                   </div>
                 )}

@@ -54,7 +54,7 @@ export default function Footer() {
                 to="/profile"
                 className="flex items-center gap-2 hover:text-white transition"
               >
-                <User size={16} /> {t`Edit Profile`}
+                <User size={16} /> Profile
               </Link>
             </li>
           </ul>

@@ -599,9 +599,9 @@ export default function AdminDashboard() {
   const setListingLifecycle = async (id, lifecycle) => { try { await axios.patch(`${import.meta.env.VITE_API_URL}/api/listings/${id}/lifecycle`, { lifecycle }); toast.success(`Property moved to ${lifecycle}.`); fetchListings(); fetchInventory(); fetchStats(); } catch (error) { toast.error(error.response?.data?.error || "Unable to update property lifecycle."); } };
 
   return (
-    <div className="flex min-h-screen flex-col items-stretch transition-all lg:h-screen lg:overflow-hidden lg:flex-row" style={{ background: "var(--canvas)" }}>
+    <div className="flex min-h-screen min-w-0 flex-col items-stretch overflow-x-hidden transition-all lg:h-screen lg:overflow-hidden lg:flex-row" style={{ background: "var(--canvas)" }}>
       {/* Mobile and Tablet Top Bar */}
-      <div className="sticky top-0 z-[40] flex items-center justify-between bg-slate-900 p-4 text-white shadow-xl lg:hidden">
+      <div className="sticky top-0 z-[900] flex items-center justify-between bg-slate-900 p-3 text-white shadow-xl lg:hidden">
         <h2 className="font-black uppercase tracking-tighter italic">
           AdminHub
         </h2>
@@ -621,7 +621,7 @@ export default function AdminDashboard() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSidebarOpen(false)}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[7000] lg:hidden"
+            className="fixed inset-0 z-[1050] bg-black/60 backdrop-blur-sm lg:hidden"
           />
         )}
       </AnimatePresence>
@@ -680,7 +680,7 @@ export default function AdminDashboard() {
       {/* SIDEBAR */}
       <aside
         className={`
-    fixed inset-y-0 left-0 z-[8000] flex h-[100dvh] w-[min(20rem,88vw)] flex-col overflow-hidden bg-slate-900 text-white shadow-2xl transition-transform duration-300 ease-in-out
+    fixed inset-y-0 left-0 z-[1100] flex h-[100dvh] w-[min(20rem,88vw)] flex-col overflow-hidden bg-slate-900 text-white shadow-2xl transition-transform duration-300 ease-in-out
     lg:sticky lg:top-0 lg:h-screen lg:w-72 lg:translate-x-0 lg:shadow-none lg:z-auto lg:flex-shrink-0
     ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
   `}
@@ -761,7 +761,7 @@ export default function AdminDashboard() {
         </div>
       </aside>
 
-      <main className="w-full flex-1 p-5 md:p-8 lg:h-screen lg:overflow-y-auto lg:p-10">
+      <main className="min-w-0 w-full flex-1 p-4 sm:p-5 md:p-8 lg:h-screen lg:overflow-y-auto lg:p-10">
         <div className="mx-auto max-w-[76rem]">
           {activeTab === "overview" && stats && (
             <div className="space-y-8">
@@ -1055,15 +1055,15 @@ export default function AdminDashboard() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="bg-white dark:bg-slate-900 p-8 rounded-3xl border dark:border-slate-800 max-w-4xl mx-auto shadow-sm"
+              className="mx-auto max-w-4xl rounded-3xl border bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:p-6 md:p-8"
             >
-              <h2 className="text-2xl font-black mb-8 tracking-tight italic">
+              <h2 className="mb-6 text-xl font-black tracking-tight italic sm:mb-8 sm:text-2xl">
                 {t`Publish Property`}
               </h2>
 
               <form
                 onSubmit={handleSubmit}
-                className="grid md:grid-cols-2 gap-6"
+                className="grid gap-4 sm:gap-6 md:grid-cols-2"
               >
                 {/* TITLE */}
                 <FormInput
@@ -1114,12 +1114,12 @@ export default function AdminDashboard() {
                 />
 
                 {/* LOCATION BLOCK */}
-                <div className="md:col-span-2 bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl space-y-4 border dark:border-slate-700">
+                <div className="space-y-4 rounded-2xl border bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800 sm:p-6 md:col-span-2">
                   <p className="font-bold text-xs uppercase text-slate-400 tracking-widest">
                     {t`Location & Coordinates`}
                   </p>
 
-                  <div className="flex gap-2">
+                  <div className="flex flex-col gap-2 sm:flex-row">
                     <input
                       className="flex-1 p-4 rounded-xl border dark:bg-slate-900 dark:border-slate-700 outline-none focus:ring-2 ring-blue-500/20"
                       placeholder={t`Search Location...`}
@@ -1132,13 +1132,13 @@ export default function AdminDashboard() {
                     <button
                       type="button"
                       onClick={handleSearchAddress}
-                      className="bg-blue-600 text-white px-6 rounded-xl hover:bg-blue-700 transition"
+                      className="rounded-xl bg-blue-600 px-6 py-3 text-white transition hover:bg-blue-700 sm:py-0"
                     >
                       <Search size={20} />
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
                     <input
                       type="number"
                       step="any"
@@ -1290,16 +1290,16 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* LIFECYCLE ACTIONS */}
-                <div className="md:col-span-2 flex flex-wrap gap-3">
-                  <button type="button" onClick={() => setShowListingPreview(true)} className="rounded-xl border border-stone-300 px-5 py-4 text-sm font-black text-stone-700 dark:border-slate-600 dark:text-stone-200">Preview</button>
-                  <button type="submit" value="draft" disabled={isUploading} className="rounded-xl border border-amber-300 bg-amber-50 px-5 py-4 text-sm font-black text-amber-800 disabled:opacity-50 dark:bg-amber-900/20 dark:text-amber-300">{isUploading ? t`Uploading...` : "Save as Draft"}</button>
-                  <button type="submit" value="published" disabled={isUploading} className="flex-1 rounded-xl bg-blue-600 px-5 py-4 text-lg font-black text-white transition-all hover:shadow-xl disabled:opacity-50">{editingListingId && formData.lifecycle === "published" ? "Save Published Changes" : "Publish Property"}</button>
-                  {editingListingId && <button type="submit" value="sold" disabled={isUploading} className="rounded-xl bg-red-600 px-5 py-4 text-sm font-black text-white disabled:opacity-50">Mark Sold</button>}
+                <div className="flex flex-col gap-3 md:col-span-2 sm:flex-row sm:flex-wrap">
+                  <button type="button" onClick={() => setShowListingPreview(true)} className="rounded-xl border border-stone-300 px-5 py-3 text-sm font-black text-stone-700 dark:border-slate-600 dark:text-stone-200 sm:py-4">Preview</button>
+                  <button type="submit" value="draft" disabled={isUploading} className="rounded-xl border border-amber-300 bg-amber-50 px-5 py-3 text-sm font-black text-amber-800 disabled:opacity-50 dark:bg-amber-900/20 dark:text-amber-300 sm:py-4">{isUploading ? t`Uploading...` : "Save as Draft"}</button>
+                  <button type="submit" value="published" disabled={isUploading} className="rounded-xl bg-blue-600 px-5 py-3 text-base font-black text-white transition-all hover:shadow-xl disabled:opacity-50 sm:flex-1 sm:py-4 sm:text-lg">{editingListingId && formData.lifecycle === "published" ? "Save Published Changes" : "Publish Property"}</button>
+                  {editingListingId && <button type="submit" value="sold" disabled={isUploading} className="rounded-xl bg-red-600 px-5 py-3 text-sm font-black text-white disabled:opacity-50 sm:py-4">Mark Sold</button>}
                 </div>
               </form>
             </motion.div>
           )}
-          {showListingPreview && <div className="fixed inset-0 z-[9000] flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm"><div className="w-full max-w-xl rounded-[2rem] bg-[#fdfbf6] p-8 shadow-2xl dark:bg-slate-900"><div className="flex items-start justify-between gap-4"><div><p className="editorial-label text-amber-700">Private preview</p><h2 className="display-face mt-2 text-4xl font-bold dark:text-white">{formData.title || "Untitled property"}</h2></div><button type="button" onClick={() => setShowListingPreview(false)} className="rounded-full p-2 text-slate-500 hover:bg-stone-100 dark:hover:bg-slate-800"><X size={20}/></button></div>{retainedImages[0] && <img src={retainedImages[0]} alt="Property preview" className="mt-6 h-56 w-full rounded-2xl object-cover"/>}<div className="mt-6 grid grid-cols-2 gap-4 border-y border-stone-200 py-5 text-sm dark:border-slate-700"><div><p className="text-xs font-bold uppercase tracking-widest text-slate-400">Price</p><p className="mt-1 font-black dark:text-white">{formData.price ? `₹${Number(formData.price).toLocaleString("en-IN")}` : "Not set"}</p></div><div><p className="text-xs font-bold uppercase tracking-widest text-slate-400">Location</p><p className="mt-1 font-black dark:text-white">{formData.location || "Not set"}</p></div></div><p className="mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300">{formData.description || "Add a description to complete the property presentation."}</p><p className="mt-6 rounded-xl bg-amber-50 p-3 text-xs font-bold text-amber-800 dark:bg-amber-900/20 dark:text-amber-300">This preview is private. Use Publish Property when you are ready to make it visible to customers.</p></div></div>}
+          {showListingPreview && <div className="fixed inset-0 z-[1200] flex items-start justify-center overflow-y-auto bg-slate-950/60 p-3 backdrop-blur-sm sm:items-center sm:p-4"><div className="my-2 max-h-[calc(100dvh-1.5rem)] w-full max-w-xl overflow-y-auto rounded-[1.5rem] bg-[#fdfbf6] p-5 shadow-2xl dark:bg-slate-900 sm:my-4 sm:max-h-[calc(100dvh-2rem)] sm:rounded-[2rem] sm:p-8"><div className="flex items-start justify-between gap-4"><div className="min-w-0"><p className="editorial-label text-amber-700">Private preview</p><h2 className="display-face mt-2 break-words text-3xl font-bold dark:text-white sm:text-4xl">{formData.title || "Untitled property"}</h2></div><button type="button" onClick={() => setShowListingPreview(false)} className="shrink-0 rounded-full p-2 text-slate-500 hover:bg-stone-100 dark:hover:bg-slate-800"><X size={20}/></button></div>{retainedImages[0] && <img src={retainedImages[0]} alt="Property preview" className="mt-5 h-44 w-full rounded-2xl object-cover sm:mt-6 sm:h-56"/>}<div className="mt-5 grid gap-4 border-y border-stone-200 py-5 text-sm dark:border-slate-700 sm:mt-6 sm:grid-cols-2"><div><p className="text-xs font-bold uppercase tracking-widest text-slate-400">Price</p><p className="mt-1 font-black dark:text-white">{formData.price ? `₹${Number(formData.price).toLocaleString("en-IN")}` : "Not set"}</p></div><div><p className="text-xs font-bold uppercase tracking-widest text-slate-400">Location</p><p className="mt-1 break-words font-black dark:text-white">{formData.location || "Not set"}</p></div></div><p className="mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300">{formData.description || "Add a description to complete the property presentation."}</p><p className="mt-6 rounded-xl bg-amber-50 p-3 text-xs font-bold text-amber-800 dark:bg-amber-900/20 dark:text-amber-300">This preview is private. Use Publish Property when you are ready to make it visible to customers.</p></div></div>}
 
           {activeTab === "users" && (
             <div className="space-y-6">
