@@ -9,4 +9,4 @@ Disallow: /profile
 Disallow: /forgot-password
 Disallow: /reset-password
 
-Sitemap: https://estatera.onrender.com/sitemap.xml
+Sitemap: https://estatera-lgq5.onrender.com/sitemap.xml

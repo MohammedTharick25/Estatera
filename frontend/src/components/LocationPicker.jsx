@@ -55,7 +55,7 @@ export default function LocationPicker({ selectedLocation, onLocationSelect }) {
   }
 
   return (
-    <div className="h-72 w-full rounded-2xl overflow-hidden border-2 border-blue-100 dark:border-slate-700 z-0">
+    <div className="leaflet-safe-layer h-60 w-full overflow-hidden rounded-2xl border-2 border-blue-100 dark:border-slate-700 sm:h-72">
       <MapContainer
         center={[selectedLocation.lat, selectedLocation.lng]}
         zoom={13}

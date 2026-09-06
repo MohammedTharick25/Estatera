@@ -25,6 +25,21 @@ import { useLingui } from "@lingui/react";
 import PropertyCard from "../components/PropertyCard";
 import { toast } from "react-hot-toast";
 
+function getDeviceName(userAgent = "") {
+  const agent = String(userAgent);
+  const browser = /Edg\//.test(agent) ? "Microsoft Edge" : /Firefox\//.test(agent) ? "Firefox" : /OPR\//.test(agent) ? "Opera" : /CriOS\//.test(agent) ? "Chrome" : /Chrome\//.test(agent) ? "Chrome" : /Safari\//.test(agent) ? "Safari" : "Web browser";
+  if (/iPad/.test(agent)) return `iPad · ${browser}`;
+  if (/iPhone|iPod/.test(agent)) return `iPhone · ${browser}`;
+  if (/Android/.test(agent)) {
+    const model = agent.match(/Android[^;)]*;[^;)]*;\s*([^;)]+?)(?:\s+Build|\))/i)?.[1]?.trim();
+    return `${model || "Android phone"} · ${browser}`;
+  }
+  if (/Windows/.test(agent)) return `Windows PC · ${browser}`;
+  if (/Macintosh|Mac OS X/.test(agent)) return `Mac · ${browser}`;
+  if (/Linux/.test(agent)) return `Linux device · ${browser}`;
+  return agent && agent !== "Unknown device" ? `Unknown device · ${browser}` : "Unknown device";
+}
+
 export default function Profile() {
   const { i18n } = useLingui();
   const { user, logout, login } = useAuth();
@@ -202,12 +217,12 @@ export default function Profile() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mx-auto max-w-5xl px-5 py-20"
+        className="mx-auto max-w-5xl px-4 py-10 sm:px-5 sm:py-20"
       >
         <div className="luxury-surface overflow-hidden rounded-[2rem]">
           <div className="h-36 bg-[linear-gradient(110deg,#0d2c24,#285645_55%,#b88a45)]" />
 
-          <div className="px-8 pb-12 relative">
+          <div className="relative px-5 pb-8 sm:px-8 sm:pb-12">
             <div className="relative -mt-16 mb-6 flex justify-center">
               <div className="relative group w-fit">
                 <img
@@ -247,7 +262,7 @@ export default function Profile() {
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                       <p className="editorial-label mb-2 text-amber-700 dark:text-amber-400">Private profile</p>
-                      <h1 className="display-face text-5xl font-bold text-slate-900 dark:text-white">
+                      <h1 className="display-face text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
                         {user.user.name}
                       </h1>
                       <p className="text-slate-500 dark:text-slate-400 font-bold flex items-center gap-1 mt-1 lowercase">
@@ -341,7 +356,7 @@ export default function Profile() {
                           <button onClick={() => setShowPasswordForm((show) => !show)} className="w-full rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-left text-xs font-black text-blue-700 transition hover:bg-blue-100 dark:border-blue-900/50 dark:bg-blue-950/30 dark:text-blue-300">{showPasswordForm ? "Cancel password change" : "Change password"}</button>
                           {showPasswordForm && <form onSubmit={changePassword} className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><p className="text-xs font-bold text-slate-500">Use at least 8 characters with uppercase, lowercase, and a number.</p><input type="password" autoComplete="current-password" required value={passwordData.currentPassword} onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })} placeholder="Current password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><input type="password" autoComplete="new-password" required value={passwordData.password} onChange={(e) => setPasswordData({ ...passwordData, password: e.target.value })} placeholder="New password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><input type="password" autoComplete="new-password" required value={passwordData.confirmPassword} onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })} placeholder="Confirm new password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><button disabled={isChangingPassword} className="w-full rounded-xl bg-emerald-950 py-3 text-sm font-black text-white disabled:opacity-50">{isChangingPassword ? "Updating…" : "Update password"}</button></form>}
                           <button onClick={toggleSessions} className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-left text-xs font-black text-stone-700 transition hover:bg-stone-100 dark:border-slate-700 dark:bg-slate-800 dark:text-stone-200">{showSessions ? "Hide active sessions" : "Manage active sessions"}</button>
-                          {showSessions && <div className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><div className="flex items-center justify-between gap-3"><p className="text-xs font-black text-slate-700 dark:text-white">Active devices</p>{sessions.length > 1 && <button onClick={revokeOtherSessions} className="text-xs font-black text-red-600 hover:underline">Sign out others</button>}</div>{sessions.length ? sessions.map((session) => <div key={session.sessionId} className="rounded-xl bg-stone-50 p-3 text-xs dark:bg-slate-800"><div className="flex justify-between gap-3"><p className="min-w-0 truncate font-bold text-slate-700 dark:text-white">{session.userAgent || "Unknown device"}</p>{session.sessionId === currentSessionId ? <span className="shrink-0 font-black text-emerald-700 dark:text-emerald-300">This device</span> : <button onClick={() => revokeSession(session.sessionId)} className="shrink-0 font-black text-red-600">Sign out</button>}</div><p className="mt-1 text-[10px] text-slate-400">Signed in {new Date(session.createdAt).toLocaleString()}</p></div>) : <p className="text-xs text-slate-500">No active sessions found.</p>}</div>}
+                          {showSessions && <div className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><div className="flex items-center justify-between gap-3"><p className="text-xs font-black text-slate-700 dark:text-white">Active devices</p>{sessions.length > 1 && <button onClick={revokeOtherSessions} className="text-xs font-black text-red-600 hover:underline">Sign out others</button>}</div>{sessions.length ? sessions.map((session) => <div key={session.sessionId} className="rounded-xl bg-stone-50 p-3 text-xs dark:bg-slate-800"><div className="flex justify-between gap-3"><p className="min-w-0 truncate font-bold text-slate-700 dark:text-white">{getDeviceName(session.userAgent)}</p>{session.sessionId === currentSessionId ? <span className="shrink-0 font-black text-emerald-700 dark:text-emerald-300">This device</span> : <button onClick={() => revokeSession(session.sessionId)} className="shrink-0 font-black text-red-600">Sign out</button>}</div><p className="mt-1 text-[10px] text-slate-400">Signed in {new Date(session.createdAt).toLocaleString()}</p></div>) : <p className="text-xs text-slate-500">No active sessions found.</p>}</div>}
 
                           {/* Role Capabilities Summary - Professional Touch */}
                           <div className="pt-2 px-1">

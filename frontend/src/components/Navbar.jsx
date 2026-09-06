@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
-  User,
   LogOut,
   Menu,
   X,
@@ -34,6 +33,8 @@ export default function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
+  const [deferredInstallPrompt, setDeferredInstallPrompt] = useState(null);
+  const notificationPanelRef = useRef(null);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -44,6 +45,28 @@ export default function Navbar() {
       localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
+
+  useEffect(() => {
+    const captureInstallPrompt = (event) => { event.preventDefault(); setDeferredInstallPrompt(event); };
+    window.addEventListener("beforeinstallprompt", captureInstallPrompt);
+    return () => window.removeEventListener("beforeinstallprompt", captureInstallPrompt);
+  }, []);
+
+  useEffect(() => {
+    if (!isNotificationsOpen) return;
+    const closeOnOutsidePress = (event) => {
+      if (!notificationPanelRef.current?.contains(event.target)) setIsNotificationsOpen(false);
+    };
+    document.addEventListener("pointerdown", closeOnOutsidePress);
+    return () => document.removeEventListener("pointerdown", closeOnOutsidePress);
+  }, [isNotificationsOpen]);
+
+  const installApp = async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    setDeferredInstallPrompt(null);
+  };
 
   const loadNotifications = async () => {
     if (!user?.user?.id) return;
@@ -62,7 +85,7 @@ export default function Navbar() {
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-stone-200/80 bg-[#fdfbf6]/90 backdrop-blur-xl dark:border-stone-700 dark:bg-[#101916]/90">
+    <nav className="sticky top-0 z-[1000] border-b border-stone-200/80 bg-[#fdfbf6]/90 backdrop-blur-xl dark:border-stone-700 dark:bg-[#101916]/90">
       <div className="mx-auto flex max-w-[76rem] items-center justify-between gap-4 px-5 py-4">
         <Link
           to="/"
@@ -89,7 +112,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link to="/compare" aria-label="Compare properties" className="hidden rounded-full p-2.5 text-stone-600 transition hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-slate-800 md:block"><Scale size={20}/></Link>
-          {user && <div className="relative">
+          {user && <div ref={notificationPanelRef} className="relative">
             <button onClick={() => { setIsNotificationsOpen((open) => !open); loadNotifications(); }} aria-label="Notifications" className="relative rounded-full p-2.5 text-stone-600 transition hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-slate-800">
               <Bell size={20}/>{unreadCount > 0 && <span className="absolute right-1 top-1 min-w-4 rounded-full bg-red-600 px-1 text-[10px] font-black leading-4 text-white">{unreadCount > 9 ? "9+" : unreadCount}</span>}
             </button>
@@ -101,7 +124,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
             aria-label="Toggle colour theme"
-            className="rounded-full p-2.5 transition hover:bg-stone-100 dark:hover:bg-slate-800"
+            className="hidden rounded-full p-2.5 transition hover:bg-stone-100 dark:hover:bg-slate-800 md:block"
           >
             {isDarkMode ? (
               <Sun size={20} className="text-yellow-400" />
@@ -113,7 +136,7 @@ export default function Navbar() {
           {user ? (
             <button
               onClick={() => navigate("/profile")}
-              className="h-10 w-10 overflow-hidden rounded-full border-2 border-stone-200 transition hover:border-emerald-800 dark:border-stone-700"
+              className="hidden h-10 w-10 overflow-hidden rounded-full border-2 border-stone-200 transition hover:border-emerald-800 dark:border-stone-700 md:block"
             >
               <img
                 src={
@@ -157,7 +180,7 @@ export default function Navbar() {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              className="fixed top-0 right-0 z-[70] flex h-screen w-[85%] max-w-[320px] flex-col border-l border-stone-200 bg-[#fdfbf6] shadow-2xl dark:border-stone-700 dark:bg-slate-900"
+              className="fixed top-0 right-0 z-[1100] flex h-[100dvh] w-[85%] max-w-[320px] flex-col border-l border-stone-200 bg-[#fdfbf6] shadow-2xl dark:border-stone-700 dark:bg-slate-900"
             >
               <div className="p-6 flex justify-between items-center border-b border-slate-100 dark:border-slate-800">
                 <span className="display-face text-2xl font-bold text-emerald-900 dark:text-emerald-200">
@@ -172,6 +195,7 @@ export default function Navbar() {
               </div>
 
               <div className="flex-1 px-4 py-6 flex flex-col gap-2">
+                {user && <Link to="/profile" onClick={closeMenu} className="mb-3 flex items-center gap-3 rounded-2xl bg-emerald-950 p-3 text-white"><img src={user?.user?.image || `https://ui-avatars.com/api/?name=${user?.user?.name || "User"}`} alt="" className="h-10 w-10 rounded-full object-cover"/><span className="min-w-0"><span className="block truncate text-sm font-black">{user?.user?.name}</span><span className="block text-xs text-emerald-100">Profile</span></span></Link>}
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
@@ -184,17 +208,17 @@ export default function Navbar() {
                   </Link>
                 ))}
 
+                <Link to="/compare" onClick={closeMenu} className="flex items-center gap-4 rounded-xl p-4 font-semibold text-slate-900 hover:bg-slate-50 dark:text-slate-100 dark:hover:bg-slate-800">
+                  <Scale size={20} /> Compare properties
+                </Link>
+
+                <button onClick={() => setIsDarkMode((dark) => !dark)} className="flex items-center gap-4 rounded-xl p-4 text-left font-semibold text-slate-900 hover:bg-slate-50 dark:text-slate-100 dark:hover:bg-slate-800">
+                  {isDarkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />} {isDarkMode ? "Light theme" : "Dark theme"}
+                </button>
+                {deferredInstallPrompt && <button onClick={installApp} className="flex items-center justify-center rounded-xl bg-emerald-800 p-4 text-sm font-bold text-white">Install Estatera app</button>}
+
                 {user ? (
                   <>
-                    <Link
-                      to="/profile"
-                      onClick={closeMenu}
-                      className="flex items-center gap-4 p-4 rounded-xl text-slate-900 dark:text-white"
-                    >
-                      <User size={20} />
-                      {t`Edit Profile`}
-                    </Link>
-
                     <button
                       onClick={() => {
                         logout();

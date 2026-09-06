@@ -26,7 +26,7 @@ export default function MapSearch({ properties }) {
   const navigate = useNavigate();
 
   return (
-    <div className="h-[500px] w-full rounded-3xl overflow-hidden shadow-xl border-4 border-white dark:border-slate-800 z-0">
+    <div className="leaflet-safe-layer h-[min(500px,62dvh)] w-full overflow-hidden rounded-3xl border-4 border-white shadow-xl dark:border-slate-800 sm:h-[500px]">
       <MapContainer
         center={[13.0827, 80.2707]} // Center of Chennai
         zoom={11}
