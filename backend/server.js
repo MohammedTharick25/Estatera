@@ -14,7 +14,7 @@ const server = http.createServer(app);
 const allowedOrigins = [
   "http://localhost:5173",
   "https://estatera.onrender.com",
-  "https://estatera-hjnn.onrender.com",
+  "https://estatera-lgq5.onrender.com",
 ];
 
 const corsOptions = {
