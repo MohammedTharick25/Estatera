@@ -15,8 +15,7 @@ setInterval(() => sendUpcomingReminders(app).catch((err) => console.error("Visit
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://estatera.onrender.com",
-  "https://estatera-lgq5.onrender.com",
+  "https://estatera-o1rf.onrender.com",
 ];
 
 const corsOptions = {
