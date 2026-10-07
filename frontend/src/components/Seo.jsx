@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const siteUrl = (import.meta.env.VITE_SITE_URL || "https://estatera.onrender.com").replace(/\/$/, "");
+const siteUrl = (import.meta.env.VITE_SITE_URL || "https://estatera-o1rf.onrender.com").replace(/\/$/, "");
 const defaultImage = `${siteUrl}/og-whatsapp.png`;
 
 const setMeta = (selector, attribute, value) => {

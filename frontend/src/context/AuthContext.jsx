@@ -32,9 +32,7 @@ export const AuthProvider = ({ children }) => {
           logout();
         }
       } catch (err) {
-        // 🛡️ IMPORTANT: Only logout if the user actually doesn't exist (404)
-        // If the server is just slow or down (500), keep the user logged in.
-        if (err.response?.status === 404) {
+        if (err.response?.status === 401 || err.response?.status === 404) {
           logout();
         }
       }
@@ -42,7 +40,6 @@ export const AuthProvider = ({ children }) => {
     [logout],
   );
 
-  // AuthContext.jsx
   useEffect(() => {
     const initAuth = async () => {
       try {
@@ -53,21 +50,13 @@ export const AuthProvider = ({ children }) => {
 
           const uid = parsed.user?._id || parsed.user?.id || parsed._id;
           if (uid) {
-            // Verify status but don't let it crash the app if the server is slow
-            await axios
-              .get(`${import.meta.env.VITE_API_URL}/api/users/status/${uid}`)
-              .then((res) => {
-                if (res.data.isBlocked) logout();
-              })
-              .catch(() =>
-                console.log("Server offline, staying logged in locally"),
-              );
+            void checkUserStatus(uid);
           }
         }
       } catch (err) {
         console.error("Auth initialization failed", err);
       } finally {
-        setLoading(false); // 👈 THIS MUST RUN TO STOP THE BLANK SCREEN
+        setLoading(false);
       }
     };
 

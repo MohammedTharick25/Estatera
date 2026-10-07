@@ -1,4 +1,4 @@
-const CACHE_NAME = "estatera-v3";
+const CACHE_NAME = "estatera-v4";
 const APP_SHELL = ["/", "/manifest.json", "/estatera-app-icon.svg"];
 
 self.addEventListener("install", (event) => {
@@ -20,12 +20,22 @@ self.addEventListener("fetch", (event) => {
   // External maps and all API calls must be handled by the browser/network.
   if (requestUrl.origin !== self.location.origin || requestUrl.pathname.startsWith("/api/")) return;
 
+  const responsePromise = fetch(event.request);
+  const cachePromise = responsePromise.then(
+    (response) => {
+      if (!response.ok) return;
+      const responseCopy = response.clone();
+      return caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseCopy));
+    },
+    () => undefined,
+  );
+
+  event.waitUntil(
+    cachePromise.catch((error) => {
+      console.error("Service worker failed to cache a response:", error);
+    }),
+  );
   event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        if (response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(event.request, response.clone()));
-        return response;
-      })
-      .catch(async () => (await caches.match(event.request)) || (event.request.mode === "navigate" ? caches.match("/") : Response.error())),
+    responsePromise.catch(async () => (await caches.match(event.request)) || (event.request.mode === "navigate" ? caches.match("/") : Response.error())),
   );
 });
