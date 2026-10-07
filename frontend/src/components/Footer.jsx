@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { Home, List, Phone, User } from "lucide-react";
 import { t } from "@lingui/macro";
-import { useLingui } from "@lingui/react";
+import useLocaleRerender from "../hooks/useLocaleRerender";
 
 export default function Footer() {
-  useLingui();
+  useLocaleRerender();
 
   return (
     <footer className="bg-[#10241d] py-16 text-stone-300">

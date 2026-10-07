@@ -1821,3 +1821,6 @@ msgstr "System Master (Protected)"
 
 msgid "Restricted"
 msgstr "Restricted"
+
+msgid "Finding a place you'll love…"
+msgstr "Finding a place you'll love…"

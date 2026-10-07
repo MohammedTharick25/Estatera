@@ -67,7 +67,10 @@ export default function PropertyDetails() {
           setRelatedProperties((related.length ? related : others).slice(0, 3));
         }).catch(() => setRelatedProperties([]));
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error("Failed to load property details:", err);
+        setLoading(false);
+      });
 
     // View Incrementer (Runs only once)
     if (!viewTracked.current) {

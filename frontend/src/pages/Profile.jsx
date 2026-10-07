@@ -150,6 +150,7 @@ export default function Profile() {
   const handleLanguageChange = (e) => {
     const lang = e.target.value;
     setFormData((prev) => ({ ...prev, language: lang }));
+    i18n.activate(lang);
   };
 
   const handleSave = async (e) => {
@@ -185,11 +186,14 @@ export default function Profile() {
     }
   };
   const cancelProfileEdit = () => {
+    const savedLanguage =
+      user.user.language || localStorage.getItem("lang") || "en";
     setFormData({
       name: user.user.name || "",
       email: user.user.email || "",
-      language: user.user.language || localStorage.getItem("lang") || "en",
+      language: savedLanguage,
     });
+    i18n.activate(savedLanguage);
     setSelectedFile(null);
     setPreviewImage(null);
     setIsEditing(false);

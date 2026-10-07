@@ -1821,3 +1821,6 @@ msgstr "सिस्टम मास्टर (सुरक्षित)"
 
 msgid "Restricted"
 msgstr "प्रतिबंधित"
+
+msgid "Finding a place you'll love…"
+msgstr "आपकी पसंद की जगह खोजी जा रही है…"

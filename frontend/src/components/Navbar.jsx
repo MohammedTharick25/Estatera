@@ -16,11 +16,10 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { t } from "@lingui/macro";
-import { useLingui } from "@lingui/react";
+import useLocaleRerender from "../hooks/useLocaleRerender";
 
 export default function Navbar() {
-  // Ensure the component re-renders when language changes
-  useLingui();
+  useLocaleRerender();
 
   const { user, logout } = useAuth();
   const navigate = useNavigate();

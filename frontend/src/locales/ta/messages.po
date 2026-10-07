@@ -1821,3 +1821,6 @@ msgstr "முதன்மை நிர்வாகி (பாதுகாக்
 
 msgid "Restricted"
 msgstr "கட்டுப்படுத்தப்பட்டது"
+
+msgid "Finding a place you'll love…"
+msgstr "நீங்கள் விரும்பும் இடத்தைத் தேடுகிறோம்…"
