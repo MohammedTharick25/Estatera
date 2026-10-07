@@ -1098,3 +1098,726 @@ msgstr "Yes, delete"
 #: frontend/src/pages/Profile.jsx:406
 msgid "Your Message..."
 msgstr "Your Message..."
+
+msgid "Curated residences · Tamil Nadu"
+msgstr "Curated residences · Tamil Nadu"
+
+msgid "A more considered way to find"
+msgstr "A more considered way to find"
+
+msgid "home."
+msgstr "home."
+
+msgid "Explore a private collection of verified land, homes, and apartments selected for their place, potential, and enduring character."
+msgstr "Explore a private collection of verified land, homes, and apartments selected for their place, potential, and enduring character."
+
+msgid "Begin your search"
+msgstr "Begin your search"
+
+msgid "City, locality, or landmark"
+msgstr "City, locality, or landmark"
+
+msgid "All property types"
+msgstr "All property types"
+
+msgid "Explore"
+msgstr "Explore"
+
+msgid "INDEPENDENTLY VERIFIED"
+msgstr "INDEPENDENTLY VERIFIED"
+
+msgid "LOCAL EXPERTISE"
+msgstr "LOCAL EXPERTISE"
+
+msgid "PRIVATE VIEWINGS"
+msgstr "PRIVATE VIEWINGS"
+
+msgid "END-TO-END GUIDANCE"
+msgstr "END-TO-END GUIDANCE"
+
+msgid "The collection"
+msgstr "The collection"
+
+msgid "Spaces with a point of view."
+msgstr "Spaces with a point of view."
+
+msgid "View every property"
+msgstr "View every property"
+
+msgid "Our next collection is being prepared. Please return soon."
+msgstr "Our next collection is being prepared. Please return soon."
+
+msgid "Confidence, built in"
+msgstr "Confidence, built in"
+
+msgid "Every opportunity begins with clarity."
+msgstr "Every opportunity begins with clarity."
+
+msgid "From first search to final visit, our team makes the details legible and the next step simple."
+msgstr "From first search to final visit, our team makes the details legible and the next step simple."
+
+msgid "Speak with an advisor"
+msgstr "Speak with an advisor"
+
+msgid "Contemporary residence"
+msgstr "Contemporary residence"
+
+msgid "Modern interior"
+msgstr "Modern interior"
+
+msgid "A private introduction"
+msgstr "A private introduction"
+
+msgid "The right address changes everything."
+msgstr "The right address changes everything."
+
+msgid "Places made meaningful."
+msgstr "Places made meaningful."
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "Mark all read"
+msgstr "Mark all read"
+
+msgid "No notifications yet."
+msgstr "No notifications yet."
+
+msgid "Toggle colour theme"
+msgstr "Toggle colour theme"
+
+msgid "Light theme"
+msgstr "Light theme"
+
+msgid "Dark theme"
+msgstr "Dark theme"
+
+msgid "Install Estatera app"
+msgstr "Install Estatera app"
+
+msgid "Availability"
+msgstr "Availability"
+
+msgid "Contact us for private guidance"
+msgstr "Contact us for private guidance"
+
+msgid "Back to listings"
+msgstr "Back to listings"
+
+msgid "Your shortlist"
+msgstr "Your shortlist"
+
+msgid "Compare properties."
+msgstr "Compare properties."
+
+msgid "Review the defining details side by side before arranging a visit."
+msgstr "Review the defining details side by side before arranging a visit."
+
+msgid "Property"
+msgstr "Property"
+
+msgid "Page not found."
+msgstr "Page not found."
+
+msgid "Sorry, the page you are looking for doesn’t exist or may have been moved."
+msgstr "Sorry, the page you are looking for doesn’t exist or may have been moved."
+
+msgid "Go to Home"
+msgstr "Go to Home"
+
+msgid "Remove from saved properties"
+msgstr "Remove from saved properties"
+
+msgid "Save property"
+msgstr "Save property"
+
+msgid "Private collection"
+msgstr "Private collection"
+
+msgid "Private pricing · Contact us"
+msgstr "Private pricing · Contact us"
+
+msgid "Profile"
+msgstr "Profile"
+
+msgid "Compare properties"
+msgstr "Compare properties"
+
+msgid "Delete notification"
+msgstr "Delete notification"
+
+msgid "Remove property"
+msgstr "Remove property"
+
+msgid "Preparing your comparison…"
+msgstr "Preparing your comparison…"
+
+msgid "Nothing to compare yet."
+msgstr "Nothing to compare yet."
+
+msgid "Add up to three properties from their details pages."
+msgstr "Add up to three properties from their details pages."
+
+msgid "Explore properties"
+msgstr "Explore properties"
+
+msgid "Private access"
+msgstr "Private access"
+
+msgid "Email address"
+msgstr "Email address"
+
+msgid "Forgot Password?"
+msgstr "Forgot Password?"
+
+msgid "A considered conversation"
+msgstr "A considered conversation"
+
+msgid "Luxury home exterior"
+msgstr "Luxury home exterior"
+
+msgid "Building"
+msgstr "Building"
+
+msgid "Legacies"
+msgstr "Legacies"
+
+msgid "Starting today."
+msgstr "Starting today."
+
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+msgid "Create your account"
+msgstr "Create your account"
+
+msgid "Your full name"
+msgstr "Your full name"
+
+msgid "Web browser"
+msgstr "Web browser"
+
+msgid "Android phone"
+msgstr "Android phone"
+
+msgid "Windows PC"
+msgstr "Windows PC"
+
+msgid "Linux device"
+msgstr "Linux device"
+
+msgid "Unknown device"
+msgstr "Unknown device"
+
+msgid "Profile picture"
+msgstr "Profile picture"
+
+msgid "Administrator"
+msgstr "Administrator"
+
+msgid "Member"
+msgstr "Member"
+
+msgid "Removed from comparison."
+msgstr "Removed from comparison."
+
+msgid "You can compare up to three properties."
+msgstr "You can compare up to three properties."
+
+msgid "Added to your comparison."
+msgstr "Added to your comparison."
+
+msgid "Add property to comparison"
+msgstr "Add property to comparison"
+
+msgid "Comparing"
+msgstr "Comparing"
+
+msgid "Compare"
+msgstr "Compare"
+
+msgid "Private pricing consultation"
+msgstr "Private pricing consultation"
+
+msgid "Contact our advisor for current availability, market guidance, and a private commercial discussion tailored to this property."
+msgstr "Contact our advisor for current availability, market guidance, and a private commercial discussion tailored to this property."
+
+msgid "Best-in-market guidance"
+msgstr "Best-in-market guidance"
+
+msgid "Call for details"
+msgstr "Call for details"
+
+msgid "WhatsApp our advisor"
+msgstr "WhatsApp our advisor"
+
+msgid "Continue exploring"
+msgstr "Continue exploring"
+
+msgid "More to consider."
+msgstr "More to consider."
+
+msgid "A selection of properties with a similar character, type, or setting."
+msgstr "A selection of properties with a similar character, type, or setting."
+
+msgid "Pending"
+msgstr "Pending"
+
+msgid "Scheduled"
+msgstr "Scheduled"
+
+msgid "Visited"
+msgstr "Visited"
+
+msgid "Purchased"
+msgstr "Purchased"
+
+msgid "Cancelled"
+msgstr "Cancelled"
+
+msgid "A new beginning"
+msgstr "A new beginning"
+
+msgid "Congratulations!"
+msgstr "Congratulations!"
+
+msgid "Your purchase of"
+msgstr "Your purchase of"
+
+msgid "your property"
+msgstr "your property"
+
+msgid "has been confirmed. Welcome to your next chapter."
+msgstr "has been confirmed. Welcome to your next chapter."
+
+msgid "Celebrate this moment"
+msgstr "Celebrate this moment"
+
+msgid "A more considered way to find home."
+msgstr "A more considered way to find home."
+
+msgid "Continue your journey in comfort."
+msgstr "Continue your journey in comfort."
+
+msgid "Continue"
+msgstr "Continue"
+
+msgid "your"
+msgstr "your"
+
+msgid "journey"
+msgstr "journey"
+
+msgid "in comfort."
+msgstr "in comfort."
+
+msgid "Active devices"
+msgstr "Active devices"
+
+msgid "Alert preferences updated."
+msgstr "Alert preferences updated."
+
+msgid "All properties"
+msgstr "All properties"
+
+msgid "Cancel password change"
+msgstr "Cancel password change"
+
+msgid "Change password"
+msgstr "Change password"
+
+msgid "Confirm new password"
+msgstr "Confirm new password"
+
+msgid "Current password"
+msgstr "Current password"
+
+msgid "Daily email digest"
+msgstr "Daily email digest"
+
+msgid "Delete saved search"
+msgstr "Delete saved search"
+
+msgid "Hide active sessions"
+msgstr "Hide active sessions"
+
+msgid "Instant in-app match"
+msgstr "Instant in-app match"
+
+msgid "Location unavailable"
+msgstr "Location unavailable"
+
+msgid "Manage active sessions"
+msgstr "Manage active sessions"
+
+msgid "New password"
+msgstr "New password"
+
+msgid "New passwords do not match."
+msgstr "New passwords do not match."
+
+msgid "No active sessions found."
+msgstr "No active sessions found."
+
+msgid "No recently viewed properties yet."
+msgstr "No recently viewed properties yet."
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Personalised alerts"
+msgstr "Personalised alerts"
+
+msgid "Private profile"
+msgstr "Private profile"
+
+msgid "Profile updated successfully."
+msgstr "Profile updated successfully."
+
+msgid "Property no longer available"
+msgstr "Property no longer available"
+
+msgid "Property type"
+msgstr "Property type"
+
+msgid "Recently Viewed"
+msgstr "Recently Viewed"
+
+msgid "Save a search from the Listings page to keep it here."
+msgstr "Save a search from the Listings page to keep it here."
+
+msgid "Saved Searches"
+msgstr "Saved Searches"
+
+msgid "Saved search removed."
+msgstr "Saved search removed."
+
+msgid "Scheduled for"
+msgstr "Scheduled for"
+
+msgid "Sent"
+msgstr "Sent"
+
+msgid "Sign out"
+msgstr "Sign out"
+
+msgid "Sign out others"
+msgstr "Sign out others"
+
+msgid "This device"
+msgstr "This device"
+
+msgid "Unable to change password."
+msgstr "Unable to change password."
+
+msgid "Unable to load sessions."
+msgstr "Unable to load sessions."
+
+msgid "Unable to remove saved search."
+msgstr "Unable to remove saved search."
+
+msgid "Unable to sign out other sessions."
+msgstr "Unable to sign out other sessions."
+
+msgid "Unable to sign out the session."
+msgstr "Unable to sign out the session."
+
+msgid "Unable to update alert preferences."
+msgstr "Unable to update alert preferences."
+
+msgid "Up to"
+msgstr "Up to"
+
+msgid "Update password"
+msgstr "Update password"
+
+msgid "Updating…"
+msgstr "Updating…"
+
+msgid "Use at least 8 characters with uppercase, lowercase, and a number."
+msgstr "Use at least 8 characters with uppercase, lowercase, and a number."
+
+msgid "Weekly email digest"
+msgstr "Weekly email digest"
+
+msgid "Your visit is scheduled for"
+msgstr "Your visit is scheduled for"
+
+msgid "All active members receive an email whenever a new property is published. These controls manage personalised saved-search matches and digests."
+msgstr "All active members receive an email whenever a new property is published. These controls manage personalised saved-search matches and digests."
+
+msgid "Back to login"
+msgstr "Back to login"
+
+msgid "Confirm password"
+msgstr "Confirm password"
+
+msgid "Could not save property."
+msgstr "Could not save property."
+
+msgid "Enter the email address registered with your Estatera account. We’ll send a one-time verification code."
+msgstr "Enter the email address registered with your Estatera account. We’ll send a one-time verification code."
+
+msgid "Enter your code."
+msgstr "Enter your code."
+
+msgid "It expires in 10 minutes."
+msgstr "It expires in 10 minutes."
+
+msgid "No properties found"
+msgstr "No properties found"
+
+msgid "One-time code"
+msgstr "One-time code"
+
+msgid "Passwords do not match."
+msgstr "Passwords do not match."
+
+msgid "Registered email"
+msgstr "Registered email"
+
+msgid "Resend code in"
+msgstr "Resend code in"
+
+msgid "Resend verification code"
+msgstr "Resend verification code"
+
+msgid "Reset discovery"
+msgstr "Reset discovery"
+
+msgid "Reset password"
+msgstr "Reset password"
+
+msgid "Reset your access."
+msgstr "Reset your access."
+
+msgid "Resetting password…"
+msgstr "Resetting password…"
+
+msgid "Secure recovery"
+msgstr "Secure recovery"
+
+msgid "Send verification code"
+msgstr "Send verification code"
+
+msgid "Sending code…"
+msgstr "Sending code…"
+
+msgid "Set a new password."
+msgstr "Set a new password."
+
+msgid "Start over"
+msgstr "Start over"
+
+msgid "This property may no longer be available, or the link may be incomplete."
+msgstr "This property may no longer be available, or the link may be incomplete."
+
+msgid "Try broadening your location, type, budget, or radius to discover more opportunities."
+msgstr "Try broadening your location, type, budget, or radius to discover more opportunities."
+
+msgid "Unable to send a verification code."
+msgstr "Unable to send a verification code."
+
+msgid "Unable to verify the code."
+msgstr "Unable to verify the code."
+
+msgid "Use another email"
+msgstr "Use another email"
+
+msgid "Use at least eight characters with uppercase, lowercase, and a number."
+msgstr "Use at least eight characters with uppercase, lowercase, and a number."
+
+msgid "Verified recovery"
+msgstr "Verified recovery"
+
+msgid "Verify code"
+msgstr "Verify code"
+
+msgid "Verifying…"
+msgstr "Verifying…"
+
+msgid "We sent a six-digit code to"
+msgstr "We sent a six-digit code to"
+
+msgid "Your reset session is invalid or expired."
+msgstr "Your reset session is invalid or expired."
+
+msgid "Discovery results"
+msgstr "Discovery results"
+
+msgid "My property search"
+msgstr "My property search"
+
+msgid "Name this saved search"
+msgstr "Name this saved search"
+
+msgid "Private availability"
+msgstr "Private availability"
+
+msgid "Properties in"
+msgstr "Properties in"
+
+msgid "Save Search"
+msgstr "Save Search"
+
+msgid "Search saved to your profile."
+msgstr "Search saved to your profile."
+
+msgid "Selected opportunities"
+msgstr "Selected opportunities"
+
+msgid "Unable to save this search."
+msgstr "Unable to save this search."
+
+msgid "Inquiries"
+msgstr "Inquiries"
+
+msgid "Business"
+msgstr "Business"
+
+msgid "Insights"
+msgstr "Insights"
+
+msgid "Real-time performance analytics and property tracking."
+msgstr "Real-time performance analytics and property tracking."
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Full Report (PDF)"
+msgstr "Full Report (PDF)"
+
+msgid "Contact desk"
+msgstr "Contact desk"
+
+msgid "Incoming inquiries"
+msgstr "Incoming inquiries"
+
+msgid "Track and close conversations started from the public contact page."
+msgstr "Track and close conversations started from the public contact page."
+
+msgid "New"
+msgstr "New"
+
+msgid "Contacted"
+msgstr "Contacted"
+
+msgid "Closed"
+msgstr "Closed"
+
+msgid "No contact inquiries yet."
+msgstr "No contact inquiries yet."
+
+msgid "Appointment planner"
+msgstr "Appointment planner"
+
+msgid "Visit calendar"
+msgstr "Visit calendar"
+
+msgid "Month"
+msgstr "Month"
+
+msgid "Week"
+msgstr "Week"
+
+msgid "All statuses"
+msgstr "All statuses"
+
+msgid "All team members"
+msgstr "All team members"
+
+msgid "Drag a scheduled appointment onto another date to reschedule and notify the customer."
+msgstr "Drag a scheduled appointment onto another date to reschedule and notify the customer."
+
+msgid "Purchase confirmed"
+msgstr "Purchase confirmed"
+
+msgid "Customer appointment date & time"
+msgstr "Customer appointment date & time"
+
+msgid "Saving a time changes this request to Scheduled and notifies the customer."
+msgstr "Saving a time changes this request to Scheduled and notifies the customer."
+
+msgid "Has the property visit happened?"
+msgstr "Has the property visit happened?"
+
+msgid "Mark visit as completed"
+msgstr "Mark visit as completed"
+
+msgid "Keep visit scheduled"
+msgstr "Keep visit scheduled"
+
+msgid "✓ marks Visited · ✕ keeps Scheduled"
+msgstr "✓ marks Visited · ✕ keeps Scheduled"
+
+msgid "Confirm visit outcome"
+msgstr "Confirm visit outcome"
+
+msgid "Assigned team member"
+msgstr "Assigned team member"
+
+msgid "e.g. Priya"
+msgstr "e.g. Priya"
+
+msgid "Customer operations"
+msgstr "Customer operations"
+
+msgid "Community command center"
+msgstr "Community command center"
+
+msgid "Review customer health, engagement, and access from one place."
+msgstr "Review customer health, engagement, and access from one place."
+
+msgid "Export directory"
+msgstr "Export directory"
+
+msgid "Total members"
+msgstr "Total members"
+
+msgid "Active access"
+msgstr "Active access"
+
+msgid "Saved properties"
+msgstr "Saved properties"
+
+msgid "of"
+msgstr "of"
+
+msgid "members shown"
+msgstr "members shown"
+
+msgid "All members"
+msgstr "All members"
+
+msgid "Administrators"
+msgstr "Administrators"
+
+msgid "Cards"
+msgstr "Cards"
+
+msgid "Table"
+msgstr "Table"
+
+msgid "Engagement"
+msgstr "Engagement"
+
+msgid "Saved"
+msgstr "Saved"
+
+msgid "Joined"
+msgstr "Joined"
+
+msgid "Suspended"
+msgstr "Suspended"
+
+msgid "Restore User"
+msgstr "Restore User"
+
+msgid "Block Access"
+msgstr "Block Access"
+
+msgid "System Master (Protected)"
+msgstr "System Master (Protected)"
+
+msgid "Restricted"
+msgstr "Restricted"

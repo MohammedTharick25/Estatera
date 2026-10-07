@@ -86,9 +86,9 @@ export default function PropertyDetails() {
   const isFavorite = user?.user?.favorites?.includes(property?._id);
   const toggleCompare = () => {
     const ids = JSON.parse(localStorage.getItem("propertyComparison") || "[]");
-    if (ids.includes(property._id)) { localStorage.setItem("propertyComparison", JSON.stringify(ids.filter((item) => item !== property._id))); setIsCompared(false); return toast.success("Removed from comparison."); }
-    if (ids.length >= 3) return toast.error("You can compare up to three properties.");
-    localStorage.setItem("propertyComparison", JSON.stringify([...ids, property._id])); setIsCompared(true); toast.success("Added to your comparison.");
+    if (ids.includes(property._id)) { localStorage.setItem("propertyComparison", JSON.stringify(ids.filter((item) => item !== property._id))); setIsCompared(false); return toast.success(t`Removed from comparison.`); }
+    if (ids.length >= 3) return toast.error(t`You can compare up to three properties.`);
+    localStorage.setItem("propertyComparison", JSON.stringify([...ids, property._id])); setIsCompared(true); toast.success(t`Added to your comparison.`);
   };
 
   const toggleFavorite = async () => {
@@ -408,7 +408,7 @@ export default function PropertyDetails() {
           >
             <Share2 size={20} />
           </button>
-          <button onClick={toggleCompare} aria-label="Add property to comparison" className={`flex items-center gap-2 rounded-full px-3 py-2 text-sm font-bold transition ${isCompared ? "bg-emerald-950 text-white" : "hover:bg-white dark:hover:bg-slate-800 dark:text-white"}`}><Scale size={19}/><span className="hidden md:inline">{isCompared ? "Comparing" : "Compare"}</span></button>
+          <button onClick={toggleCompare} aria-label={t`Add property to comparison`} className={`flex items-center gap-2 rounded-full px-3 py-2 text-sm font-bold transition ${isCompared ? "bg-emerald-950 text-white" : "hover:bg-white dark:hover:bg-slate-800 dark:text-white"}`}><Scale size={19}/><span className="hidden md:inline">{isCompared ? t`Comparing` : t`Compare`}</span></button>
           <button
             onClick={toggleFavorite}
             className="p-3 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg transition hover:scale-110"
@@ -499,7 +499,7 @@ export default function PropertyDetails() {
         <div className="lg:col-span-2">
           {/* Title and stats */}
           <div className="mb-8">
-            <p className="editorial-label mb-3 text-amber-700 dark:text-amber-400">Private collection · {property.propertyType}</p>
+            <p className="editorial-label mb-3 text-amber-700 dark:text-amber-400">{t`Private collection`} · {property.propertyType}</p>
             <h1 className="display-face mb-3 text-5xl font-bold text-slate-900 dark:text-white md:text-6xl">
               {property.title}
             </h1>
@@ -548,8 +548,8 @@ export default function PropertyDetails() {
           )}
 
           <div className="luxury-surface rounded-[2rem] p-8">
-            <h3 className="text-xl font-black dark:text-white">Private pricing consultation</h3>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">Contact our advisor for current availability, market guidance, and a private commercial discussion tailored to this property.</p>
+            <h3 className="text-xl font-black dark:text-white">{t`Private pricing consultation`}</h3>
+            <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">{t`Contact our advisor for current availability, market guidance, and a private commercial discussion tailored to this property.`}</p>
           </div>
           <div className="hidden">
             <h3 className="text-xl font-black mb-6 flex items-center gap-2 dark:text-white">
@@ -603,11 +603,11 @@ export default function PropertyDetails() {
         {/* SIDEBAR FORM */}
         <div className="lg:col-span-1">
           <div className="luxury-surface sticky top-24 rounded-[2rem] p-8">
-            <p className="mb-1 text-xs font-bold uppercase text-slate-400">Private availability</p>
-            <h2 className="display-face mb-8 text-3xl font-bold text-emerald-900 dark:text-emerald-300">Best-in-market guidance</h2>
+            <p className="mb-1 text-xs font-bold uppercase text-slate-400">{t`Private availability`}</p>
+            <h2 className="display-face mb-8 text-3xl font-bold text-emerald-900 dark:text-emerald-300">{t`Best-in-market guidance`}</h2>
             <div className="mb-5 grid gap-3 sm:grid-cols-2">
-              <a href="tel:+919791674849" className="flex items-center justify-center gap-2 rounded-xl bg-emerald-950 px-4 py-3 text-sm font-black text-white transition hover:bg-emerald-800"><Phone size={18}/> Call for details</a>
-              <a href={`https://wa.me/919791674849?text=${encodeURIComponent(`Hello Estatera team,\n\nI am interested in *${property.title}*.\n\nPlease share the current availability, private pricing guidance, and suitable viewing times.\n\nMy details:\nName: ${user?.user?.name || "Interested customer"}\nEmail: ${user?.user?.email || "I will share this shortly"}${phone ? `\nPhone: ${phone}` : ""}\n\nThank you.`)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-emerald-900 px-4 py-3 text-sm font-black text-emerald-900 transition hover:bg-emerald-50 dark:border-emerald-300 dark:text-emerald-300 dark:hover:bg-emerald-950/30"><MessageCircle size={18}/> WhatsApp our advisor</a>
+              <a href="tel:+919791674849" className="flex items-center justify-center gap-2 rounded-xl bg-emerald-950 px-4 py-3 text-sm font-black text-white transition hover:bg-emerald-800"><Phone size={18}/> {t`Call for details`}</a>
+              <a href={`https://wa.me/919791674849?text=${encodeURIComponent(`Hello Estatera team,\n\nI am interested in *${property.title}*.\n\nPlease share the current availability, private pricing guidance, and suitable viewing times.\n\nMy details:\nName: ${user?.user?.name || "Interested customer"}\nEmail: ${user?.user?.email || "I will share this shortly"}${phone ? `\nPhone: ${phone}` : ""}\n\nThank you.`)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-emerald-900 px-4 py-3 text-sm font-black text-emerald-900 transition hover:bg-emerald-50 dark:border-emerald-300 dark:text-emerald-300 dark:hover:bg-emerald-950/30"><MessageCircle size={18}/> {t`WhatsApp our advisor`}</a>
             </div>
             <form onSubmit={handleRequestVisit} className="space-y-4">
               {/* Form fields... (your existing code) */}
@@ -647,7 +647,7 @@ export default function PropertyDetails() {
           </div>
         </div>
       </div>
-      {relatedProperties.length > 0 && <section className="mx-auto mt-20 max-w-[76rem] px-5"><div className="mb-9 flex flex-wrap items-end justify-between gap-4"><div><p className="editorial-label text-amber-700">Continue exploring</p><h2 className="display-face mt-2 text-5xl font-bold text-emerald-950 dark:text-emerald-200">More to consider.</h2></div><p className="max-w-sm text-sm leading-6 text-stone-500 dark:text-stone-400">A selection of properties with a similar character, type, or setting.</p></div><div className="grid gap-7 md:grid-cols-3">{relatedProperties.map((listing) => <PropertyCard key={listing._id} property={listing}/>)}</div></section>}
+      {relatedProperties.length > 0 && <section className="mx-auto mt-20 max-w-[76rem] px-5"><div className="mb-9 flex flex-wrap items-end justify-between gap-4"><div><p className="editorial-label text-amber-700">{t`Continue exploring`}</p><h2 className="display-face mt-2 text-5xl font-bold text-emerald-950 dark:text-emerald-200">{t`More to consider.`}</h2></div><p className="max-w-sm text-sm leading-6 text-stone-500 dark:text-stone-400">{t`A selection of properties with a similar character, type, or setting.`}</p></div><div className="grid gap-7 md:grid-cols-3">{relatedProperties.map((listing) => <PropertyCard key={listing._id} property={listing}/>)}</div></section>}
     </motion.div>
   </>;
 }

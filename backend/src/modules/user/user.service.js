@@ -1,5 +1,5 @@
 const repository = require("./user.repository");
-exports.updateProfile = async ({ name, email, id }, file) => { if (!id || id === "undefined") return { error: "User ID missing", status: 400 }; const data = { name, email }; if (file) data.image = file.path; return repository.findByIdAndUpdate(id, data); };
+exports.updateProfile = async ({ name, email, id, language }, file) => { if (!id || id === "undefined") return { error: "User ID missing", status: 400 }; if (language && !["en", "hi", "ta"].includes(language)) return { error: "Unsupported language.", status: 400 }; const data = { name, email }; if (language) data.language = language; if (file) data.image = file.path; return repository.findByIdAndUpdate(id, data); };
 exports.toggleFavorite = async ({ userId, propertyId }) => { const user = await repository.findById(userId); if (!user) return null; const exists = user.favorites.includes(propertyId); user.favorites = exists ? user.favorites.filter((id) => id.toString() !== propertyId) : [...user.favorites, propertyId]; await user.save(); return user.favorites; };
 exports.getFavorites = async (userId) => { const user = await repository.findFavorites(userId); return user ? user.favorites : null; };
 exports.getStatus = async (id) => { const user = await repository.findById(id); return user ? { isBlocked: user.isBlocked, role: user.role } : null; };

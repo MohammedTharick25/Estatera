@@ -125,19 +125,19 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link to="/compare" aria-label="Compare properties" className="hidden rounded-full p-2.5 text-stone-600 transition hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-slate-800 md:block"><Scale size={20}/></Link>
+          <Link to="/compare" aria-label={t`Compare properties`} className="hidden rounded-full p-2.5 text-stone-600 transition hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-slate-800 md:block"><Scale size={20}/></Link>
           {user && <div ref={notificationPanelRef} className="relative">
-            <button onClick={() => { setIsNotificationsOpen((open) => !open); loadNotifications(); }} aria-label="Notifications" className="relative rounded-full p-2.5 text-stone-600 transition hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-slate-800">
+            <button onClick={() => { setIsNotificationsOpen((open) => !open); loadNotifications(); }} aria-label={t`Notifications`} className="relative rounded-full p-2.5 text-stone-600 transition hover:bg-stone-100 dark:text-stone-300 dark:hover:bg-slate-800">
               <Bell size={20}/>{unreadCount > 0 && <span className="absolute right-1 top-1 min-w-4 rounded-full bg-red-600 px-1 text-[10px] font-black leading-4 text-white">{unreadCount > 9 ? "9+" : unreadCount}</span>}
             </button>
             {isNotificationsOpen && <div className="fixed left-4 right-4 top-20 z-[80] max-h-[calc(100dvh-6rem)] overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 md:absolute md:left-auto md:right-0 md:top-12 md:w-80 md:max-h-[30rem]">
-              <div className="flex items-center justify-between border-b border-stone-100 px-4 py-3 dark:border-slate-800"><p className="font-black dark:text-white">Notifications</p>{unreadCount > 0 && <button onClick={markAllRead} className="text-xs font-bold text-emerald-700 dark:text-emerald-300">Mark all read</button>}</div>
-              <div className="max-h-96 overflow-y-auto">{notifications.length ? notifications.map((item) => <div key={item._id} className={`group relative border-b border-stone-100 transition hover:bg-stone-50 dark:border-slate-800 dark:hover:bg-slate-800 ${item.readAt ? "opacity-60" : "bg-emerald-50/50 dark:bg-emerald-950/20"}`}><Link to={item.link || "/profile"} onClick={() => { markNotificationRead(item._id); setIsNotificationsOpen(false); }} className="block px-4 py-3 pr-11"><p className="text-sm font-bold dark:text-white">{item.title}</p><p className="mt-1 text-xs leading-5 text-stone-600 dark:text-stone-300">{item.message}</p><p className="mt-1 text-[10px] text-stone-400">{item.eventAt ? `Scheduled for ${new Date(item.eventAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}` : `Sent ${new Date(item.createdAt).toLocaleString()}`}</p></Link><button onClick={(event) => deleteNotification(event, item._id)} aria-label={`Delete ${item.title} notification`} className="absolute right-2 top-2 rounded-full p-1.5 text-stone-400 opacity-100 transition hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/40 md:opacity-0 md:group-hover:opacity-100"><X size={14}/></button></div>) : <p className="px-4 py-10 text-center text-sm text-stone-500">No notifications yet.</p>}</div>
+              <div className="flex items-center justify-between border-b border-stone-100 px-4 py-3 dark:border-slate-800"><p className="font-black dark:text-white">{t`Notifications`}</p>{unreadCount > 0 && <button onClick={markAllRead} className="text-xs font-bold text-emerald-700 dark:text-emerald-300">{t`Mark all read`}</button>}</div>
+              <div className="max-h-96 overflow-y-auto">{notifications.length ? notifications.map((item) => <div key={item._id} className={`group relative border-b border-stone-100 transition hover:bg-stone-50 dark:border-slate-800 dark:hover:bg-slate-800 ${item.readAt ? "opacity-60" : "bg-emerald-50/50 dark:bg-emerald-950/20"}`}><Link to={item.link || "/profile"} onClick={() => { markNotificationRead(item._id); setIsNotificationsOpen(false); }} className="block px-4 py-3 pr-11"><p className="text-sm font-bold dark:text-white">{item.title}</p><p className="mt-1 text-xs leading-5 text-stone-600 dark:text-stone-300">{item.message}</p><p className="mt-1 text-[10px] text-stone-400">{item.eventAt ? t`Scheduled for` : t`Sent`} {new Date(item.eventAt || item.createdAt).toLocaleString()}</p></Link><button onClick={(event) => deleteNotification(event, item._id)} aria-label={t`Delete notification`} className="absolute right-2 top-2 rounded-full p-1.5 text-stone-400 opacity-100 transition hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/40 md:opacity-0 md:group-hover:opacity-100"><X size={14}/></button></div>) : <p className="px-4 py-10 text-center text-sm text-stone-500">{t`No notifications yet.`}</p>}</div>
             </div>}
           </div>}
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            aria-label="Toggle colour theme"
+            aria-label={t`Toggle colour theme`}
             className="hidden rounded-full p-2.5 transition hover:bg-stone-100 dark:hover:bg-slate-800 md:block"
           >
             {isDarkMode ? (
@@ -209,7 +209,7 @@ export default function Navbar() {
               </div>
 
               <div className="flex-1 px-4 py-6 flex flex-col gap-2">
-                {user && <Link to="/profile" onClick={closeMenu} className="mb-3 flex items-center gap-3 rounded-2xl bg-emerald-950 p-3 text-white"><img src={user?.user?.image || `https://ui-avatars.com/api/?name=${user?.user?.name || "User"}`} alt="" className="h-10 w-10 rounded-full object-cover"/><span className="min-w-0"><span className="block truncate text-sm font-black">{user?.user?.name}</span><span className="block text-xs text-emerald-100">Profile</span></span></Link>}
+                {user && <Link to="/profile" onClick={closeMenu} className="mb-3 flex items-center gap-3 rounded-2xl bg-emerald-950 p-3 text-white"><img src={user?.user?.image || `https://ui-avatars.com/api/?name=${user?.user?.name || "User"}`} alt="" className="h-10 w-10 rounded-full object-cover"/><span className="min-w-0"><span className="block truncate text-sm font-black">{user?.user?.name}</span><span className="block text-xs text-emerald-100">{t`Profile`}</span></span></Link>}
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
@@ -223,13 +223,13 @@ export default function Navbar() {
                 ))}
 
                 <Link to="/compare" onClick={closeMenu} className="flex items-center gap-4 rounded-xl p-4 font-semibold text-slate-900 hover:bg-slate-50 dark:text-slate-100 dark:hover:bg-slate-800">
-                  <Scale size={20} /> Compare properties
+                  <Scale size={20} /> {t`Compare properties`}
                 </Link>
 
                 <button onClick={() => setIsDarkMode((dark) => !dark)} className="flex items-center gap-4 rounded-xl p-4 text-left font-semibold text-slate-900 hover:bg-slate-50 dark:text-slate-100 dark:hover:bg-slate-800">
-                  {isDarkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />} {isDarkMode ? "Light theme" : "Dark theme"}
+                  {isDarkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />} {isDarkMode ? t`Light theme` : t`Dark theme`}
                 </button>
-                {deferredInstallPrompt && <button onClick={installApp} className="flex items-center justify-center rounded-xl bg-emerald-800 p-4 text-sm font-bold text-white">Install Estatera app</button>}
+                {deferredInstallPrompt && <button onClick={installApp} className="flex items-center justify-center rounded-xl bg-emerald-800 p-4 text-sm font-bold text-white">{t`Install Estatera app`}</button>}
 
                 {user ? (
                   <>

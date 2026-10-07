@@ -27,17 +27,17 @@ import { toast } from "react-hot-toast";
 
 function getDeviceName(userAgent = "") {
   const agent = String(userAgent);
-  const browser = /Edg\//.test(agent) ? "Microsoft Edge" : /Firefox\//.test(agent) ? "Firefox" : /OPR\//.test(agent) ? "Opera" : /CriOS\//.test(agent) ? "Chrome" : /Chrome\//.test(agent) ? "Chrome" : /Safari\//.test(agent) ? "Safari" : "Web browser";
+  const browser = /Edg\//.test(agent) ? "Microsoft Edge" : /Firefox\//.test(agent) ? "Firefox" : /OPR\//.test(agent) ? "Opera" : /CriOS\//.test(agent) ? "Chrome" : /Chrome\//.test(agent) ? "Chrome" : /Safari\//.test(agent) ? "Safari" : t`Web browser`;
   if (/iPad/.test(agent)) return `iPad · ${browser}`;
   if (/iPhone|iPod/.test(agent)) return `iPhone · ${browser}`;
   if (/Android/.test(agent)) {
     const model = agent.match(/Android[^;)]*;[^;)]*;\s*([^;)]+?)(?:\s+Build|\))/i)?.[1]?.trim();
-    return `${model || "Android phone"} · ${browser}`;
+    return `${model || t`Android phone`} · ${browser}`;
   }
-  if (/Windows/.test(agent)) return `Windows PC · ${browser}`;
+  if (/Windows/.test(agent)) return `${t`Windows PC`} · ${browser}`;
   if (/Macintosh|Mac OS X/.test(agent)) return `Mac · ${browser}`;
-  if (/Linux/.test(agent)) return `Linux device · ${browser}`;
-  return agent && agent !== "Unknown device" ? `Unknown device · ${browser}` : "Unknown device";
+  if (/Linux/.test(agent)) return `${t`Linux device`} · ${browser}`;
+  return agent && agent !== "Unknown device" ? `${t`Unknown device`} · ${browser}` : t`Unknown device`;
 }
 
 export default function Profile() {
@@ -67,7 +67,7 @@ export default function Profile() {
   const [formData, setFormData] = useState({
     name: user?.user?.name || "",
     email: user?.user?.email || "",
-    language: user?.user?.language || "en",
+    language: user?.user?.language || localStorage.getItem("lang") || "en",
   });
 
   const [previewImage, setPreviewImage] = useState(null);
@@ -130,8 +130,8 @@ export default function Profile() {
     try { const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/saved-searches`); setSavedSearches(data); } catch (_) { setSavedSearches([]); }
   };
   useEffect(() => { fetchSavedSearches(); }, [user?.user?.id]);
-  const deleteSavedSearch = async (id) => { try { await axios.delete(`${import.meta.env.VITE_API_URL}/api/saved-searches/${id}`); setSavedSearches((searches) => searches.filter((search) => search._id !== id)); toast.success("Saved search removed."); } catch (_) { toast.error("Unable to remove saved search."); } };
-  const updateSavedSearchAlert = async (search, update) => { try { const { data } = await axios.patch(`${import.meta.env.VITE_API_URL}/api/saved-searches/${search._id}`, update); setSavedSearches((items) => items.map((item) => item._id === search._id ? data : item)); toast.success("Alert preferences updated."); } catch (_) { toast.error("Unable to update alert preferences."); } };
+  const deleteSavedSearch = async (id) => { try { await axios.delete(`${import.meta.env.VITE_API_URL}/api/saved-searches/${id}`); setSavedSearches((searches) => searches.filter((search) => search._id !== id)); toast.success(t`Saved search removed.`); } catch (_) { toast.error(t`Unable to remove saved search.`); } };
+  const updateSavedSearchAlert = async (search, update) => { try { const { data } = await axios.patch(`${import.meta.env.VITE_API_URL}/api/saved-searches/${search._id}`, update); setSavedSearches((items) => items.map((item) => item._id === search._id ? data : item)); toast.success(t`Alert preferences updated.`); } catch (_) { toast.error(t`Unable to update alert preferences.`); } };
   const openSavedSearch = (search) => { const filters = search.filters || {}; const params = new URLSearchParams(); if (filters.location) params.set("location", filters.location); if (filters.type) params.set("type", filters.type); if (filters.maxPrice) params.set("maxPrice", filters.maxPrice); if (filters.radius) params.set("radius", filters.radius); if (filters.sort) params.set("sort", filters.sort); navigate(`/listings?${params}`); };
 
   const submitFeedback = async (visitId) => {
@@ -150,8 +150,6 @@ export default function Profile() {
   const handleLanguageChange = (e) => {
     const lang = e.target.value;
     setFormData((prev) => ({ ...prev, language: lang }));
-    i18n.activate(lang);
-    localStorage.setItem("lang", lang);
   };
 
   const handleSave = async (e) => {
@@ -169,30 +167,48 @@ export default function Profile() {
         `${import.meta.env.VITE_API_URL}/api/users/update`,
         data,
       );
-      login(res.data);
+      const language = res.data.user.language || formData.language;
+      const updatedAuth = {
+        ...user,
+        user: { ...user.user, ...res.data.user, language },
+      };
+      login(updatedAuth);
+      localStorage.setItem("lang", language);
+      i18n.activate(language);
       setIsEditing(false);
       setPreviewImage(null);
+      toast.success(t`Profile updated successfully.`);
     } catch (err) {
       toast.error(t`Profile update failed`);
     } finally {
       setLoading(false);
     }
   };
+  const cancelProfileEdit = () => {
+    setFormData({
+      name: user.user.name || "",
+      email: user.user.email || "",
+      language: user.user.language || localStorage.getItem("lang") || "en",
+    });
+    setSelectedFile(null);
+    setPreviewImage(null);
+    setIsEditing(false);
+  };
 
   const changePassword = async (event) => {
     event.preventDefault();
-    if (passwordData.password !== passwordData.confirmPassword) return toast.error("New passwords do not match.");
+    if (passwordData.password !== passwordData.confirmPassword) return toast.error(t`New passwords do not match.`);
     setIsChangingPassword(true);
     try {
       const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/change-password`, passwordData);
       toast.success(data.message); setPasswordData({ currentPassword: "", password: "", confirmPassword: "" }); setShowPasswordForm(false);
-    } catch (error) { toast.error(error.response?.data?.error || "Unable to change password."); }
+    } catch (error) { toast.error(error.response?.data?.error || t`Unable to change password.`); }
     finally { setIsChangingPassword(false); }
   };
-  const loadSessions = async () => { try { const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/sessions`); setSessions(data.sessions || []); setCurrentSessionId(data.currentSessionId); } catch (error) { toast.error(error.response?.data?.error || "Unable to load sessions."); } };
+  const loadSessions = async () => { try { const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/sessions`); setSessions(data.sessions || []); setCurrentSessionId(data.currentSessionId); } catch (error) { toast.error(error.response?.data?.error || t`Unable to load sessions.`); } };
   const toggleSessions = () => { const next = !showSessions; setShowSessions(next); if (next) loadSessions(); };
-  const revokeSession = async (sessionId) => { try { const { data } = await axios.delete(`${import.meta.env.VITE_API_URL}/api/auth/sessions/${sessionId}`); toast.success(data.message); loadSessions(); } catch (error) { toast.error(error.response?.data?.error || "Unable to sign out the session."); } };
-  const revokeOtherSessions = async () => { try { const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/sessions/revoke-others`); toast.success(data.message); loadSessions(); } catch (error) { toast.error(error.response?.data?.error || "Unable to sign out other sessions."); } };
+  const revokeSession = async (sessionId) => { try { const { data } = await axios.delete(`${import.meta.env.VITE_API_URL}/api/auth/sessions/${sessionId}`); toast.success(data.message); loadSessions(); } catch (error) { toast.error(error.response?.data?.error || t`Unable to sign out the session.`); } };
+  const revokeOtherSessions = async () => { try { const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/sessions/revoke-others`); toast.success(data.message); loadSessions(); } catch (error) { toast.error(error.response?.data?.error || t`Unable to sign out other sessions.`); } };
 
   // Helper for Status Colors
   const getStatusStyles = (status) => {
@@ -209,6 +225,16 @@ export default function Profile() {
         return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400";
       default:
         return "bg-slate-100 text-slate-700";
+    }
+  };
+  const getStatusLabel = (status) => {
+    switch (status) {
+      case "pending": return t`Pending`;
+      case "scheduled": return t`Scheduled`;
+      case "visited": return t`Visited`;
+      case "purchased": return t`Purchased`;
+      case "cancelled": return t`Cancelled`;
+      default: return status;
     }
   };
 
@@ -229,7 +255,7 @@ export default function Profile() {
         animate={{ opacity: 1, y: 0 }}
         className="mx-auto max-w-5xl px-4 py-10 sm:px-5 sm:py-20"
       >
-        <AnimatePresence>{purchaseCelebration && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[1300] flex items-center justify-center bg-emerald-950/80 p-5 backdrop-blur-md"><motion.div initial={{ scale: .8, y: 24 }} animate={{ scale: 1, y: 0 }} className="relative w-full max-w-md overflow-hidden rounded-[2rem] bg-[#fdfbf6] p-8 text-center shadow-2xl dark:bg-slate-900"><div className="pointer-events-none absolute inset-x-0 top-3 flex justify-around text-2xl"><span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span></div><div className="mx-auto mt-5 flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-3xl">🏡</div><p className="editorial-label mt-6 text-amber-700">A new beginning</p><h2 className="display-face mt-3 text-4xl font-bold text-emerald-950 dark:text-white">Congratulations!</h2><p className="mt-4 text-sm leading-6 text-stone-600 dark:text-slate-300">Your purchase of {purchaseCelebration.propertyId?.title || "your property"} has been confirmed. Welcome to your next chapter.</p><button onClick={() => setPurchaseCelebration(null)} className="mt-7 w-full rounded-xl bg-emerald-950 py-3 text-sm font-black text-white">Celebrate this moment</button></motion.div></motion.div>}</AnimatePresence>
+        <AnimatePresence>{purchaseCelebration && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[1300] flex items-center justify-center bg-emerald-950/80 p-5 backdrop-blur-md"><motion.div initial={{ scale: .8, y: 24 }} animate={{ scale: 1, y: 0 }} className="relative w-full max-w-md overflow-hidden rounded-[2rem] bg-[#fdfbf6] p-8 text-center shadow-2xl dark:bg-slate-900"><div className="pointer-events-none absolute inset-x-0 top-3 flex justify-around text-2xl"><span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span></div><div className="mx-auto mt-5 flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-3xl">🏡</div><p className="editorial-label mt-6 text-amber-700">{t`A new beginning`}</p><h2 className="display-face mt-3 text-4xl font-bold text-emerald-950 dark:text-white">{t`Congratulations!`}</h2><p className="mt-4 text-sm leading-6 text-stone-600 dark:text-slate-300">{t`Your purchase of`} {purchaseCelebration.propertyId?.title || t`your property`} {t`has been confirmed. Welcome to your next chapter.`}</p><button onClick={() => setPurchaseCelebration(null)} className="mt-7 w-full rounded-xl bg-emerald-950 py-3 text-sm font-black text-white">{t`Celebrate this moment`}</button></motion.div></motion.div>}</AnimatePresence>
         <div className="luxury-surface overflow-hidden rounded-[2rem]">
           <div className="h-36 bg-[linear-gradient(110deg,#0d2c24,#285645_55%,#b88a45)]" />
 
@@ -239,7 +265,7 @@ export default function Profile() {
                 <img
                   src={currentAvatar}
                   className="w-32 h-32 rounded-full border-4 border-white dark:border-slate-900 shadow-xl object-cover"
-                  alt="Avatar"
+                  alt={t`Profile picture`}
                 />
                 {isEditing && (
                   <button
@@ -272,7 +298,7 @@ export default function Profile() {
                 >
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
-                      <p className="editorial-label mb-2 text-amber-700 dark:text-amber-400">Private profile</p>
+                      <p className="editorial-label mb-2 text-amber-700 dark:text-amber-400">{t`Private profile`}</p>
                       <h1 className="display-face text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
                         {user.user.name}
                       </h1>
@@ -361,13 +387,13 @@ export default function Profile() {
               : "bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200"
           }`}
                             >
-                              {user.user.role}
+                              {user.user.role === "admin" ? t`Administrator` : t`Member`}
                             </span>
                           </div>
-                          <button onClick={() => setShowPasswordForm((show) => !show)} className="w-full rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-left text-xs font-black text-blue-700 transition hover:bg-blue-100 dark:border-blue-900/50 dark:bg-blue-950/30 dark:text-blue-300">{showPasswordForm ? "Cancel password change" : "Change password"}</button>
-                          {showPasswordForm && <form onSubmit={changePassword} className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><p className="text-xs font-bold text-slate-500">Use at least 8 characters with uppercase, lowercase, and a number.</p><input type="password" autoComplete="current-password" required value={passwordData.currentPassword} onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })} placeholder="Current password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><input type="password" autoComplete="new-password" required value={passwordData.password} onChange={(e) => setPasswordData({ ...passwordData, password: e.target.value })} placeholder="New password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><input type="password" autoComplete="new-password" required value={passwordData.confirmPassword} onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })} placeholder="Confirm new password" className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><button disabled={isChangingPassword} className="w-full rounded-xl bg-emerald-950 py-3 text-sm font-black text-white disabled:opacity-50">{isChangingPassword ? "Updating…" : "Update password"}</button></form>}
-                          <button onClick={toggleSessions} className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-left text-xs font-black text-stone-700 transition hover:bg-stone-100 dark:border-slate-700 dark:bg-slate-800 dark:text-stone-200">{showSessions ? "Hide active sessions" : "Manage active sessions"}</button>
-                          {showSessions && <div className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><div className="flex items-center justify-between gap-3"><p className="text-xs font-black text-slate-700 dark:text-white">Active devices</p>{sessions.length > 1 && <button onClick={revokeOtherSessions} className="text-xs font-black text-red-600 hover:underline">Sign out others</button>}</div>{sessions.length ? sessions.map((session) => <div key={session.sessionId} className="rounded-xl bg-stone-50 p-3 text-xs dark:bg-slate-800"><div className="flex justify-between gap-3"><p className="min-w-0 truncate font-bold text-slate-700 dark:text-white">{session.deviceLabel || getDeviceName(session.userAgent)}</p>{session.sessionId === currentSessionId ? <span className="shrink-0 font-black text-emerald-700 dark:text-emerald-300">This device</span> : <button onClick={() => revokeSession(session.sessionId)} className="shrink-0 font-black text-red-600">Sign out</button>}</div><p className="mt-1 text-[10px] text-slate-400">Signed in {new Date(session.createdAt).toLocaleString()}</p></div>) : <p className="text-xs text-slate-500">No active sessions found.</p>}</div>}
+                          <button onClick={() => setShowPasswordForm((show) => !show)} className="w-full rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-left text-xs font-black text-blue-700 transition hover:bg-blue-100 dark:border-blue-900/50 dark:bg-blue-950/30 dark:text-blue-300">{showPasswordForm ? t`Cancel password change` : t`Change password`}</button>
+                          {showPasswordForm && <form onSubmit={changePassword} className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><p className="text-xs font-bold text-slate-500">{t`Use at least 8 characters with uppercase, lowercase, and a number.`}</p><input type="password" autoComplete="current-password" required value={passwordData.currentPassword} onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })} placeholder={t`Current password`} className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><input type="password" autoComplete="new-password" required value={passwordData.password} onChange={(e) => setPasswordData({ ...passwordData, password: e.target.value })} placeholder={t`New password`} className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><input type="password" autoComplete="new-password" required value={passwordData.confirmPassword} onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })} placeholder={t`Confirm new password`} className="w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-white"/><button disabled={isChangingPassword} className="w-full rounded-xl bg-emerald-950 py-3 text-sm font-black text-white disabled:opacity-50">{isChangingPassword ? t`Updating…` : t`Update password`}</button></form>}
+                          <button onClick={toggleSessions} className="w-full rounded-xl border border-stone-200 bg-stone-50 px-4 py-3 text-left text-xs font-black text-stone-700 transition hover:bg-stone-100 dark:border-slate-700 dark:bg-slate-800 dark:text-stone-200">{showSessions ? t`Hide active sessions` : t`Manage active sessions`}</button>
+                          {showSessions && <div className="space-y-3 rounded-2xl border border-stone-200 p-4 dark:border-slate-700"><div className="flex items-center justify-between gap-3"><p className="text-xs font-black text-slate-700 dark:text-white">{t`Active devices`}</p>{sessions.length > 1 && <button onClick={revokeOtherSessions} className="text-xs font-black text-red-600 hover:underline">{t`Sign out others`}</button>}</div>{sessions.length ? sessions.map((session) => <div key={session.sessionId} className="rounded-xl bg-stone-50 p-3 text-xs dark:bg-slate-800"><div className="flex justify-between gap-3"><p className="min-w-0 truncate font-bold text-slate-700 dark:text-white">{session.deviceLabel || getDeviceName(session.userAgent)}</p>{session.sessionId === currentSessionId ? <span className="shrink-0 font-black text-emerald-700 dark:text-emerald-300">{t`This device`}</span> : <button onClick={() => revokeSession(session.sessionId)} className="shrink-0 font-black text-red-600">{t`Sign out`}</button>}</div><p className="mt-1 text-[10px] text-slate-400">{t`Signed in ${new Date(session.createdAt).toLocaleString()}`}</p></div>) : <p className="text-xs text-slate-500">{t`No active sessions found.`}</p>}</div>}
 
                           {/* Role Capabilities Summary - Professional Touch */}
                           <div className="pt-2 px-1">
@@ -421,9 +447,9 @@ export default function Profile() {
                         onClick={() => setActiveProfileTab("recent")}
                         className={`flex items-center gap-2 border-b-2 px-6 py-4 font-bold transition-all ${activeProfileTab === "recent" ? "border-emerald-800 text-emerald-800 dark:text-emerald-300" : "border-transparent text-slate-400"}`}
                       >
-                        <Clock3 size={18} /> Recently Viewed
+                        <Clock3 size={18} /> {t`Recently Viewed`}
                       </button>
-                      <button onClick={() => { setActiveProfileTab("saved"); fetchSavedSearches(); }} className={`flex items-center gap-2 border-b-2 px-6 py-4 font-bold transition-all ${activeProfileTab === "saved" ? "border-emerald-800 text-emerald-800 dark:text-emerald-300" : "border-transparent text-slate-400"}`}><Bookmark size={18} /> Saved Searches</button>
+                      <button onClick={() => { setActiveProfileTab("saved"); fetchSavedSearches(); }} className={`flex items-center gap-2 border-b-2 px-6 py-4 font-bold transition-all ${activeProfileTab === "saved" ? "border-emerald-800 text-emerald-800 dark:text-emerald-300" : "border-transparent text-slate-400"}`}><Bookmark size={18} /> {t`Saved Searches`}</button>
                     </div>
 
                     {/* Tab Content */}
@@ -446,20 +472,20 @@ export default function Profile() {
                                   <div>
                                     <p className="font-bold dark:text-white">
                                       {v.propertyId?.title ||
-                                        "Property no longer available"}
+                                        t`Property no longer available`}
                                     </p>
                                     <p className="text-xs text-slate-400">
                                       {v.propertyId?.location ||
-                                        "Location unavailable"}
+                                        t`Location unavailable`}
                                     </p>
                                   </div>
                                   <span
                                     className={`text-[10px] font-black uppercase px-3 py-1 rounded-lg ${getStatusStyles(v.status)}`}
                                   >
-                                    {v.status}
+                                    {getStatusLabel(v.status)}
                                   </span>
                                 </div>
-                                {v.scheduledFor && <p className="mt-3 text-xs font-bold text-emerald-800 dark:text-emerald-300">Your visit is scheduled for {new Date(v.scheduledFor).toLocaleString()}.</p>}
+                                {v.scheduledFor && <p className="mt-3 text-xs font-bold text-emerald-800 dark:text-emerald-300">{t`Your visit is scheduled for`} {new Date(v.scheduledFor).toLocaleString()}.</p>}
                                 {v.status === "visited" &&
                                   !v.feedback?.rating && (
                                     <div className="mt-4 p-4 bg-white dark:bg-slate-900 rounded-2xl border-2 border-dashed border-blue-200 dark:border-slate-700">
@@ -538,11 +564,11 @@ export default function Profile() {
                         </motion.div>
                       ) : activeProfileTab === "recent" ? (
                         <motion.div key="recent-grid" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                          {recentlyViewed.length ? recentlyViewed.map((property) => <PropertyCard key={property._id} property={property} />) : <p className="col-span-2 py-10 text-center text-slate-500">No recently viewed properties yet.</p>}
+                          {recentlyViewed.length ? recentlyViewed.map((property) => <PropertyCard key={property._id} property={property} />) : <p className="col-span-2 py-10 text-center text-slate-500">{t`No recently viewed properties yet.`}</p>}
                         </motion.div>
                       ) : (
                         <motion.div key="saved-searches" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }} className="space-y-3">
-                          {savedSearches.length ? savedSearches.map((search) => <div key={search._id} className="luxury-surface flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5"><div><p className="font-black dark:text-white">{search.name}</p><p className="mt-1 text-xs text-slate-500">{[search.filters?.location, search.filters?.type, search.filters?.maxPrice ? `Up to ₹${Number(search.filters.maxPrice).toLocaleString()}` : ""].filter(Boolean).join(" · ") || "All properties"}</p><p className="mt-2 text-[11px] text-stone-500">All active members receive an email whenever a new property is published. These controls manage personalised saved-search matches and digests.</p><div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-bold text-stone-600 dark:text-stone-300"><label className="flex items-center gap-2"><input type="checkbox" checked={search.alertEnabled !== false} onChange={(e) => updateSavedSearchAlert(search, { alertEnabled: e.target.checked })} /> Personalised alerts</label><select value={search.alertFrequency || "immediate"} disabled={search.alertEnabled === false} onChange={(e) => updateSavedSearchAlert(search, { alertFrequency: e.target.value })} className="rounded-md border border-stone-200 bg-white px-2 py-1 dark:border-slate-600 dark:bg-slate-800"><option value="immediate">Instant in-app match</option><option value="daily">Daily email digest</option><option value="weekly">Weekly email digest</option></select></div></div><div className="flex gap-2"><button onClick={() => openSavedSearch(search)} className="rounded-lg bg-emerald-950 px-3 py-2 text-xs font-black text-white">Open</button><button onClick={() => deleteSavedSearch(search._id)} aria-label={`Delete ${search.name}`} className="rounded-lg bg-red-50 p-2 text-red-500"><Trash2 size={16}/></button></div></div>) : <p className="py-10 text-center text-slate-500">Save a search from the Listings page to keep it here.</p>}
+                          {savedSearches.length ? savedSearches.map((search) => <div key={search._id} className="luxury-surface flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5"><div><p className="font-black dark:text-white">{search.name}</p><p className="mt-1 text-xs text-slate-500">{[search.filters?.location, search.filters?.type, search.filters?.maxPrice ? `${t`Up to`} ₹${Number(search.filters.maxPrice).toLocaleString()}` : ""].filter(Boolean).join(" · ") || t`All properties`}</p><p className="mt-2 text-[11px] text-stone-500">{t`All active members receive an email whenever a new property is published. These controls manage personalised saved-search matches and digests.`}</p><div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-bold text-stone-600 dark:text-stone-300"><label className="flex items-center gap-2"><input type="checkbox" checked={search.alertEnabled !== false} onChange={(e) => updateSavedSearchAlert(search, { alertEnabled: e.target.checked })} /> {t`Personalised alerts`}</label><select value={search.alertFrequency || "immediate"} disabled={search.alertEnabled === false} onChange={(e) => updateSavedSearchAlert(search, { alertFrequency: e.target.value })} className="rounded-md border border-stone-200 bg-white px-2 py-1 dark:border-slate-600 dark:bg-slate-800"><option value="immediate">{t`Instant in-app match`}</option><option value="daily">{t`Daily email digest`}</option><option value="weekly">{t`Weekly email digest`}</option></select></div></div><div className="flex gap-2"><button onClick={() => openSavedSearch(search)} className="rounded-lg bg-emerald-950 px-3 py-2 text-xs font-black text-white">{t`Open`}</button><button onClick={() => deleteSavedSearch(search._id)} aria-label={t`Delete saved search`} className="rounded-lg bg-red-50 p-2 text-red-500"><Trash2 size={16}/></button></div></div>) : <p className="py-10 text-center text-slate-500">{t`Save a search from the Listings page to keep it here.`}</p>}
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -575,7 +601,7 @@ export default function Profile() {
                 >
                   <div className="flex justify-between items-center">
                     <h2 className="text-2xl font-black text-slate-900 dark:text-white">{t`Edit Profile`}</h2>
-                    <button type="button" onClick={() => setIsEditing(false)}>
+                    <button type="button" onClick={cancelProfileEdit}>
                       <X />
                     </button>
                   </div>

@@ -130,9 +130,9 @@ export default function Listings() {
     filter.maxPrice < 100000000;
   const saveSearch = async () => {
     if (!user) return navigate("/login");
-    const name = window.prompt("Name this saved search", filter.search ? `Properties in ${filter.search}` : "My property search");
+    const name = window.prompt(t`Name this saved search`, filter.search ? `${t`Properties in`} ${filter.search}` : t`My property search`);
     if (!name?.trim()) return;
-    try { await axios.post(`${import.meta.env.VITE_API_URL}/api/saved-searches`, { name: name.trim(), filters: { location: filter.search, type: filter.type, maxPrice: filter.maxPrice, radius: filter.radius, sort: filter.sort } }); toast.success("Search saved to your profile."); } catch (error) { toast.error(error.response?.data?.error || "Unable to save this search."); }
+    try { await axios.post(`${import.meta.env.VITE_API_URL}/api/saved-searches`, { name: name.trim(), filters: { location: filter.search, type: filter.type, maxPrice: filter.maxPrice, radius: filter.radius, sort: filter.sort } }); toast.success(t`Search saved to your profile.`); } catch (error) { toast.error(error.response?.data?.error || t`Unable to save this search.`); }
   };
 
   return (
@@ -163,7 +163,7 @@ export default function Listings() {
               >
                 <SlidersHorizontal size={20} /> {t`Filters`}
               </button>
-              <button onClick={saveSearch} className="rounded-xl border border-stone-200 bg-white px-3 py-3 text-xs font-black text-emerald-900 transition hover:bg-emerald-50 dark:border-stone-700 dark:bg-slate-900 dark:text-emerald-200 sm:px-4">Save<span className="hidden sm:inline"> Search</span></button>
+              <button onClick={saveSearch} className="rounded-xl border border-stone-200 bg-white px-3 py-3 text-xs font-black text-emerald-900 transition hover:bg-emerald-50 dark:border-stone-700 dark:bg-slate-900 dark:text-emerald-200 sm:px-4">{t`Save Search`}</button>
               <div className="flex bg-slate-100 dark:bg-slate-900 p-1 rounded-2xl">
                 <button
                   onClick={() => setViewMode("list")}
@@ -211,7 +211,7 @@ export default function Listings() {
                 </div>
                 <div>
                   <label className="block text-xs font-black uppercase text-slate-400 mb-3">
-                    Private availability
+                    {t`Private availability`}
                     <span className="hidden text-blue-600">
                       ₹{(filter.maxPrice / 100000).toFixed(0)}L
                     </span>
@@ -259,7 +259,7 @@ export default function Listings() {
             {isSearching || viewMode === "map" ? (
               /* --- SEARCH / MAP VIEW --- */
               <section>
-                <p className="editorial-label mb-3 text-amber-700">Discovery results</p><h2 className="display-face mb-8 text-5xl font-bold">
+                <p className="editorial-label mb-3 text-amber-700">{t`Discovery results`}</p><h2 className="display-face mb-8 text-5xl font-bold">
                   {t`Search Results`} ({properties.length})
                 </h2>
                 {viewMode === "list" ? (
@@ -305,7 +305,7 @@ export default function Listings() {
                               {p.title}
                             </h3>
                             <div className="flex justify-between items-center">
-                              <p className="text-amber-300 font-black text-sm">Private pricing · Contact us</p>
+                              <p className="text-amber-300 font-black text-sm">{t`Private pricing · Contact us`}</p>
                               <button
                                 onClick={() => navigate(`/property/${p._id}`)}
                                 className="p-4 bg-white/10 backdrop-blur-md rounded-2xl text-white hover:bg-white hover:text-black transition-all"
@@ -374,7 +374,7 @@ export default function Listings() {
                       <div className="p-3 bg-red-500 rounded-2xl text-white shadow-lg animate-pulse">
                         <Flame size={24} />
                       </div>
-                      <h2 className="text-3xl font-black text-white tracking-tight">Selected opportunities</h2>
+                      <h2 className="text-3xl font-black text-white tracking-tight">{t`Selected opportunities`}</h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                       {hotDeals.length > 0 ? (

@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import LocationPicker from "../components/LocationPicker";
 import Swal from "sweetalert2";
 import {
@@ -60,6 +61,7 @@ import {
 import autoTable from "jspdf-autotable";
 
 export default function AdminDashboard() {
+  useLingui();
   const [activeTab, setActiveTab] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [listings, setListings] = useState([]);
@@ -747,7 +749,7 @@ export default function AdminDashboard() {
           <SideBtn
             active={activeTab === "inquiries"}
             icon={<Mail size={20} />}
-            label="Inquiries"
+            label={t`Inquiries`}
             onClick={() => {
               setActiveTab("inquiries");
               setSidebarOpen(false);
@@ -768,13 +770,13 @@ export default function AdminDashboard() {
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                   <h2 className="text-3xl font-black tracking-tight dark:text-white italic">
-                    Business <span className="text-blue-600">Insights</span>
+                    {t`Business`} <span className="text-blue-600">{t`Insights`}</span>
                   </h2>
                   <p className="text-slate-500 text-sm">
-                    Real-time performance analytics and property tracking.
+                    {t`Real-time performance analytics and property tracking.`}
                   </p>
                 </div>
-                <div className="flex gap-3"><button onClick={exportStatsCSV} className="flex items-center gap-2 rounded-2xl border bg-white px-5 py-2.5 text-sm font-bold transition-all hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"><FileText size={18} className="text-blue-600"/> CSV</button><button onClick={exportFullReportPDF} className="flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-700"><FileDown size={18}/> Full Report (PDF)</button></div>
+                <div className="flex gap-3"><button onClick={exportStatsCSV} className="flex items-center gap-2 rounded-2xl border bg-white px-5 py-2.5 text-sm font-bold transition-all hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"><FileText size={18} className="text-blue-600"/> {t`CSV`}</button><button onClick={exportFullReportPDF} className="flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-700"><FileDown size={18}/> {t`Full Report (PDF)`}</button></div>
               </div>
               {/* KPI Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -1304,14 +1306,14 @@ export default function AdminDashboard() {
           {activeTab === "users" && (
             <div className="space-y-6">
               <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(115deg,#102c25,#1d5948_55%,#b88a45)] p-7 text-white shadow-xl">
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-200">Customer operations</p><div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div><h2 className="display-face text-4xl font-bold">Community command center</h2><p className="mt-2 max-w-xl text-sm text-emerald-50/80">Review customer health, engagement, and access from one place.</p></div><button className="flex w-fit items-center gap-2 rounded-xl bg-white/15 px-4 py-3 text-xs font-black backdrop-blur hover:bg-white/25" onClick={exportUsersToCSV}><Download size={16}/> Export directory</button></div>
-                <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4"><div className="rounded-2xl bg-white/10 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-emerald-100">Total members</p><p className="mt-1 text-2xl font-black">{users.length}</p></div><div className="rounded-2xl bg-white/10 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-emerald-100">Active access</p><p className="mt-1 text-2xl font-black">{activeUserCount}</p></div><div className="rounded-2xl bg-white/10 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-emerald-100">Restricted</p><p className="mt-1 text-2xl font-black">{blockedUserCount}</p></div><div className="rounded-2xl bg-white/10 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-emerald-100">Saved properties</p><p className="mt-1 text-2xl font-black">{totalSavedProperties}</p></div></div>
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-200">{t`Customer operations`}</p><div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div><h2 className="display-face text-4xl font-bold">{t`Community command center`}</h2><p className="mt-2 max-w-xl text-sm text-emerald-50/80">{t`Review customer health, engagement, and access from one place.`}</p></div><button className="flex w-fit items-center gap-2 rounded-xl bg-white/15 px-4 py-3 text-xs font-black backdrop-blur hover:bg-white/25" onClick={exportUsersToCSV}><Download size={16}/> {t`Export directory`}</button></div>
+                <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4"><div className="rounded-2xl bg-white/10 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-emerald-100">{t`Total members`}</p><p className="mt-1 text-2xl font-black">{users.length}</p></div><div className="rounded-2xl bg-white/10 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-emerald-100">{t`Active access`}</p><p className="mt-1 text-2xl font-black">{activeUserCount}</p></div><div className="rounded-2xl bg-white/10 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-emerald-100">{t`Restricted`}</p><p className="mt-1 text-2xl font-black">{blockedUserCount}</p></div><div className="rounded-2xl bg-white/10 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-emerald-100">{t`Saved properties`}</p><p className="mt-1 text-2xl font-black">{totalSavedProperties}</p></div></div>
               </div>
               {/* Directory controls */}
               <div className="flex flex-col md:flex-row justify-between items-center gap-4 bg-white dark:bg-slate-900 p-5 rounded-3xl border dark:border-slate-800 shadow-sm">
                 <div>
                   <h2 className="text-2xl font-black tracking-tight">{t`User Directory`}</h2>
-                  <p className="text-slate-500 text-sm">{filteredUsers.length} of {users.length} members shown</p>
+                  <p className="text-slate-500 text-sm">{filteredUsers.length} {t`of`} {users.length} {t`members shown`}</p>
                 </div>
 
                 <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center md:w-auto md:flex-1 md:justify-end">
@@ -1328,8 +1330,8 @@ export default function AdminDashboard() {
                       onChange={(e) => setUserSearch(e.target.value)}
                     />
                   </div>
-                  <select value={userFilter} onChange={(event) => setUserFilter(event.target.value)} className="rounded-2xl bg-slate-100 px-4 py-3 text-sm font-bold outline-none dark:bg-slate-800 dark:text-white"><option value="all">All members</option><option value="active">Active access</option><option value="blocked">Restricted</option><option value="admin">Administrators</option></select>
-                  <div className="flex rounded-2xl bg-slate-100 p-1 dark:bg-slate-800"><button onClick={() => setUserDirectoryView("cards")} className={`rounded-xl px-3 py-2 text-xs font-black ${userDirectoryView === "cards" ? "bg-white text-emerald-800 shadow dark:bg-slate-700 dark:text-emerald-300" : "text-slate-500"}`}>Cards</button><button onClick={() => setUserDirectoryView("table")} className={`rounded-xl px-3 py-2 text-xs font-black ${userDirectoryView === "table" ? "bg-white text-emerald-800 shadow dark:bg-slate-700 dark:text-emerald-300" : "text-slate-500"}`}>Table</button></div>
+                  <select value={userFilter} onChange={(event) => setUserFilter(event.target.value)} className="rounded-2xl bg-slate-100 px-4 py-3 text-sm font-bold outline-none dark:bg-slate-800 dark:text-white"><option value="all">{t`All members`}</option><option value="active">{t`Active access`}</option><option value="blocked">{t`Restricted`}</option><option value="admin">{t`Administrators`}</option></select>
+                  <div className="flex rounded-2xl bg-slate-100 p-1 dark:bg-slate-800"><button onClick={() => setUserDirectoryView("cards")} className={`rounded-xl px-3 py-2 text-xs font-black ${userDirectoryView === "cards" ? "bg-white text-emerald-800 shadow dark:bg-slate-700 dark:text-emerald-300" : "text-slate-500"}`}>{t`Cards`}</button><button onClick={() => setUserDirectoryView("table")} className={`rounded-xl px-3 py-2 text-xs font-black ${userDirectoryView === "table" ? "bg-white text-emerald-800 shadow dark:bg-slate-700 dark:text-emerald-300" : "text-slate-500"}`}>{t`Table`}</button></div>
                 </div>
               </div>
 
@@ -1377,27 +1379,27 @@ export default function AdminDashboard() {
                         <div className="grid grid-cols-3 gap-3 mb-6">
                           <div className="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700">
                             <p className="text-[10px] uppercase font-black text-slate-400 mb-1">
-                              Engagement
+                              {t`Engagement`}
                             </p>
                             <div className="flex items-center gap-2">
                               <Star size={12} className="text-amber-500" />
                               <span className="font-bold text-sm dark:text-white">
-                                {u.favorites?.length || 0} Saved
+                                {u.favorites?.length || 0} {t`Saved`}
                               </span>
                             </div>
                           </div>
                           <div className="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700">
-                            <p className="text-[10px] uppercase font-black text-slate-400 mb-1">Joined</p>
+                            <p className="text-[10px] uppercase font-black text-slate-400 mb-1">{t`Joined`}</p>
                             <span className="text-[11px] font-black text-slate-700 dark:text-white">{u.createdAt ? new Date(u.createdAt).toLocaleDateString("en-IN", { month: "short", year: "numeric" }) : "—"}</span>
                           </div>
                           <div className="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-700">
                             <p className="text-[10px] uppercase font-black text-slate-400 mb-1">
-                              Status
+                              {t`Status`}
                             </p>
                             <span
                               className={`text-[10px] font-black px-2 py-0.5 rounded-full ${u.isBlocked ? "bg-red-100 text-red-600" : "bg-emerald-100 text-emerald-600"}`}
                             >
-                              {u.isBlocked ? "SUSPENDED" : "ACTIVE"}
+                              {u.isBlocked ? t`Suspended` : t`Active`}
                             </span>
                           </div>
                         </div>
@@ -1419,7 +1421,7 @@ export default function AdminDashboard() {
                                 ) : (
                                   <UserX size={16} />
                                 )}
-                                {u.isBlocked ? "Restore User" : "Block Access"}
+                                {u.isBlocked ? t`Restore User` : t`Block Access`}
                               </button>
 
                               <button
@@ -1431,7 +1433,7 @@ export default function AdminDashboard() {
                             </>
                           ) : (
                             <div className="w-full py-3 bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-center rounded-2xl text-[10px] font-black uppercase tracking-tighter">
-                              System Master (Protected)
+                              {t`System Master (Protected)`}
                             </div>
                           )}
                         </div>
@@ -1447,15 +1449,15 @@ export default function AdminDashboard() {
           {activeTab === "inquiries" && (
             <div className="space-y-6">
               <div>
-                <p className="editorial-label text-amber-700">Contact desk</p>
-                <h2 className="display-face mt-2 text-5xl font-bold">Incoming inquiries</h2>
-                <p className="mt-2 text-sm text-slate-500">Track and close conversations started from the public contact page.</p>
+                <p className="editorial-label text-amber-700">{t`Contact desk`}</p>
+                <h2 className="display-face mt-2 text-5xl font-bold">{t`Incoming inquiries`}</h2>
+                <p className="mt-2 text-sm text-slate-500">{t`Track and close conversations started from the public contact page.`}</p>
               </div>
               {inquiries.length ? <div className="grid gap-4 lg:grid-cols-2">{inquiries.map((inquiry) => (
                 <article key={inquiry._id} className="luxury-surface rounded-[1.5rem] p-6">
-                  <div className="flex items-start justify-between gap-3"><div><h3 className="font-black dark:text-white">{inquiry.name}</h3><p className="text-sm text-slate-500">{inquiry.email}</p></div><select value={inquiry.status} onChange={(event) => updateInquiry(inquiry._id, event.target.value)} className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-xs font-bold dark:border-slate-700 dark:bg-slate-800"><option value="new">New</option><option value="contacted">Contacted</option><option value="closed">Closed</option></select></div><p className="mt-5 whitespace-pre-line text-sm leading-6 text-slate-600 dark:text-slate-300">{inquiry.message}</p><p className="mt-5 text-[10px] font-bold uppercase tracking-widest text-slate-400">{new Date(inquiry.date).toLocaleString()}</p>
+                  <div className="flex items-start justify-between gap-3"><div><h3 className="font-black dark:text-white">{inquiry.name}</h3><p className="text-sm text-slate-500">{inquiry.email}</p></div><select value={inquiry.status} onChange={(event) => updateInquiry(inquiry._id, event.target.value)} className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-xs font-bold dark:border-slate-700 dark:bg-slate-800"><option value="new">{t`New`}</option><option value="contacted">{t`Contacted`}</option><option value="closed">{t`Closed`}</option></select></div><p className="mt-5 whitespace-pre-line text-sm leading-6 text-slate-600 dark:text-slate-300">{inquiry.message}</p><p className="mt-5 text-[10px] font-bold uppercase tracking-widest text-slate-400">{new Date(inquiry.date).toLocaleString()}</p>
                 </article>
-              ))}</div> : <div className="luxury-surface rounded-[1.5rem] p-10 text-center text-slate-500">No contact inquiries yet.</div>}
+              ))}</div> : <div className="luxury-surface rounded-[1.5rem] p-10 text-center text-slate-500">{t`No contact inquiries yet.`}</div>}
             </div>
           )}
 
@@ -1463,10 +1465,10 @@ export default function AdminDashboard() {
           {activeTab === "visits" && (
             <div className="space-y-6">
               <section className="luxury-surface rounded-[1.5rem] p-5">
-                <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center"><div><p className="editorial-label text-amber-700">Appointment planner</p><h2 className="display-face mt-1 text-3xl font-bold dark:text-white">Visit calendar</h2></div><div className="flex rounded-xl bg-stone-100 p-1 dark:bg-slate-800"><button onClick={() => setVisitCalendarMode("month")} className={`rounded-lg px-3 py-2 text-xs font-black ${visitCalendarMode === "month" ? "bg-white shadow dark:bg-slate-700" : "text-slate-500"}`}>Month</button><button onClick={() => setVisitCalendarMode("week")} className={`rounded-lg px-3 py-2 text-xs font-black ${visitCalendarMode === "week" ? "bg-white shadow dark:bg-slate-700" : "text-slate-500"}`}>Week</button></div></div>
-                <div className="mt-4 grid gap-3 md:grid-cols-3"><select value={visitStatusFilter} onChange={(e) => setVisitStatusFilter(e.target.value)} className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">All statuses</option><option value="pending">Pending</option><option value="scheduled">Scheduled</option><option value="visited">Visited</option><option value="cancelled">Cancelled</option></select><select value={visitPropertyFilter} onChange={(e) => setVisitPropertyFilter(e.target.value)} className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">All properties</option>{calendarProperties.map(([id, title]) => <option key={id} value={id}>{title}</option>)}</select><select value={visitAgentFilter} onChange={(e) => setVisitAgentFilter(e.target.value)} className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">All team members</option>{calendarAgents.map((agent) => <option key={agent} value={agent}>{agent}</option>)}</select></div>
+                <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center"><div><p className="editorial-label text-amber-700">{t`Appointment planner`}</p><h2 className="display-face mt-1 text-3xl font-bold dark:text-white">{t`Visit calendar`}</h2></div><div className="flex rounded-xl bg-stone-100 p-1 dark:bg-slate-800"><button onClick={() => setVisitCalendarMode("month")} className={`rounded-lg px-3 py-2 text-xs font-black ${visitCalendarMode === "month" ? "bg-white shadow dark:bg-slate-700" : "text-slate-500"}`}>{t`Month`}</button><button onClick={() => setVisitCalendarMode("week")} className={`rounded-lg px-3 py-2 text-xs font-black ${visitCalendarMode === "week" ? "bg-white shadow dark:bg-slate-700" : "text-slate-500"}`}>{t`Week`}</button></div></div>
+                <div className="mt-4 grid gap-3 md:grid-cols-3"><select value={visitStatusFilter} onChange={(e) => setVisitStatusFilter(e.target.value)} className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">{t`All statuses`}</option><option value="pending">{t`Pending`}</option><option value="scheduled">{t`Scheduled`}</option><option value="visited">{t`Visited`}</option><option value="cancelled">{t`Cancelled`}</option></select><select value={visitPropertyFilter} onChange={(e) => setVisitPropertyFilter(e.target.value)} className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">{t`All properties`}</option>{calendarProperties.map(([id, title]) => <option key={id} value={id}>{title}</option>)}</select><select value={visitAgentFilter} onChange={(e) => setVisitAgentFilter(e.target.value)} className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800"><option value="all">{t`All team members`}</option>{calendarAgents.map((agent) => <option key={agent} value={agent}>{agent}</option>)}</select></div>
                 <VisitCalendar mode={visitCalendarMode} date={calendarDate} visits={scheduledVisits} onPrevious={() => setCalendarDate((date) => visitCalendarMode === "month" ? new Date(date.getFullYear(), date.getMonth() - 1, 1) : new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7))} onNext={() => setCalendarDate((date) => visitCalendarMode === "month" ? new Date(date.getFullYear(), date.getMonth() + 1, 1) : new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7))} onDrop={(visit, nextDate) => updateVisitStatus(visit._id, "scheduled", nextDate.toISOString().slice(0, 16), visit.adminNote || "", true, visit.assignedAgent || "")} />
-                <p className="mt-3 text-xs text-slate-500">Drag a scheduled appointment onto another date to reschedule and notify the customer.</p>
+                <p className="mt-3 text-xs text-slate-500">{t`Drag a scheduled appointment onto another date to reschedule and notify the customer.`}</p>
               </section>
               <div className="grid md:grid-cols-2 gap-4">
               {visits.map((v) => (
@@ -1502,18 +1504,18 @@ export default function AdminDashboard() {
                     onChange={(e) => updateVisitStatus(v._id, e.target.value, v.scheduledFor ? new Date(v.scheduledFor).toISOString().slice(0, 16) : "", v.adminNote || "")}
                     className="w-full p-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-black font-bold outline-none cursor-pointer mt-2 text-sm"
                   >
-                    <option value="pending">Pending</option>
-                    <option value="scheduled">Scheduled</option>
-                    <option value="visited">Visited</option>
-                    <option value="purchased">Purchase confirmed</option>
-                    <option value="cancelled">Cancelled</option>
+                    <option value="pending">{t`Pending`}</option>
+                    <option value="scheduled">{t`Scheduled`}</option>
+                    <option value="visited">{t`Visited`}</option>
+                    <option value="purchased">{t`Purchase confirmed`}</option>
+                    <option value="cancelled">{t`Cancelled`}</option>
                   </select>
-                  <label className="mt-3 block text-[10px] font-black uppercase tracking-widest text-slate-400">Customer appointment date & time</label>
+                  <label className="mt-3 block text-[10px] font-black uppercase tracking-widest text-slate-400">{t`Customer appointment date & time`}</label>
                   <input type="datetime-local" defaultValue={v.scheduledFor ? new Date(v.scheduledFor).toISOString().slice(0, 16) : ""} onBlur={(e) => { if (e.target.value) updateVisitStatus(v._id, "scheduled", e.target.value, v.adminNote || "", true); }} className="mt-1 w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800" />
-                  <p className="mt-1 text-[10px] leading-4 text-slate-400">Saving a time changes this request to Scheduled and notifies the customer.</p>
-                  {v.status === "scheduled" && <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-3 dark:border-amber-900/50 dark:bg-amber-900/10"><p className="text-xs font-bold text-amber-800 dark:text-amber-300">Has the property visit happened?</p>{visitCheckId === v._id ? <div className="mt-3 flex gap-2"><button onClick={() => { updateVisitStatus(v._id, "visited", v.scheduledFor ? new Date(v.scheduledFor).toISOString().slice(0, 16) : "", v.adminNote || "", true); setVisitCheckId(null); }} aria-label="Mark visit as completed" className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-600 text-xl font-black text-white">✓</button><button onClick={() => setVisitCheckId(null)} aria-label="Keep visit scheduled" className="flex h-10 w-10 items-center justify-center rounded-lg bg-stone-200 text-xl font-black text-stone-700 dark:bg-slate-700 dark:text-stone-100">✕</button><span className="self-center text-[11px] text-amber-700 dark:text-amber-300">✓ marks Visited · ✕ keeps Scheduled</span></div> : <button onClick={() => setVisitCheckId(v._id)} className="mt-2 text-xs font-black text-amber-800 underline underline-offset-4 dark:text-amber-300">Confirm visit outcome</button>}</div>}
-                  <label className="mt-3 block text-[10px] font-black uppercase tracking-widest text-slate-400">Assigned team member</label>
-                  <input defaultValue={v.assignedAgent || ""} onBlur={(e) => updateVisitStatus(v._id, v.status, v.scheduledFor ? new Date(v.scheduledFor).toISOString().slice(0, 16) : "", v.adminNote || "", false, e.target.value)} placeholder="e.g. Priya" className="mt-1 w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800" />
+                  <p className="mt-1 text-[10px] leading-4 text-slate-400">{t`Saving a time changes this request to Scheduled and notifies the customer.`}</p>
+                  {v.status === "scheduled" && <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-3 dark:border-amber-900/50 dark:bg-amber-900/10"><p className="text-xs font-bold text-amber-800 dark:text-amber-300">{t`Has the property visit happened?`}</p>{visitCheckId === v._id ? <div className="mt-3 flex gap-2"><button onClick={() => { updateVisitStatus(v._id, "visited", v.scheduledFor ? new Date(v.scheduledFor).toISOString().slice(0, 16) : "", v.adminNote || "", true); setVisitCheckId(null); }} aria-label={t`Mark visit as completed`} className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-600 text-xl font-black text-white">✓</button><button onClick={() => setVisitCheckId(null)} aria-label={t`Keep visit scheduled`} className="flex h-10 w-10 items-center justify-center rounded-lg bg-stone-200 text-xl font-black text-stone-700 dark:bg-slate-700 dark:text-stone-100">✕</button><span className="self-center text-[11px] text-amber-700 dark:text-amber-300">{t`✓ marks Visited · ✕ keeps Scheduled`}</span></div> : <button onClick={() => setVisitCheckId(v._id)} className="mt-2 text-xs font-black text-amber-800 underline underline-offset-4 dark:text-amber-300">{t`Confirm visit outcome`}</button>}</div>}
+                  <label className="mt-3 block text-[10px] font-black uppercase tracking-widest text-slate-400">{t`Assigned team member`}</label>
+                  <input defaultValue={v.assignedAgent || ""} onBlur={(e) => updateVisitStatus(v._id, v.status, v.scheduledFor ? new Date(v.scheduledFor).toISOString().slice(0, 16) : "", v.adminNote || "", false, e.target.value)} placeholder={t`e.g. Priya`} className="mt-1 w-full rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800" />
                   <label className="mt-3 block text-[10px] font-black uppercase tracking-widest text-slate-400">Private note</label>
                   <textarea defaultValue={v.adminNote || ""} onBlur={(e) => updateVisitStatus(v._id, v.status, v.scheduledFor ? new Date(v.scheduledFor).toISOString().slice(0, 16) : "", e.target.value, false)} rows="2" placeholder="Internal note for the team" className="mt-1 w-full resize-none rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm outline-none dark:border-slate-700 dark:bg-slate-800" />
                 </div>

@@ -38,7 +38,7 @@ export default function PropertyCard({ property }) {
       {/* Wishlist Heart Button */}
       <button
         onClick={toggleFavorite}
-        aria-label={isFavorite ? "Remove from saved properties" : "Save property"}
+        aria-label={isFavorite ? t`Remove from saved properties` : t`Save property`}
         className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-white/90 dark:bg-slate-800/90 backdrop-blur-md shadow-lg transition-transform hover:scale-110 active:scale-95"
       >
         <Heart
@@ -55,12 +55,12 @@ export default function PropertyCard({ property }) {
           <img loading="lazy"
             src={image}
             className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-            alt={property?.title || "Property"}
+            alt={property?.title || t`Property`}
           />
         </div>
 
         <div className="p-5">
-          <p className="editorial-label mb-2 text-amber-700 dark:text-amber-400">{property?.propertyType || "Private collection"}</p>
+          <p className="editorial-label mb-2 text-amber-700 dark:text-amber-400">{property?.propertyType || t`Private collection`}</p>
           <h3 className="display-face text-2xl font-bold text-slate-800 dark:text-white line-clamp-1">
             {property?.title || t`New Property`}
           </h3>
@@ -70,7 +70,7 @@ export default function PropertyCard({ property }) {
           </p>
 
           <div className="flex justify-between items-center mt-4">
-            <span className="text-sm font-extrabold text-emerald-900 dark:text-emerald-300">Private pricing · Contact us</span>
+            <span className="text-sm font-extrabold text-emerald-900 dark:text-emerald-300">{t`Private pricing · Contact us`}</span>
             {property?.size && (
               <span className="flex items-center text-slate-600 dark:text-slate-400 text-sm">
                 <Maximize size={16} className="mr-1" /> {property.size}

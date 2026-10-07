@@ -49,15 +49,15 @@ msgstr "10,000+ खुश ग्राहक"
 
 #: frontend/src/pages/Login.jsx:39
 msgid "Access granted. Welcome back."
-msgstr ""
+msgstr "लॉगिन सफल रहा। आपका फिर से स्वागत है।"
 
 #: frontend/src/pages/Login.jsx:165
 msgid "Access Key"
-msgstr ""
+msgstr "पासवर्ड"
 
 #: frontend/src/pages/Signup.jsx:39
 msgid "Account created successfully! Welcome."
-msgstr ""
+msgstr "खाता सफलतापूर्वक बन गया! आपका स्वागत है।"
 
 #: frontend/src/components/PropertyCard.jsx:16
 #: frontend/src/pages/PropertyDetails.jsx:71
@@ -99,7 +99,7 @@ msgstr "सभी प्रॉपर्टीज"
 
 #: frontend/src/pages/Signup.jsx:226
 msgid "Already part of the inner circle?"
-msgstr ""
+msgstr "क्या आप पहले से हमारे सदस्य हैं?"
 
 #: frontend/src/pages/PropertyDetails.jsx:462
 msgid "Amenities"
@@ -131,7 +131,7 @@ msgstr "मांगी गई कीमत"
 
 #: frontend/src/pages/Login.jsx:42
 msgid "Authentication failed. Check your access keys."
-msgstr ""
+msgstr "लॉगिन नहीं हो सका। अपना ईमेल और पासवर्ड जाँचें।"
 
 #: frontend/src/pages/Profile.jsx:296
 msgid "Authorized Capabilities"
@@ -148,7 +148,7 @@ msgstr "पीछे"
 #: frontend/src/pages/Login.jsx:124
 #: frontend/src/pages/Signup.jsx:137
 msgid "Back to exploration"
-msgstr ""
+msgstr "खोज पर वापस जाएँ"
 
 #: frontend/src/pages/PropertyDetails.jsx:323
 msgid "Brochure"
@@ -222,7 +222,7 @@ msgstr "प्रॉपर्टी प्रकाशित नहीं की
 
 #: frontend/src/pages/Signup.jsx:151
 msgid "Create your membership to access the world's most prestigious property portfolio."
-msgstr ""
+msgstr "विशेष संपत्तियों के हमारे संग्रह तक पहुँचने के लिए अपना खाता बनाएँ।"
 
 #: frontend/src/pages/Signup.jsx:92
 #~ msgid "Creating Account..."
@@ -272,7 +272,7 @@ msgstr "उदा. 1500 वर्ग फुट या 0.5 एकड़"
 
 #: frontend/src/pages/Signup.jsx:110
 msgid "Early Access"
-msgstr ""
+msgstr "पहले से जानकारी पाएँ"
 
 #: frontend/src/components/Footer.jsx:54
 #: frontend/src/components/Navbar.jsx:171
@@ -304,7 +304,7 @@ msgstr "ईएमआई कैलकुलेटर"
 
 #: frontend/src/pages/Login.jsx:108
 msgid "Encrypted Session"
-msgstr ""
+msgstr "एन्क्रिप्टेड सत्र"
 
 #: frontend/src/pages/Profile.jsx:242
 #: frontend/src/pages/Profile.jsx:512
@@ -321,7 +321,7 @@ msgstr "कीमत दर्ज करें"
 
 #: frontend/src/pages/Signup.jsx:106
 msgid "Every listing is verified by our internal legal team."
-msgstr ""
+msgstr "हमारी कानूनी टीम हर संपत्ति की जाँच करती है।"
 
 #: frontend/src/pages/Login.jsx:58
 #~ msgid "example@gmail.com"
@@ -402,11 +402,11 @@ msgstr "उच्च गुणवत्ता वाला ब्रोशर �
 
 #: frontend/src/pages/Signup.jsx:111
 msgid "Get notified about prime locations before they hit the public market."
-msgstr ""
+msgstr "बेहतरीन लोकेशन आम लोगों के लिए उपलब्ध होने से पहले सूचना पाएँ।"
 
 #: frontend/src/pages/Login.jsx:101
 msgid "Global Portfolios"
-msgstr ""
+msgstr "दुनिया भर की संपत्तियाँ"
 
 #: frontend/src/pages/Home.jsx:186
 msgid "Hand-picked properties just for you"
@@ -440,7 +440,7 @@ msgstr "हम आपकी क्या मदद कर सकते हैं
 
 #: frontend/src/pages/Login.jsx:146
 msgid "Identity"
-msgstr ""
+msgstr "पहचान"
 
 #: frontend/src/pages/AdminDashboard.jsx:227
 #~ msgid "Images"
@@ -449,7 +449,7 @@ msgstr ""
 #: frontend/src/pages/Login.jsx:218
 #: frontend/src/pages/Signup.jsx:216
 msgid "Initialize Membership"
-msgstr ""
+msgstr "खाता बनाएँ"
 
 #: frontend/src/pages/PropertyDetails.jsx:492
 msgid "Interest Rate"
@@ -485,7 +485,7 @@ msgstr "जॉन डो"
 
 #: frontend/src/pages/Signup.jsx:148
 msgid "Join the Elite."
-msgstr ""
+msgstr "चुनिंदा लोगों के साथ जुड़ें।"
 
 #: frontend/src/pages/Home.jsx:216
 msgid "Join thousands of investors securing premium land and homes through our verified platform."
@@ -497,7 +497,7 @@ msgstr "जमीन"
 
 #: frontend/src/pages/Signup.jsx:105
 msgid "Legal Protection"
-msgstr ""
+msgstr "कानूनी सुरक्षा"
 
 #: frontend/src/pages/AdminDashboard.jsx:618
 msgid "Live Stats Connected"
@@ -532,7 +532,7 @@ msgstr "लॉगिन"
 
 #: frontend/src/pages/Login.jsx:169
 msgid "Lost Key?"
-msgstr ""
+msgstr "पासवर्ड भूल गए?"
 
 #: frontend/src/pages/AdminDashboard.jsx:944
 msgid "Luxurious 3BHK in Downtown"
@@ -614,7 +614,7 @@ msgstr "नई प्रॉपर्टी"
 
 #: frontend/src/pages/Login.jsx:213
 msgid "New to the network?"
-msgstr ""
+msgstr "क्या आप यहाँ नए हैं?"
 
 #: frontend/src/pages/Home.jsx:132
 msgid "Newest"
@@ -669,7 +669,7 @@ msgstr "फोटो"
 
 #: frontend/src/pages/Login.jsx:139
 msgid "Please authenticate your identity to access your private real estate collection."
-msgstr ""
+msgstr "अपने निजी संपत्ति संग्रह तक पहुँचने के लिए कृपया लॉगिन करें।"
 
 #: frontend/src/pages/PropertyDetails.jsx:106
 msgid "Please enter your mobile number."
@@ -793,7 +793,7 @@ msgstr "पंजीकृत सदस्य"
 
 #: frontend/src/pages/Signup.jsx:43
 msgid "Registration failed. Please try again."
-msgstr ""
+msgstr "खाता नहीं बन सका। कृपया फिर से कोशिश करें।"
 
 #: frontend/src/components/Testimonials.jsx:22
 #~ msgid "Regular Client"
@@ -870,11 +870,11 @@ msgstr "खोज परिणाम"
 
 #: frontend/src/pages/Login.jsx:102
 msgid "Secure Assets"
-msgstr ""
+msgstr "सुरक्षित संपत्तियाँ"
 
 #: frontend/src/pages/Login.jsx:203
 msgid "Secure Login"
-msgstr ""
+msgstr "सुरक्षित लॉगिन"
 
 #: frontend/src/pages/Profile.jsx:259
 msgid "Security & Access"
@@ -882,7 +882,7 @@ msgstr "सुरक्षा और एक्सेस"
 
 #: frontend/src/pages/Signup.jsx:183
 msgid "Security Password"
-msgstr ""
+msgstr "खाते का पासवर्ड"
 
 #: frontend/src/pages/Contact.jsx:141
 msgid "Send Message"
@@ -890,7 +890,7 @@ msgstr "संदेश भेजें"
 
 #: frontend/src/pages/Signup.jsx:231
 msgid "Sign In"
-msgstr ""
+msgstr "लॉगिन करें"
 
 #: frontend/src/pages/Login.jsx:45
 #~ msgid "Sign in to manage your properties"
@@ -944,7 +944,7 @@ msgstr "विषय"
 
 #: frontend/src/pages/PropertyDetails.jsx:386
 msgid "Swipe to explore"
-msgstr ""
+msgstr "देखने के लिए स्वाइप करें"
 
 #: frontend/src/pages/Profile.jsx:262
 msgid "System Identity"
@@ -1053,7 +1053,7 @@ msgstr "सभी देखें"
 
 #: frontend/src/pages/PropertyDetails.jsx:419
 msgid "View All Media"
-msgstr ""
+msgstr "सभी फ़ोटो और वीडियो देखें"
 
 #: frontend/src/pages/Listings.jsx:347
 msgid "View All Properties"
@@ -1085,7 +1085,7 @@ msgstr "हम आपके अगले बड़े निवेश को ख
 
 #: frontend/src/pages/Login.jsx:136
 msgid "Welcome Back."
-msgstr ""
+msgstr "आपका फिर से स्वागत है।"
 
 #: frontend/src/pages/Profile.jsx:339
 msgid "Wishlist"
@@ -1098,3 +1098,726 @@ msgstr "हाँ, हटाएं"
 #: frontend/src/pages/Profile.jsx:406
 msgid "Your Message..."
 msgstr "आपका संदेश..."
+
+msgid "Curated residences · Tamil Nadu"
+msgstr "चुनिंदा आवास · तमिलनाडु"
+
+msgid "A more considered way to find"
+msgstr "घर खोजने का एक बेहतर तरीका"
+
+msgid "home."
+msgstr "अपना घर।"
+
+msgid "Explore a private collection of verified land, homes, and apartments selected for their place, potential, and enduring character."
+msgstr "स्थान, संभावनाओं और खासियत के आधार पर चुनी गई सत्यापित ज़मीन, घरों और अपार्टमेंट का हमारा विशेष संग्रह देखें।"
+
+msgid "Begin your search"
+msgstr "अपनी खोज शुरू करें"
+
+msgid "City, locality, or landmark"
+msgstr "शहर, इलाका या प्रमुख स्थान"
+
+msgid "All property types"
+msgstr "सभी प्रकार की संपत्तियाँ"
+
+msgid "Explore"
+msgstr "देखें"
+
+msgid "INDEPENDENTLY VERIFIED"
+msgstr "स्वतंत्र रूप से सत्यापित"
+
+msgid "LOCAL EXPERTISE"
+msgstr "स्थानीय विशेषज्ञता"
+
+msgid "PRIVATE VIEWINGS"
+msgstr "निजी मुलाक़ातें"
+
+msgid "END-TO-END GUIDANCE"
+msgstr "शुरू से अंत तक मार्गदर्शन"
+
+msgid "The collection"
+msgstr "संपत्तियों का संग्रह"
+
+msgid "Spaces with a point of view."
+msgstr "खास पहचान वाले स्थान।"
+
+msgid "View every property"
+msgstr "सभी संपत्तियाँ देखें"
+
+msgid "Our next collection is being prepared. Please return soon."
+msgstr "हमारा अगला संग्रह तैयार हो रहा है। कृपया जल्द वापस आएँ।"
+
+msgid "Confidence, built in"
+msgstr "भरोसा, हर कदम पर"
+
+msgid "Every opportunity begins with clarity."
+msgstr "हर अवसर की शुरुआत स्पष्टता से होती है।"
+
+msgid "From first search to final visit, our team makes the details legible and the next step simple."
+msgstr "पहली खोज से लेकर संपत्ति देखने तक, हमारी टीम हर जानकारी स्पष्ट रखती है और अगला कदम आसान बनाती है।"
+
+msgid "Speak with an advisor"
+msgstr "हमारे सलाहकार से बात करें"
+
+msgid "Contemporary residence"
+msgstr "आधुनिक आवास"
+
+msgid "Modern interior"
+msgstr "आधुनिक आंतरिक सज्जा"
+
+msgid "A private introduction"
+msgstr "एक निजी परिचय"
+
+msgid "The right address changes everything."
+msgstr "सही पता सब कुछ बदल देता है।"
+
+msgid "Places made meaningful."
+msgstr "हर जगह को खास बनाएँ।"
+
+msgid "Notifications"
+msgstr "सूचनाएँ"
+
+msgid "Mark all read"
+msgstr "सभी को पढ़ा हुआ चिह्नित करें"
+
+msgid "No notifications yet."
+msgstr "अभी कोई सूचना नहीं है।"
+
+msgid "Toggle colour theme"
+msgstr "रंग थीम बदलें"
+
+msgid "Light theme"
+msgstr "लाइट थीम"
+
+msgid "Dark theme"
+msgstr "डार्क थीम"
+
+msgid "Install Estatera app"
+msgstr "Estatera ऐप इंस्टॉल करें"
+
+msgid "Availability"
+msgstr "उपलब्धता"
+
+msgid "Contact us for private guidance"
+msgstr "निजी मार्गदर्शन के लिए हमसे संपर्क करें"
+
+msgid "Back to listings"
+msgstr "संपत्तियों की सूची पर वापस जाएँ"
+
+msgid "Your shortlist"
+msgstr "आपकी चुनी हुई संपत्तियाँ"
+
+msgid "Compare properties."
+msgstr "संपत्तियों की तुलना करें।"
+
+msgid "Review the defining details side by side before arranging a visit."
+msgstr "मुलाक़ात तय करने से पहले सभी ज़रूरी जानकारियों की साथ-साथ तुलना करें।"
+
+msgid "Property"
+msgstr "संपत्ति"
+
+msgid "Page not found."
+msgstr "पेज नहीं मिला।"
+
+msgid "Sorry, the page you are looking for doesn’t exist or may have been moved."
+msgstr "क्षमा करें, यह पेज उपलब्ध नहीं है या शायद कहीं और स्थानांतरित कर दिया गया है।"
+
+msgid "Go to Home"
+msgstr "होम पेज पर जाएँ"
+
+msgid "Remove from saved properties"
+msgstr "सहेजी गई संपत्तियों से हटाएँ"
+
+msgid "Save property"
+msgstr "संपत्ति सहेजें"
+
+msgid "Private collection"
+msgstr "विशेष संपत्ति संग्रह"
+
+msgid "Private pricing · Contact us"
+msgstr "कीमत की जानकारी के लिए संपर्क करें"
+
+msgid "Profile"
+msgstr "प्रोफ़ाइल"
+
+msgid "Compare properties"
+msgstr "संपत्तियों की तुलना करें"
+
+msgid "Delete notification"
+msgstr "सूचना हटाएँ"
+
+msgid "Remove property"
+msgstr "संपत्ति हटाएँ"
+
+msgid "Preparing your comparison…"
+msgstr "तुलना तैयार की जा रही है…"
+
+msgid "Nothing to compare yet."
+msgstr "तुलना करने के लिए अभी कोई संपत्ति नहीं है।"
+
+msgid "Add up to three properties from their details pages."
+msgstr "संपत्ति के विवरण पेज से अधिकतम तीन संपत्तियाँ जोड़ें।"
+
+msgid "Explore properties"
+msgstr "संपत्तियाँ देखें"
+
+msgid "Private access"
+msgstr "निजी प्रवेश"
+
+msgid "Email address"
+msgstr "ईमेल पता"
+
+msgid "Forgot Password?"
+msgstr "पासवर्ड भूल गए?"
+
+msgid "A considered conversation"
+msgstr "सोच-समझकर की गई बातचीत"
+
+msgid "Luxury home exterior"
+msgstr "आलीशान घर का बाहरी दृश्य"
+
+msgid "Building"
+msgstr "बनाएँ"
+
+msgid "Legacies"
+msgstr "विरासतें"
+
+msgid "Starting today."
+msgstr "आज से शुरुआत करें।"
+
+msgid "All rights reserved."
+msgstr "सर्वाधिकार सुरक्षित।"
+
+msgid "Create your account"
+msgstr "अपना खाता बनाएँ"
+
+msgid "Your full name"
+msgstr "आपका पूरा नाम"
+
+msgid "Web browser"
+msgstr "वेब ब्राउज़र"
+
+msgid "Android phone"
+msgstr "Android फ़ोन"
+
+msgid "Windows PC"
+msgstr "Windows कंप्यूटर"
+
+msgid "Linux device"
+msgstr "Linux डिवाइस"
+
+msgid "Unknown device"
+msgstr "अज्ञात डिवाइस"
+
+msgid "Profile picture"
+msgstr "प्रोफ़ाइल चित्र"
+
+msgid "Administrator"
+msgstr "प्रशासक"
+
+msgid "Member"
+msgstr "सदस्य"
+
+msgid "Removed from comparison."
+msgstr "तुलना से हटा दिया गया।"
+
+msgid "You can compare up to three properties."
+msgstr "आप अधिकतम तीन संपत्तियों की तुलना कर सकते हैं।"
+
+msgid "Added to your comparison."
+msgstr "आपकी तुलना सूची में जोड़ दिया गया।"
+
+msgid "Add property to comparison"
+msgstr "तुलना में संपत्ति जोड़ें"
+
+msgid "Comparing"
+msgstr "तुलना में है"
+
+msgid "Compare"
+msgstr "तुलना करें"
+
+msgid "Private pricing consultation"
+msgstr "निजी मूल्य परामर्श"
+
+msgid "Contact our advisor for current availability, market guidance, and a private commercial discussion tailored to this property."
+msgstr "इस संपत्ति की उपलब्धता, बाज़ार संबंधी सलाह और आपकी ज़रूरत के अनुसार निजी चर्चा के लिए हमारे सलाहकार से संपर्क करें।"
+
+msgid "Best-in-market guidance"
+msgstr "बाज़ार का बेहतरीन मार्गदर्शन"
+
+msgid "Call for details"
+msgstr "जानकारी के लिए कॉल करें"
+
+msgid "WhatsApp our advisor"
+msgstr "हमारे सलाहकार को WhatsApp करें"
+
+msgid "Continue exploring"
+msgstr "खोज जारी रखें"
+
+msgid "More to consider."
+msgstr "देखने के लिए और भी संपत्तियाँ।"
+
+msgid "A selection of properties with a similar character, type, or setting."
+msgstr "मिलती-जुलती विशेषताओं, प्रकार या लोकेशन वाली संपत्तियों का चयन।"
+
+msgid "Pending"
+msgstr "लंबित"
+
+msgid "Scheduled"
+msgstr "निर्धारित"
+
+msgid "Visited"
+msgstr "मुलाक़ात हुई"
+
+msgid "Purchased"
+msgstr "खरीदी गई"
+
+msgid "Cancelled"
+msgstr "रद्द"
+
+msgid "A new beginning"
+msgstr "एक नई शुरुआत"
+
+msgid "Congratulations!"
+msgstr "बधाई हो!"
+
+msgid "Your purchase of"
+msgstr "आपकी खरीद:"
+
+msgid "your property"
+msgstr "आपकी संपत्ति"
+
+msgid "has been confirmed. Welcome to your next chapter."
+msgstr "की पुष्टि हो गई है। आपके नए सफ़र में स्वागत है।"
+
+msgid "Celebrate this moment"
+msgstr "इस पल का जश्न मनाएँ"
+
+msgid "A more considered way to find home."
+msgstr "अपने घर की तलाश का एक बेहतर तरीका।"
+
+msgid "Continue your journey in comfort."
+msgstr "आराम से अपनी यात्रा जारी रखें।"
+
+msgid "Continue"
+msgstr "जारी रखें"
+
+msgid "your"
+msgstr "अपनी"
+
+msgid "journey"
+msgstr "यात्रा"
+
+msgid "in comfort."
+msgstr "आराम के साथ।"
+
+msgid "Active devices"
+msgstr "सक्रिय डिवाइस"
+
+msgid "Alert preferences updated."
+msgstr "अलर्ट प्राथमिकताएँ अपडेट हो गईं।"
+
+msgid "All properties"
+msgstr "सभी संपत्तियाँ"
+
+msgid "Cancel password change"
+msgstr "पासवर्ड बदलना रद्द करें"
+
+msgid "Change password"
+msgstr "पासवर्ड बदलें"
+
+msgid "Confirm new password"
+msgstr "नए पासवर्ड की पुष्टि करें"
+
+msgid "Current password"
+msgstr "मौजूदा पासवर्ड"
+
+msgid "Daily email digest"
+msgstr "रोज़ाना ईमेल सारांश"
+
+msgid "Delete saved search"
+msgstr "सहेजी गई खोज हटाएँ"
+
+msgid "Hide active sessions"
+msgstr "सक्रिय सत्र छिपाएँ"
+
+msgid "Instant in-app match"
+msgstr "ऐप में तुरंत मिलने वाली संपत्ति"
+
+msgid "Location unavailable"
+msgstr "लोकेशन उपलब्ध नहीं है"
+
+msgid "Manage active sessions"
+msgstr "सक्रिय सत्र प्रबंधित करें"
+
+msgid "New password"
+msgstr "नया पासवर्ड"
+
+msgid "New passwords do not match."
+msgstr "नए पासवर्ड मेल नहीं खाते।"
+
+msgid "No active sessions found."
+msgstr "कोई सक्रिय सत्र नहीं मिला।"
+
+msgid "No recently viewed properties yet."
+msgstr "आपने हाल ही में कोई संपत्ति नहीं देखी है।"
+
+msgid "Open"
+msgstr "खोलें"
+
+msgid "Personalised alerts"
+msgstr "आपकी पसंद के अलर्ट"
+
+msgid "Private profile"
+msgstr "निजी प्रोफ़ाइल"
+
+msgid "Profile updated successfully."
+msgstr "प्रोफ़ाइल सफलतापूर्वक अपडेट हुई।"
+
+msgid "Property no longer available"
+msgstr "यह संपत्ति अब उपलब्ध नहीं है"
+
+msgid "Property type"
+msgstr "संपत्ति का प्रकार"
+
+msgid "Recently Viewed"
+msgstr "हाल ही में देखी गई"
+
+msgid "Save a search from the Listings page to keep it here."
+msgstr "इसे यहाँ रखने के लिए संपत्तियों के पेज से कोई खोज सहेजें।"
+
+msgid "Saved Searches"
+msgstr "सहेजी गई खोजें"
+
+msgid "Saved search removed."
+msgstr "सहेजी गई खोज हटा दी गई।"
+
+msgid "Scheduled for"
+msgstr "निर्धारित समय"
+
+msgid "Sent"
+msgstr "भेजी गई"
+
+msgid "Sign out"
+msgstr "साइन आउट करें"
+
+msgid "Sign out others"
+msgstr "अन्य डिवाइस से साइन आउट करें"
+
+msgid "This device"
+msgstr "यह डिवाइस"
+
+msgid "Unable to change password."
+msgstr "पासवर्ड बदला नहीं जा सका।"
+
+msgid "Unable to load sessions."
+msgstr "सत्र लोड नहीं हो सके।"
+
+msgid "Unable to remove saved search."
+msgstr "सहेजी गई खोज हटाई नहीं जा सकी।"
+
+msgid "Unable to sign out other sessions."
+msgstr "अन्य सत्रों से साइन आउट नहीं हो सका।"
+
+msgid "Unable to sign out the session."
+msgstr "इस सत्र से साइन आउट नहीं हो सका।"
+
+msgid "Unable to update alert preferences."
+msgstr "अलर्ट प्राथमिकताएँ अपडेट नहीं हो सकीं।"
+
+msgid "Up to"
+msgstr "अधिकतम"
+
+msgid "Update password"
+msgstr "पासवर्ड अपडेट करें"
+
+msgid "Updating…"
+msgstr "अपडेट हो रहा है…"
+
+msgid "Use at least 8 characters with uppercase, lowercase, and a number."
+msgstr "कम-से-कम 8 अक्षरों का पासवर्ड रखें, जिसमें बड़े और छोटे अक्षर तथा एक अंक हो।"
+
+msgid "Weekly email digest"
+msgstr "साप्ताहिक ईमेल सारांश"
+
+msgid "Your visit is scheduled for"
+msgstr "आपकी मुलाक़ात का समय"
+
+msgid "All active members receive an email whenever a new property is published. These controls manage personalised saved-search matches and digests."
+msgstr "नई संपत्ति प्रकाशित होने पर सभी सक्रिय सदस्यों को ईमेल मिलता है। ये विकल्प आपकी सहेजी गई खोजों से मेल खाने वाली संपत्तियों और ईमेल सारांशों के अलर्ट नियंत्रित करते हैं।"
+
+msgid "Back to login"
+msgstr "लॉगिन पर वापस जाएँ"
+
+msgid "Confirm password"
+msgstr "पासवर्ड की पुष्टि करें"
+
+msgid "Could not save property."
+msgstr "संपत्ति सहेजी नहीं जा सकी।"
+
+msgid "Enter the email address registered with your Estatera account. We’ll send a one-time verification code."
+msgstr "अपने Estatera खाते से जुड़ा ईमेल पता दर्ज करें। हम आपको एक बार इस्तेमाल होने वाला सत्यापन कोड भेजेंगे।"
+
+msgid "Enter your code."
+msgstr "अपना कोड दर्ज करें।"
+
+msgid "It expires in 10 minutes."
+msgstr "यह 10 मिनट में समाप्त हो जाएगा।"
+
+msgid "No properties found"
+msgstr "कोई संपत्ति नहीं मिली"
+
+msgid "One-time code"
+msgstr "एक बार इस्तेमाल होने वाला कोड"
+
+msgid "Passwords do not match."
+msgstr "पासवर्ड मेल नहीं खाते।"
+
+msgid "Registered email"
+msgstr "पंजीकृत ईमेल"
+
+msgid "Resend code in"
+msgstr "कोड फिर से भेजें"
+
+msgid "Resend verification code"
+msgstr "सत्यापन कोड फिर से भेजें"
+
+msgid "Reset discovery"
+msgstr "खोज रीसेट करें"
+
+msgid "Reset password"
+msgstr "पासवर्ड रीसेट करें"
+
+msgid "Reset your access."
+msgstr "अपने खाते का पासवर्ड रीसेट करें।"
+
+msgid "Resetting password…"
+msgstr "पासवर्ड रीसेट हो रहा है…"
+
+msgid "Secure recovery"
+msgstr "सुरक्षित खाता पुनर्प्राप्ति"
+
+msgid "Send verification code"
+msgstr "सत्यापन कोड भेजें"
+
+msgid "Sending code…"
+msgstr "कोड भेजा जा रहा है…"
+
+msgid "Set a new password."
+msgstr "नया पासवर्ड बनाएँ।"
+
+msgid "Start over"
+msgstr "फिर से शुरू करें"
+
+msgid "This property may no longer be available, or the link may be incomplete."
+msgstr "यह संपत्ति अब उपलब्ध नहीं हो सकती है या लिंक अधूरा हो सकता है।"
+
+msgid "Try broadening your location, type, budget, or radius to discover more opportunities."
+msgstr "और विकल्प देखने के लिए लोकेशन, संपत्ति के प्रकार, बजट या दूरी का दायरा बढ़ाकर देखें।"
+
+msgid "Unable to send a verification code."
+msgstr "सत्यापन कोड नहीं भेजा जा सका।"
+
+msgid "Unable to verify the code."
+msgstr "कोड सत्यापित नहीं हो सका।"
+
+msgid "Use another email"
+msgstr "दूसरा ईमेल इस्तेमाल करें"
+
+msgid "Use at least eight characters with uppercase, lowercase, and a number."
+msgstr "कम-से-कम 8 अक्षरों का पासवर्ड रखें, जिसमें बड़े और छोटे अक्षर तथा एक अंक हो।"
+
+msgid "Verified recovery"
+msgstr "सत्यापित खाता पुनर्प्राप्ति"
+
+msgid "Verify code"
+msgstr "कोड सत्यापित करें"
+
+msgid "Verifying…"
+msgstr "सत्यापन हो रहा है…"
+
+msgid "We sent a six-digit code to"
+msgstr "हमने छह अंकों का कोड इस ईमेल पर भेजा है:"
+
+msgid "Your reset session is invalid or expired."
+msgstr "पासवर्ड रीसेट सत्र अमान्य है या समाप्त हो गया है।"
+
+msgid "Discovery results"
+msgstr "खोज के परिणाम"
+
+msgid "My property search"
+msgstr "मेरी संपत्ति खोज"
+
+msgid "Name this saved search"
+msgstr "इस सहेजी गई खोज का नाम दें"
+
+msgid "Private availability"
+msgstr "निजी उपलब्धता"
+
+msgid "Properties in"
+msgstr "इस लोकेशन में संपत्तियाँ:"
+
+msgid "Save Search"
+msgstr "खोज सहेजें"
+
+msgid "Search saved to your profile."
+msgstr "खोज आपकी प्रोफ़ाइल में सहेज दी गई।"
+
+msgid "Selected opportunities"
+msgstr "चुनिंदा अवसर"
+
+msgid "Unable to save this search."
+msgstr "यह खोज सहेजी नहीं जा सकी।"
+
+msgid "Inquiries"
+msgstr "पूछताछ"
+
+msgid "Business"
+msgstr "व्यवसाय"
+
+msgid "Insights"
+msgstr "जानकारी"
+
+msgid "Real-time performance analytics and property tracking."
+msgstr "प्रदर्शन विश्लेषण और संपत्ति की निगरानी रीयल-टाइम में करें।"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Full Report (PDF)"
+msgstr "पूरी रिपोर्ट (PDF)"
+
+msgid "Contact desk"
+msgstr "संपर्क केंद्र"
+
+msgid "Incoming inquiries"
+msgstr "नई पूछताछ"
+
+msgid "Track and close conversations started from the public contact page."
+msgstr "सार्वजनिक संपर्क पृष्ठ से शुरू हुई बातचीत पर नज़र रखें और उन्हें पूरा करें।"
+
+msgid "New"
+msgstr "नई"
+
+msgid "Contacted"
+msgstr "संपर्क किया गया"
+
+msgid "Closed"
+msgstr "बंद"
+
+msgid "No contact inquiries yet."
+msgstr "अभी तक कोई संपर्क पूछताछ नहीं है।"
+
+msgid "Appointment planner"
+msgstr "अपॉइंटमेंट योजनाकार"
+
+msgid "Visit calendar"
+msgstr "विज़िट कैलेंडर"
+
+msgid "Month"
+msgstr "महीना"
+
+msgid "Week"
+msgstr "सप्ताह"
+
+msgid "All statuses"
+msgstr "सभी स्थितियां"
+
+msgid "All team members"
+msgstr "टीम के सभी सदस्य"
+
+msgid "Drag a scheduled appointment onto another date to reschedule and notify the customer."
+msgstr "अपॉइंटमेंट को किसी दूसरी तारीख पर खींचकर समय बदलें और ग्राहक को सूचित करें।"
+
+msgid "Purchase confirmed"
+msgstr "खरीद की पुष्टि हुई"
+
+msgid "Customer appointment date & time"
+msgstr "ग्राहक की अपॉइंटमेंट तिथि और समय"
+
+msgid "Saving a time changes this request to Scheduled and notifies the customer."
+msgstr "समय सहेजने पर अनुरोध निर्धारित हो जाएगा और ग्राहक को सूचना मिलेगी।"
+
+msgid "Has the property visit happened?"
+msgstr "क्या संपत्ति का दौरा हो चुका है?"
+
+msgid "Mark visit as completed"
+msgstr "दौरे को पूरा चिह्नित करें"
+
+msgid "Keep visit scheduled"
+msgstr "दौरा निर्धारित ही रखें"
+
+msgid "✓ marks Visited · ✕ keeps Scheduled"
+msgstr "✓ का अर्थ दौरा हुआ · ✕ से दौरा निर्धारित रहता है"
+
+msgid "Confirm visit outcome"
+msgstr "दौरे के परिणाम की पुष्टि करें"
+
+msgid "Assigned team member"
+msgstr "सौंपा गया टीम सदस्य"
+
+msgid "e.g. Priya"
+msgstr "उदाहरण: प्रिया"
+
+msgid "Customer operations"
+msgstr "ग्राहक संचालन"
+
+msgid "Community command center"
+msgstr "ग्राहक प्रबंधन केंद्र"
+
+msgid "Review customer health, engagement, and access from one place."
+msgstr "एक ही जगह से ग्राहकों की स्थिति, सहभागिता और पहुंच की समीक्षा करें।"
+
+msgid "Export directory"
+msgstr "निर्देशिका निर्यात करें"
+
+msgid "Total members"
+msgstr "कुल सदस्य"
+
+msgid "Active access"
+msgstr "सक्रिय पहुंच"
+
+msgid "Saved properties"
+msgstr "सहेजी गई संपत्तियां"
+
+msgid "of"
+msgstr "में से"
+
+msgid "members shown"
+msgstr "सदस्य दिखाए गए"
+
+msgid "All members"
+msgstr "सभी सदस्य"
+
+msgid "Administrators"
+msgstr "प्रशासक"
+
+msgid "Cards"
+msgstr "कार्ड"
+
+msgid "Table"
+msgstr "तालिका"
+
+msgid "Engagement"
+msgstr "सहभागिता"
+
+msgid "Saved"
+msgstr "सहेजा गया"
+
+msgid "Joined"
+msgstr "शामिल हुए"
+
+msgid "Suspended"
+msgstr "निलंबित"
+
+msgid "Restore User"
+msgstr "उपयोगकर्ता बहाल करें"
+
+msgid "Block Access"
+msgstr "पहुंच अवरुद्ध करें"
+
+msgid "System Master (Protected)"
+msgstr "सिस्टम मास्टर (सुरक्षित)"
+
+msgid "Restricted"
+msgstr "प्रतिबंधित"

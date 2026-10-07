@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 import { t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import { toast } from "react-hot-toast";
 import {
   Eye,
@@ -16,6 +17,7 @@ import {
 } from "lucide-react";
 
 export default function Login() {
+  const { i18n } = useLingui();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -46,6 +48,11 @@ export default function Login() {
         },
       );
       login(res.data);
+      const language = res.data.user?.language;
+      if (["en", "hi", "ta"].includes(language)) {
+        localStorage.setItem("lang", language);
+        i18n.activate(language);
+      }
       toast.success(t`Access granted. Welcome back.`);
       navigate("/");
     } catch (err) {
@@ -79,7 +86,7 @@ export default function Login() {
           transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
           src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
           className="absolute inset-0 w-full h-full object-cover"
-          alt="Luxury Architecture"
+          alt={t`Luxury home exterior`}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-transparent backdrop-blur-[1px]" />
 
@@ -103,8 +110,7 @@ export default function Login() {
               animate={{ opacity: 1, x: 0 }}
               className="text-6xl font-black text-white leading-tight"
             >
-              Resume <br /> Your <span className="text-[#e7c47e]">Journey</span>{" "}
-              <br /> In Luxury.
+              {t`Continue your journey in comfort.`}
             </motion.h1>
 
             <div className="flex gap-10">
@@ -142,7 +148,7 @@ export default function Login() {
         >
           {/* Header section matches Signup spacing */}
           <motion.div variants={itemVariants} className="mb-12">
-            <p className="editorial-label mb-3 text-amber-700">Private access</p><h2 className="display-face mb-3 text-5xl font-bold text-slate-900 dark:text-white">
+            <p className="editorial-label mb-3 text-amber-700">{t`Private access`}</p><h2 className="display-face mb-3 text-5xl font-bold text-slate-900 dark:text-white">
               {t`Welcome Back.`}
             </h2>
             <p className="text-slate-500 font-medium leading-relaxed">
@@ -158,7 +164,7 @@ export default function Login() {
                 <input
                   type="email"
                   required
-                  placeholder="admin@estatera.com"
+                  placeholder={t`Email address`}
                   className="w-full p-4 pl-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl outline-none focus:ring-4 ring-blue-500/10 dark:text-white transition-all placeholder:text-slate-300"
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -173,7 +179,7 @@ export default function Login() {
             <motion.div variants={itemVariants} className="space-y-2">
               <div className="flex justify-between items-center px-1">
                 <label className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">{t`Access Key`}</label>
-                <Link to="/forgot-password" className="text-[10px] font-black uppercase text-emerald-800 hover:underline dark:text-emerald-300">Forgot Password?</Link>
+                <Link to="/forgot-password" className="text-[10px] font-black uppercase text-emerald-800 hover:underline dark:text-emerald-300">{t`Forgot Password?`}</Link>
               </div>
               <div className="relative">
                 <input

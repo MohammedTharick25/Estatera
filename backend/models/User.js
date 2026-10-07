@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
   password: { type: String, required: true },
   role: { type: String, enum: ["user", "admin"], default: "user" },
+  language: { type: String, enum: ["en", "hi", "ta"], default: "en" },
   image: { type: String, default: "" },
   phone: { type: String, default: "", trim: true, maxlength: 30 },
   favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Listings" }],

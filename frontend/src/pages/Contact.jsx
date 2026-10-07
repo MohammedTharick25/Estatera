@@ -3,9 +3,11 @@ import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import axios from "axios";
 import { t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import { toast } from "react-hot-toast";
 
 export default function Contact() {
+  useLingui();
   const form = useRef();
 
   const sendEmail = async (e) => {
@@ -48,7 +50,7 @@ export default function Contact() {
       <div className="mx-auto max-w-[76rem] px-5 py-20">
         {/* Header */}
         <div className="mb-16 max-w-3xl">
-          <p className="editorial-label mb-4 text-amber-700">A considered conversation</p>
+          <p className="editorial-label mb-4 text-amber-700">{t`A considered conversation`}</p>
           <h1 className="display-face text-6xl font-bold text-emerald-950 dark:text-stone-100 md:text-7xl">
             {t`Contact Our Experts`}
           </h1>

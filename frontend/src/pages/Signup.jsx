@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { t } from "@lingui/macro";
+import { useLingui } from "@lingui/react";
 import { toast } from "react-hot-toast";
 import {
   ArrowLeft,
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 
 export default function Signup() {
+  useLingui();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -71,7 +73,7 @@ export default function Signup() {
           transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
           src="signup.avif"
           className="absolute inset-0 w-full h-full object-cover"
-          alt="Luxury Villa Exterior"
+          alt={t`Luxury home exterior`}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-transparent backdrop-blur-[1px]" />
 
@@ -95,8 +97,8 @@ export default function Signup() {
               animate={{ opacity: 1, x: 0 }}
               className="text-6xl font-black text-white leading-tight"
             >
-              Building <br /> <span className="text-[#e7c47e]">Legacies</span>{" "}
-              <br /> Since Today.
+              {t`Building`} <br /> <span className="text-[#e7c47e]">{t`Legacies`}</span>{" "}
+              <br /> {t`Starting today.`}
             </motion.h1>
 
             <div className="grid gap-4 max-w-md">
@@ -118,8 +120,7 @@ export default function Signup() {
             animate={{ opacity: 1 }}
             className="text-slate-400 text-sm font-medium"
           >
-            © {new Date().getFullYear()} Estatera Global Realty. All Rights
-            Reserved.
+            © {new Date().getFullYear()} Estatera. {t`All rights reserved.`}
           </motion.p>
         </div>
       </div>
@@ -144,7 +145,7 @@ export default function Signup() {
           className="max-w-md w-full mx-auto py-20"
         >
           <motion.div variants={itemVariants} className="mb-12">
-            <p className="editorial-label mb-3 text-amber-700">Private membership</p><h2 className="display-face mb-3 text-5xl font-bold text-slate-900 dark:text-white">
+            <p className="editorial-label mb-3 text-amber-700">{t`Create your account`}</p><h2 className="display-face mb-3 text-5xl font-bold text-slate-900 dark:text-white">
               {t`Join the Elite.`}
             </h2>
             <p className="text-slate-500 font-medium leading-relaxed">
@@ -159,7 +160,7 @@ export default function Signup() {
                 type="text"
                 name="name"
                 required
-                placeholder="Ex: Alexander Pierce"
+                placeholder={t`Your full name`}
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl outline-none focus:ring-4 ring-blue-500/10 dark:text-white transition-all placeholder:text-slate-300"
@@ -172,7 +173,7 @@ export default function Signup() {
                 type="email"
                 name="email"
                 required
-                placeholder="alexander@luxury.com"
+                placeholder={t`Email address`}
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl outline-none focus:ring-4 ring-blue-500/10 dark:text-white transition-all placeholder:text-slate-300"

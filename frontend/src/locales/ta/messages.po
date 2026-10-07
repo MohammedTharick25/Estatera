@@ -49,15 +49,15 @@ msgstr "10,000+ மகிழ்ச்சியான வாடிக்கைய
 
 #: frontend/src/pages/Login.jsx:39
 msgid "Access granted. Welcome back."
-msgstr ""
+msgstr "உள்நுழைவு வெற்றிகரமாக முடிந்தது. மீண்டும் வரவேற்கிறோம்."
 
 #: frontend/src/pages/Login.jsx:165
 msgid "Access Key"
-msgstr ""
+msgstr "கடவுச்சொல்"
 
 #: frontend/src/pages/Signup.jsx:39
 msgid "Account created successfully! Welcome."
-msgstr ""
+msgstr "கணக்கு வெற்றிகரமாக உருவாக்கப்பட்டது! வரவேற்கிறோம்."
 
 #: frontend/src/components/PropertyCard.jsx:16
 #: frontend/src/pages/PropertyDetails.jsx:71
@@ -99,7 +99,7 @@ msgstr "அனைத்து சொத்துக்கள்"
 
 #: frontend/src/pages/Signup.jsx:226
 msgid "Already part of the inner circle?"
-msgstr ""
+msgstr "ஏற்கனவே எங்கள் உறுப்பினரா?"
 
 #: frontend/src/pages/PropertyDetails.jsx:462
 msgid "Amenities"
@@ -131,7 +131,7 @@ msgstr "கேட்கப்படும் விலை"
 
 #: frontend/src/pages/Login.jsx:42
 msgid "Authentication failed. Check your access keys."
-msgstr ""
+msgstr "உள்நுழைய முடியவில்லை. உங்கள் மின்னஞ்சல் மற்றும் கடவுச்சொல்லைச் சரிபார்க்கவும்."
 
 #: frontend/src/pages/Profile.jsx:296
 msgid "Authorized Capabilities"
@@ -148,7 +148,7 @@ msgstr "பின்செல்"
 #: frontend/src/pages/Login.jsx:124
 #: frontend/src/pages/Signup.jsx:137
 msgid "Back to exploration"
-msgstr ""
+msgstr "தேடலுக்குத் திரும்பு"
 
 #: frontend/src/pages/PropertyDetails.jsx:323
 msgid "Brochure"
@@ -222,7 +222,7 @@ msgstr "சொத்தை வெளியிட முடியவில்ல�
 
 #: frontend/src/pages/Signup.jsx:151
 msgid "Create your membership to access the world's most prestigious property portfolio."
-msgstr ""
+msgstr "சிறப்பான சொத்துகளின் தொகுப்பைப் பார்வையிட உங்கள் கணக்கை உருவாக்குங்கள்."
 
 #: frontend/src/pages/Signup.jsx:92
 #~ msgid "Creating Account..."
@@ -272,7 +272,7 @@ msgstr "உதாரணமாக: 1500 சதுர அடி அல்லது
 
 #: frontend/src/pages/Signup.jsx:110
 msgid "Early Access"
-msgstr ""
+msgstr "முன்கூட்டிய அணுகல்"
 
 #: frontend/src/components/Footer.jsx:54
 #: frontend/src/components/Navbar.jsx:171
@@ -304,7 +304,7 @@ msgstr "EMI கால்குலேட்டர்"
 
 #: frontend/src/pages/Login.jsx:108
 msgid "Encrypted Session"
-msgstr ""
+msgstr "குறியாக்கப்பட்ட அமர்வு"
 
 #: frontend/src/pages/Profile.jsx:242
 #: frontend/src/pages/Profile.jsx:512
@@ -321,7 +321,7 @@ msgstr "விலையை உள்ளிடவும்"
 
 #: frontend/src/pages/Signup.jsx:106
 msgid "Every listing is verified by our internal legal team."
-msgstr ""
+msgstr "ஒவ்வொரு சொத்துப் பட்டியலையும் எங்கள் சட்டக் குழு சரிபார்க்கிறது."
 
 #: frontend/src/pages/Login.jsx:58
 #~ msgid "example@gmail.com"
@@ -402,11 +402,11 @@ msgstr "உயர்தர சிற்றேடு உருவாக்கப�
 
 #: frontend/src/pages/Signup.jsx:111
 msgid "Get notified about prime locations before they hit the public market."
-msgstr ""
+msgstr "சிறந்த இடங்கள் பொதுச் சந்தைக்கு வருவதற்கு முன்பே அறிவிப்பைப் பெறுங்கள்."
 
 #: frontend/src/pages/Login.jsx:101
 msgid "Global Portfolios"
-msgstr ""
+msgstr "உலகளாவிய சொத்துத் தொகுப்புகள்"
 
 #: frontend/src/pages/Home.jsx:186
 msgid "Hand-picked properties just for you"
@@ -440,7 +440,7 @@ msgstr "நாங்கள் உங்களுக்கு எப்படி 
 
 #: frontend/src/pages/Login.jsx:146
 msgid "Identity"
-msgstr ""
+msgstr "அடையாளம்"
 
 #: frontend/src/pages/AdminDashboard.jsx:227
 #~ msgid "Images"
@@ -449,7 +449,7 @@ msgstr ""
 #: frontend/src/pages/Login.jsx:218
 #: frontend/src/pages/Signup.jsx:216
 msgid "Initialize Membership"
-msgstr ""
+msgstr "கணக்கை உருவாக்கு"
 
 #: frontend/src/pages/PropertyDetails.jsx:492
 msgid "Interest Rate"
@@ -485,7 +485,7 @@ msgstr "ஜான் டோ"
 
 #: frontend/src/pages/Signup.jsx:148
 msgid "Join the Elite."
-msgstr ""
+msgstr "தேர்ந்தெடுக்கப்பட்டோருடன் இணையுங்கள்."
 
 #: frontend/src/pages/Home.jsx:216
 msgid "Join thousands of investors securing premium land and homes through our verified platform."
@@ -497,7 +497,7 @@ msgstr "நிலம்"
 
 #: frontend/src/pages/Signup.jsx:105
 msgid "Legal Protection"
-msgstr ""
+msgstr "சட்டப் பாதுகாப்பு"
 
 #: frontend/src/pages/AdminDashboard.jsx:618
 msgid "Live Stats Connected"
@@ -532,7 +532,7 @@ msgstr "உள்நுழை"
 
 #: frontend/src/pages/Login.jsx:169
 msgid "Lost Key?"
-msgstr ""
+msgstr "கடவுச்சொல் மறந்துவிட்டதா?"
 
 #: frontend/src/pages/AdminDashboard.jsx:944
 msgid "Luxurious 3BHK in Downtown"
@@ -614,7 +614,7 @@ msgstr "புதிய சொத்து"
 
 #: frontend/src/pages/Login.jsx:213
 msgid "New to the network?"
-msgstr ""
+msgstr "இங்கு புதிதாக வருகிறீர்களா?"
 
 #: frontend/src/pages/Home.jsx:132
 msgid "Newest"
@@ -669,7 +669,7 @@ msgstr "புகைப்படங்கள்"
 
 #: frontend/src/pages/Login.jsx:139
 msgid "Please authenticate your identity to access your private real estate collection."
-msgstr ""
+msgstr "உங்கள் தனிப்பட்ட சொத்துத் தொகுப்பைப் பார்வையிட உள்நுழையவும்."
 
 #: frontend/src/pages/PropertyDetails.jsx:106
 msgid "Please enter your mobile number."
@@ -793,7 +793,7 @@ msgstr "பதிவுசெய்யப்பட்ட உறுப்பி�
 
 #: frontend/src/pages/Signup.jsx:43
 msgid "Registration failed. Please try again."
-msgstr ""
+msgstr "கணக்கை உருவாக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
 
 #: frontend/src/components/Testimonials.jsx:22
 #~ msgid "Regular Client"
@@ -870,11 +870,11 @@ msgstr "தேடல் முடிவுகள்"
 
 #: frontend/src/pages/Login.jsx:102
 msgid "Secure Assets"
-msgstr ""
+msgstr "பாதுகாப்பான சொத்துகள்"
 
 #: frontend/src/pages/Login.jsx:203
 msgid "Secure Login"
-msgstr ""
+msgstr "பாதுகாப்பான உள்நுழைவு"
 
 #: frontend/src/pages/Profile.jsx:259
 msgid "Security & Access"
@@ -882,7 +882,7 @@ msgstr "பாதுகாப்பு மற்றும் அணுகல்"
 
 #: frontend/src/pages/Signup.jsx:183
 msgid "Security Password"
-msgstr ""
+msgstr "கணக்குக் கடவுச்சொல்"
 
 #: frontend/src/pages/Contact.jsx:141
 msgid "Send Message"
@@ -890,7 +890,7 @@ msgstr "செய்தி அனுப்பவும்"
 
 #: frontend/src/pages/Signup.jsx:231
 msgid "Sign In"
-msgstr ""
+msgstr "உள்நுழை"
 
 #: frontend/src/pages/Login.jsx:45
 #~ msgid "Sign in to manage your properties"
@@ -944,7 +944,7 @@ msgstr "பொருள்"
 
 #: frontend/src/pages/PropertyDetails.jsx:386
 msgid "Swipe to explore"
-msgstr ""
+msgstr "பார்க்க ஸ்வைப் செய்யவும்"
 
 #: frontend/src/pages/Profile.jsx:262
 msgid "System Identity"
@@ -1053,7 +1053,7 @@ msgstr "அனைத்தையும் காண்க"
 
 #: frontend/src/pages/PropertyDetails.jsx:419
 msgid "View All Media"
-msgstr ""
+msgstr "அனைத்துப் படங்களையும் காணொளிகளையும் காண்க"
 
 #: frontend/src/pages/Listings.jsx:347
 msgid "View All Properties"
@@ -1085,7 +1085,7 @@ msgstr "உங்கள் அடுத்த பெரிய முதலீட
 
 #: frontend/src/pages/Login.jsx:136
 msgid "Welcome Back."
-msgstr ""
+msgstr "மீண்டும் வரவேற்கிறோம்."
 
 #: frontend/src/pages/Profile.jsx:339
 msgid "Wishlist"
@@ -1098,3 +1098,726 @@ msgstr "ஆம், நீக்கு"
 #: frontend/src/pages/Profile.jsx:406
 msgid "Your Message..."
 msgstr "உங்கள் செய்தி..."
+
+msgid "Curated residences · Tamil Nadu"
+msgstr "தேர்ந்தெடுக்கப்பட்ட இல்லங்கள் · தமிழ்நாடு"
+
+msgid "A more considered way to find"
+msgstr "வீடு தேடுவதற்கான சிறந்த வழி"
+
+msgid "home."
+msgstr "இல்லம்."
+
+msgid "Explore a private collection of verified land, homes, and apartments selected for their place, potential, and enduring character."
+msgstr "அமைவிடம், வாய்ப்பு மற்றும் தனித்துவத்தின் அடிப்படையில் தேர்ந்தெடுக்கப்பட்ட சரிபார்க்கப்பட்ட நிலங்கள், வீடுகள் மற்றும் அடுக்குமாடி குடியிருப்புகளின் தனிப்பட்ட தொகுப்பைப் பாருங்கள்."
+
+msgid "Begin your search"
+msgstr "உங்கள் தேடலைத் தொடங்குங்கள்"
+
+msgid "City, locality, or landmark"
+msgstr "நகரம், பகுதி அல்லது அடையாள இடம்"
+
+msgid "All property types"
+msgstr "அனைத்து வகைச் சொத்துகளும்"
+
+msgid "Explore"
+msgstr "பாருங்கள்"
+
+msgid "INDEPENDENTLY VERIFIED"
+msgstr "சுயாதீனமாகச் சரிபார்க்கப்பட்டது"
+
+msgid "LOCAL EXPERTISE"
+msgstr "உள்ளூர் நிபுணத்துவம்"
+
+msgid "PRIVATE VIEWINGS"
+msgstr "தனிப்பட்ட பார்வைகள்"
+
+msgid "END-TO-END GUIDANCE"
+msgstr "தொடக்கம் முதல் முடிவு வரை வழிகாட்டுதல்"
+
+msgid "The collection"
+msgstr "சொத்துத் தொகுப்பு"
+
+msgid "Spaces with a point of view."
+msgstr "தனித்துவம் மிக்க இடங்கள்."
+
+msgid "View every property"
+msgstr "அனைத்துச் சொத்துகளையும் காண்க"
+
+msgid "Our next collection is being prepared. Please return soon."
+msgstr "எங்கள் அடுத்த சொத்துத் தொகுப்பு தயாராகிறது. விரைவில் மீண்டும் வாருங்கள்."
+
+msgid "Confidence, built in"
+msgstr "ஒவ்வொரு கட்டத்திலும் நம்பிக்கை"
+
+msgid "Every opportunity begins with clarity."
+msgstr "ஒவ்வொரு வாய்ப்பும் தெளிவுடன் தொடங்குகிறது."
+
+msgid "From first search to final visit, our team makes the details legible and the next step simple."
+msgstr "முதல் தேடலிலிருந்து நேரில் பார்வையிடுவது வரை, விவரங்களைத் தெளிவுபடுத்தி அடுத்த படியை எளிதாக்குகிறோம்."
+
+msgid "Speak with an advisor"
+msgstr "எங்கள் ஆலோசகரிடம் பேசுங்கள்"
+
+msgid "Contemporary residence"
+msgstr "நவீன குடியிருப்பு"
+
+msgid "Modern interior"
+msgstr "நவீன உட்புறம்"
+
+msgid "A private introduction"
+msgstr "தனிப்பட்ட அறிமுகம்"
+
+msgid "The right address changes everything."
+msgstr "சரியான முகவரி அனைத்தையும் மாற்றும்."
+
+msgid "Places made meaningful."
+msgstr "ஒவ்வொரு இடத்திற்கும் ஒரு அர்த்தம்."
+
+msgid "Notifications"
+msgstr "அறிவிப்புகள்"
+
+msgid "Mark all read"
+msgstr "அனைத்தையும் படித்ததாகக் குறிக்கவும்"
+
+msgid "No notifications yet."
+msgstr "அறிவிப்புகள் எதுவும் இல்லை."
+
+msgid "Toggle colour theme"
+msgstr "வண்ணத் தோற்றத்தை மாற்றவும்"
+
+msgid "Light theme"
+msgstr "ஒளி தோற்றம்"
+
+msgid "Dark theme"
+msgstr "இருண்ட தோற்றம்"
+
+msgid "Install Estatera app"
+msgstr "Estatera செயலியை நிறுவவும்"
+
+msgid "Availability"
+msgstr "கிடைக்கும் நிலை"
+
+msgid "Contact us for private guidance"
+msgstr "தனிப்பட்ட வழிகாட்டுதலுக்கு எங்களைத் தொடர்புகொள்ளவும்"
+
+msgid "Back to listings"
+msgstr "சொத்துப் பட்டியலுக்குத் திரும்பு"
+
+msgid "Your shortlist"
+msgstr "நீங்கள் தேர்ந்தெடுத்தவை"
+
+msgid "Compare properties."
+msgstr "சொத்துகளை ஒப்பிடுங்கள்."
+
+msgid "Review the defining details side by side before arranging a visit."
+msgstr "பார்வையிட ஏற்பாடு செய்வதற்கு முன் முக்கிய விவரங்களை ஒப்பிட்டுப் பாருங்கள்."
+
+msgid "Property"
+msgstr "சொத்து"
+
+msgid "Page not found."
+msgstr "பக்கம் கிடைக்கவில்லை."
+
+msgid "Sorry, the page you are looking for doesn’t exist or may have been moved."
+msgstr "மன்னிக்கவும், நீங்கள் தேடும் பக்கம் இல்லை அல்லது வேறு இடத்திற்கு மாற்றப்பட்டிருக்கலாம்."
+
+msgid "Go to Home"
+msgstr "முகப்புக்குச் செல்லுங்கள்"
+
+msgid "Remove from saved properties"
+msgstr "சேமித்த சொத்துகளிலிருந்து நீக்கவும்"
+
+msgid "Save property"
+msgstr "சொத்தைச் சேமிக்கவும்"
+
+msgid "Private collection"
+msgstr "தனிப்பட்ட சொத்துத் தொகுப்பு"
+
+msgid "Private pricing · Contact us"
+msgstr "விலை விவரங்களுக்கு எங்களைத் தொடர்புகொள்ளவும்"
+
+msgid "Profile"
+msgstr "சுயவிவரம்"
+
+msgid "Compare properties"
+msgstr "சொத்துகளை ஒப்பிடுங்கள்"
+
+msgid "Delete notification"
+msgstr "அறிவிப்பை நீக்கவும்"
+
+msgid "Remove property"
+msgstr "சொத்தை நீக்கவும்"
+
+msgid "Preparing your comparison…"
+msgstr "ஒப்பீடு தயாராகிறது…"
+
+msgid "Nothing to compare yet."
+msgstr "ஒப்பிடுவதற்கு இன்னும் சொத்துகள் இல்லை."
+
+msgid "Add up to three properties from their details pages."
+msgstr "சொத்து விவரப் பக்கங்களிலிருந்து அதிகபட்சம் மூன்று சொத்துகளைச் சேர்க்கவும்."
+
+msgid "Explore properties"
+msgstr "சொத்துகளைப் பாருங்கள்"
+
+msgid "Private access"
+msgstr "தனிப்பட்ட அணுகல்"
+
+msgid "Email address"
+msgstr "மின்னஞ்சல் முகவரி"
+
+msgid "Forgot Password?"
+msgstr "கடவுச்சொல் மறந்துவிட்டதா?"
+
+msgid "A considered conversation"
+msgstr "கவனமுடன் தொடங்கும் உரையாடல்"
+
+msgid "Luxury home exterior"
+msgstr "சொகுசு இல்லத்தின் வெளிப்புறம்"
+
+msgid "Building"
+msgstr "உருவாக்குகிறோம்"
+
+msgid "Legacies"
+msgstr "மரபுச் செல்வம்"
+
+msgid "Starting today."
+msgstr "இன்றே தொடங்குங்கள்."
+
+msgid "All rights reserved."
+msgstr "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+
+msgid "Create your account"
+msgstr "உங்கள் கணக்கை உருவாக்குங்கள்"
+
+msgid "Your full name"
+msgstr "உங்கள் முழுப் பெயர்"
+
+msgid "Web browser"
+msgstr "இணைய உலாவி"
+
+msgid "Android phone"
+msgstr "Android கைபேசி"
+
+msgid "Windows PC"
+msgstr "Windows கணினி"
+
+msgid "Linux device"
+msgstr "Linux சாதனம்"
+
+msgid "Unknown device"
+msgstr "அறியப்படாத சாதனம்"
+
+msgid "Profile picture"
+msgstr "சுயவிவரப் படம்"
+
+msgid "Administrator"
+msgstr "நிர்வாகி"
+
+msgid "Member"
+msgstr "உறுப்பினர்"
+
+msgid "Removed from comparison."
+msgstr "ஒப்பீட்டிலிருந்து நீக்கப்பட்டது."
+
+msgid "You can compare up to three properties."
+msgstr "அதிகபட்சம் மூன்று சொத்துகளை ஒப்பிடலாம்."
+
+msgid "Added to your comparison."
+msgstr "உங்கள் ஒப்பீட்டில் சேர்க்கப்பட்டது."
+
+msgid "Add property to comparison"
+msgstr "ஒப்பீட்டில் சொத்தைச் சேர்"
+
+msgid "Comparing"
+msgstr "ஒப்பிடப்படுகிறது"
+
+msgid "Compare"
+msgstr "ஒப்பிடு"
+
+msgid "Private pricing consultation"
+msgstr "தனிப்பட்ட விலை ஆலோசனை"
+
+msgid "Contact our advisor for current availability, market guidance, and a private commercial discussion tailored to this property."
+msgstr "இந்தச் சொத்தின் தற்போதைய கிடைக்கும் நிலை, சந்தை வழிகாட்டுதல் மற்றும் உங்களுக்கேற்ற தனிப்பட்ட வணிக ஆலோசனைக்கு எங்கள் ஆலோசகரைத் தொடர்புகொள்ளவும்."
+
+msgid "Best-in-market guidance"
+msgstr "சிறந்த சந்தை வழிகாட்டுதல்"
+
+msgid "Call for details"
+msgstr "விவரங்களுக்கு அழைக்கவும்"
+
+msgid "WhatsApp our advisor"
+msgstr "எங்கள் ஆலோசகருக்கு WhatsApp செய்யவும்"
+
+msgid "Continue exploring"
+msgstr "தேடலைத் தொடருங்கள்"
+
+msgid "More to consider."
+msgstr "பரிசீலிக்க இன்னும் பல."
+
+msgid "A selection of properties with a similar character, type, or setting."
+msgstr "ஒத்த தன்மை, வகை அல்லது அமைவிடத்தைக் கொண்ட சொத்துகளின் தேர்வு."
+
+msgid "Pending"
+msgstr "நிலுவையில்"
+
+msgid "Scheduled"
+msgstr "திட்டமிடப்பட்டது"
+
+msgid "Visited"
+msgstr "பார்வையிடப்பட்டது"
+
+msgid "Purchased"
+msgstr "வாங்கப்பட்டது"
+
+msgid "Cancelled"
+msgstr "ரத்துசெய்யப்பட்டது"
+
+msgid "A new beginning"
+msgstr "புதிய தொடக்கம்"
+
+msgid "Congratulations!"
+msgstr "வாழ்த்துகள்!"
+
+msgid "Your purchase of"
+msgstr "நீங்கள் வாங்கிய"
+
+msgid "your property"
+msgstr "உங்கள் சொத்து"
+
+msgid "has been confirmed. Welcome to your next chapter."
+msgstr "உறுதிப்படுத்தப்பட்டது. உங்கள் வாழ்க்கையின் அடுத்த அத்தியாயத்திற்கு வரவேற்கிறோம்."
+
+msgid "Celebrate this moment"
+msgstr "இந்தத் தருணத்தைக் கொண்டாடுங்கள்"
+
+msgid "A more considered way to find home."
+msgstr "உங்கள் இல்லத்தைத் தேடுவதற்கான சிறந்த வழி."
+
+msgid "Continue your journey in comfort."
+msgstr "உங்கள் பயணத்தைச் சௌகரியமாகத் தொடருங்கள்."
+
+msgid "Continue"
+msgstr "தொடரவும்"
+
+msgid "your"
+msgstr "உங்கள்"
+
+msgid "journey"
+msgstr "பயணம்"
+
+msgid "in comfort."
+msgstr "சௌகரியமாக."
+
+msgid "Active devices"
+msgstr "செயலில் உள்ள சாதனங்கள்"
+
+msgid "Alert preferences updated."
+msgstr "அறிவிப்பு விருப்பங்கள் புதுப்பிக்கப்பட்டன."
+
+msgid "All properties"
+msgstr "அனைத்துச் சொத்துகளும்"
+
+msgid "Cancel password change"
+msgstr "கடவுச்சொல் மாற்றத்தை ரத்துசெய்"
+
+msgid "Change password"
+msgstr "கடவுச்சொல்லை மாற்று"
+
+msgid "Confirm new password"
+msgstr "புதிய கடவுச்சொல்லை உறுதிசெய்யவும்"
+
+msgid "Current password"
+msgstr "தற்போதைய கடவுச்சொல்"
+
+msgid "Daily email digest"
+msgstr "தினசரி மின்னஞ்சல் தொகுப்பு"
+
+msgid "Delete saved search"
+msgstr "சேமித்த தேடலை நீக்கு"
+
+msgid "Hide active sessions"
+msgstr "செயலில் உள்ள அமர்வுகளை மறை"
+
+msgid "Instant in-app match"
+msgstr "செயலியில் உடனடி பொருத்தம்"
+
+msgid "Location unavailable"
+msgstr "இடம் கிடைக்கவில்லை"
+
+msgid "Manage active sessions"
+msgstr "செயலில் உள்ள அமர்வுகளை நிர்வகி"
+
+msgid "New password"
+msgstr "புதிய கடவுச்சொல்"
+
+msgid "New passwords do not match."
+msgstr "புதிய கடவுச்சொற்கள் பொருந்தவில்லை."
+
+msgid "No active sessions found."
+msgstr "செயலில் உள்ள அமர்வுகள் எதுவும் இல்லை."
+
+msgid "No recently viewed properties yet."
+msgstr "சமீபத்தில் பார்த்த சொத்துகள் எதுவும் இல்லை."
+
+msgid "Open"
+msgstr "திற"
+
+msgid "Personalised alerts"
+msgstr "உங்களுக்கான அறிவிப்புகள்"
+
+msgid "Private profile"
+msgstr "தனிப்பட்ட சுயவிவரம்"
+
+msgid "Profile updated successfully."
+msgstr "சுயவிவரம் வெற்றிகரமாகப் புதுப்பிக்கப்பட்டது."
+
+msgid "Property no longer available"
+msgstr "இந்தச் சொத்து இனி கிடைக்காது"
+
+msgid "Property type"
+msgstr "சொத்து வகை"
+
+msgid "Recently Viewed"
+msgstr "சமீபத்தில் பார்த்தவை"
+
+msgid "Save a search from the Listings page to keep it here."
+msgstr "இங்கே வைத்திருக்க, சொத்துப் பட்டியல் பக்கத்திலிருந்து ஒரு தேடலைச் சேமிக்கவும்."
+
+msgid "Saved Searches"
+msgstr "சேமித்த தேடல்கள்"
+
+msgid "Saved search removed."
+msgstr "சேமித்த தேடல் நீக்கப்பட்டது."
+
+msgid "Scheduled for"
+msgstr "திட்டமிடப்பட்டது"
+
+msgid "Sent"
+msgstr "அனுப்பப்பட்டது"
+
+msgid "Sign out"
+msgstr "வெளியேறு"
+
+msgid "Sign out others"
+msgstr "மற்ற அமர்வுகளிலிருந்து வெளியேறு"
+
+msgid "This device"
+msgstr "இந்தச் சாதனம்"
+
+msgid "Unable to change password."
+msgstr "கடவுச்சொல்லை மாற்ற முடியவில்லை."
+
+msgid "Unable to load sessions."
+msgstr "அமர்வுகளை ஏற்ற முடியவில்லை."
+
+msgid "Unable to remove saved search."
+msgstr "சேமித்த தேடலை நீக்க முடியவில்லை."
+
+msgid "Unable to sign out other sessions."
+msgstr "மற்ற அமர்வுகளிலிருந்து வெளியேற முடியவில்லை."
+
+msgid "Unable to sign out the session."
+msgstr "இந்த அமர்விலிருந்து வெளியேற முடியவில்லை."
+
+msgid "Unable to update alert preferences."
+msgstr "அறிவிப்பு விருப்பங்களைப் புதுப்பிக்க முடியவில்லை."
+
+msgid "Up to"
+msgstr "அதிகபட்சம்"
+
+msgid "Update password"
+msgstr "கடவுச்சொல்லைப் புதுப்பி"
+
+msgid "Updating…"
+msgstr "புதுப்பிக்கப்படுகிறது…"
+
+msgid "Use at least 8 characters with uppercase, lowercase, and a number."
+msgstr "குறைந்தது 8 எழுத்துகள் கொண்ட கடவுச்சொல்லைப் பயன்படுத்தவும்; அதில் பெரிய எழுத்து, சிறிய எழுத்து மற்றும் ஓர் எண் இருக்க வேண்டும்."
+
+msgid "Weekly email digest"
+msgstr "வாராந்திர மின்னஞ்சல் தொகுப்பு"
+
+msgid "Your visit is scheduled for"
+msgstr "உங்கள் வருகை திட்டமிடப்பட்ட நேரம்"
+
+msgid "All active members receive an email whenever a new property is published. These controls manage personalised saved-search matches and digests."
+msgstr "புதிய சொத்து வெளியிடப்படும் போதெல்லாம் செயலில் உள்ள அனைத்து உறுப்பினர்களுக்கும் மின்னஞ்சல் அனுப்பப்படும். இந்த அமைப்புகள் உங்கள் சேமித்த தேடல்களுக்கான பொருத்தங்கள் மற்றும் மின்னஞ்சல் தொகுப்புகளின் அறிவிப்புகளைக் கட்டுப்படுத்தும்."
+
+msgid "Back to login"
+msgstr "உள்நுழைவுக்குத் திரும்பு"
+
+msgid "Confirm password"
+msgstr "கடவுச்சொல்லை உறுதிசெய்யவும்"
+
+msgid "Could not save property."
+msgstr "சொத்தைச் சேமிக்க முடியவில்லை."
+
+msgid "Enter the email address registered with your Estatera account. We’ll send a one-time verification code."
+msgstr "உங்கள் Estatera கணக்கில் பதிவு செய்த மின்னஞ்சல் முகவரியை உள்ளிடவும். ஒருமுறை பயன்படுத்தக்கூடிய சரிபார்ப்புக் குறியீட்டை அனுப்புகிறோம்."
+
+msgid "Enter your code."
+msgstr "உங்கள் குறியீட்டை உள்ளிடவும்."
+
+msgid "It expires in 10 minutes."
+msgstr "இது 10 நிமிடங்களில் காலாவதியாகும்."
+
+msgid "No properties found"
+msgstr "சொத்துகள் எதுவும் கிடைக்கவில்லை"
+
+msgid "One-time code"
+msgstr "ஒருமுறை பயன்படுத்தும் குறியீடு"
+
+msgid "Passwords do not match."
+msgstr "கடவுச்சொற்கள் பொருந்தவில்லை."
+
+msgid "Registered email"
+msgstr "பதிவு செய்த மின்னஞ்சல்"
+
+msgid "Resend code in"
+msgstr "குறியீட்டை மீண்டும் அனுப்ப"
+
+msgid "Resend verification code"
+msgstr "சரிபார்ப்புக் குறியீட்டை மீண்டும் அனுப்பு"
+
+msgid "Reset discovery"
+msgstr "தேடலை மீட்டமை"
+
+msgid "Reset password"
+msgstr "கடவுச்சொல்லை மீட்டமை"
+
+msgid "Reset your access."
+msgstr "உங்கள் கணக்குக் கடவுச்சொல்லை மீட்டமைக்கவும்."
+
+msgid "Resetting password…"
+msgstr "கடவுச்சொல் மீட்டமைக்கப்படுகிறது…"
+
+msgid "Secure recovery"
+msgstr "பாதுகாப்பான கணக்கு மீட்பு"
+
+msgid "Send verification code"
+msgstr "சரிபார்ப்புக் குறியீட்டை அனுப்பு"
+
+msgid "Sending code…"
+msgstr "குறியீடு அனுப்பப்படுகிறது…"
+
+msgid "Set a new password."
+msgstr "புதிய கடவுச்சொல்லை அமைக்கவும்."
+
+msgid "Start over"
+msgstr "மீண்டும் தொடங்கு"
+
+msgid "This property may no longer be available, or the link may be incomplete."
+msgstr "இந்தச் சொத்து இனி கிடைக்காமல் இருக்கலாம் அல்லது இணைப்பு முழுமையற்றதாக இருக்கலாம்."
+
+msgid "Try broadening your location, type, budget, or radius to discover more opportunities."
+msgstr "மேலும் வாய்ப்புகளைக் காண இடம், சொத்து வகை, பட்ஜெட் அல்லது தேடல் தூரத்தை விரிவுபடுத்திப் பாருங்கள்."
+
+msgid "Unable to send a verification code."
+msgstr "சரிபார்ப்புக் குறியீட்டை அனுப்ப முடியவில்லை."
+
+msgid "Unable to verify the code."
+msgstr "குறியீட்டைச் சரிபார்க்க முடியவில்லை."
+
+msgid "Use another email"
+msgstr "வேறு மின்னஞ்சலைப் பயன்படுத்தவும்"
+
+msgid "Use at least eight characters with uppercase, lowercase, and a number."
+msgstr "குறைந்தது 8 எழுத்துகள் கொண்ட கடவுச்சொல்லைப் பயன்படுத்தவும்; அதில் பெரிய எழுத்து, சிறிய எழுத்து மற்றும் ஓர் எண் இருக்க வேண்டும்."
+
+msgid "Verified recovery"
+msgstr "சரிபார்க்கப்பட்ட கணக்கு மீட்பு"
+
+msgid "Verify code"
+msgstr "குறியீட்டைச் சரிபார்"
+
+msgid "Verifying…"
+msgstr "சரிபார்க்கப்படுகிறது…"
+
+msgid "We sent a six-digit code to"
+msgstr "ஆறு இலக்கக் குறியீட்டை இந்த மின்னஞ்சலுக்கு அனுப்பியுள்ளோம்:"
+
+msgid "Your reset session is invalid or expired."
+msgstr "கடவுச்சொல் மீட்டமைப்பு அமர்வு தவறானது அல்லது காலாவதியாகிவிட்டது."
+
+msgid "Discovery results"
+msgstr "தேடல் முடிவுகள்"
+
+msgid "My property search"
+msgstr "எனது சொத்துத் தேடல்"
+
+msgid "Name this saved search"
+msgstr "இந்தச் சேமித்த தேடலுக்குப் பெயரிடவும்"
+
+msgid "Private availability"
+msgstr "தனிப்பட்ட கிடைக்கும் நிலை"
+
+msgid "Properties in"
+msgstr "இந்த இடத்தில் உள்ள சொத்துகள்:"
+
+msgid "Save Search"
+msgstr "தேடலைச் சேமி"
+
+msgid "Search saved to your profile."
+msgstr "தேடல் உங்கள் சுயவிவரத்தில் சேமிக்கப்பட்டது."
+
+msgid "Selected opportunities"
+msgstr "தேர்ந்தெடுக்கப்பட்ட வாய்ப்புகள்"
+
+msgid "Unable to save this search."
+msgstr "இந்தத் தேடலைச் சேமிக்க முடியவில்லை."
+
+msgid "Inquiries"
+msgstr "விசாரணைகள்"
+
+msgid "Business"
+msgstr "வணிகம்"
+
+msgid "Insights"
+msgstr "நுண்ணறிவுகள்"
+
+msgid "Real-time performance analytics and property tracking."
+msgstr "செயல்திறன் பகுப்பாய்வு மற்றும் சொத்து கண்காணிப்பை நிகழ்நேரத்தில் காண்க."
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Full Report (PDF)"
+msgstr "முழு அறிக்கை (PDF)"
+
+msgid "Contact desk"
+msgstr "தொடர்பு மையம்"
+
+msgid "Incoming inquiries"
+msgstr "வரும் விசாரணைகள்"
+
+msgid "Track and close conversations started from the public contact page."
+msgstr "பொது தொடர்புப் பக்கத்தில் தொடங்கிய உரையாடல்களைக் கண்காணித்து முடிக்கவும்."
+
+msgid "New"
+msgstr "புதியது"
+
+msgid "Contacted"
+msgstr "தொடர்பு கொள்ளப்பட்டது"
+
+msgid "Closed"
+msgstr "மூடப்பட்டது"
+
+msgid "No contact inquiries yet."
+msgstr "இதுவரை தொடர்பு விசாரணைகள் இல்லை."
+
+msgid "Appointment planner"
+msgstr "சந்திப்பு திட்டமிடல்"
+
+msgid "Visit calendar"
+msgstr "வருகை நாட்காட்டி"
+
+msgid "Month"
+msgstr "மாதம்"
+
+msgid "Week"
+msgstr "வாரம்"
+
+msgid "All statuses"
+msgstr "அனைத்து நிலைகள்"
+
+msgid "All team members"
+msgstr "குழு உறுப்பினர்கள் அனைவரும்"
+
+msgid "Drag a scheduled appointment onto another date to reschedule and notify the customer."
+msgstr "மீண்டும் திட்டமிட்டு வாடிக்கையாளருக்கு அறிவிக்க, திட்டமிட்ட சந்திப்பை வேறு தேதிக்கு இழுக்கவும்."
+
+msgid "Purchase confirmed"
+msgstr "கொள்முதல் உறுதிசெய்யப்பட்டது"
+
+msgid "Customer appointment date & time"
+msgstr "வாடிக்கையாளர் சந்திப்பு தேதி மற்றும் நேரம்"
+
+msgid "Saving a time changes this request to Scheduled and notifies the customer."
+msgstr "நேரத்தைச் சேமித்தால் இந்தக் கோரிக்கை திட்டமிடப்பட்டதாக மாறி வாடிக்கையாளருக்கு அறிவிக்கப்படும்."
+
+msgid "Has the property visit happened?"
+msgstr "சொத்து பார்வையிடப்பட்டதா?"
+
+msgid "Mark visit as completed"
+msgstr "வருகையை முடிந்ததாகக் குறி"
+
+msgid "Keep visit scheduled"
+msgstr "வருகையைத் திட்டமிட்டபடியே வைத்திரு"
+
+msgid "✓ marks Visited · ✕ keeps Scheduled"
+msgstr "✓ பார்வையிட்டதைக் குறிக்கும் · ✕ திட்டமிட்டபடியே வைக்கும்"
+
+msgid "Confirm visit outcome"
+msgstr "வருகை முடிவை உறுதிசெய்"
+
+msgid "Assigned team member"
+msgstr "ஒதுக்கப்பட்ட குழு உறுப்பினர்"
+
+msgid "e.g. Priya"
+msgstr "எ.கா. பிரியா"
+
+msgid "Customer operations"
+msgstr "வாடிக்கையாளர் செயல்பாடுகள்"
+
+msgid "Community command center"
+msgstr "வாடிக்கையாளர் மேலாண்மை மையம்"
+
+msgid "Review customer health, engagement, and access from one place."
+msgstr "வாடிக்கையாளர் நிலை, ஈடுபாடு மற்றும் அணுகலை ஒரே இடத்தில் மதிப்பாய்வு செய்யவும்."
+
+msgid "Export directory"
+msgstr "பட்டியலை ஏற்றுமதி செய்"
+
+msgid "Total members"
+msgstr "மொத்த உறுப்பினர்கள்"
+
+msgid "Active access"
+msgstr "செயலில் உள்ள அணுகல்"
+
+msgid "Saved properties"
+msgstr "சேமித்த சொத்துகள்"
+
+msgid "of"
+msgstr "இல்"
+
+msgid "members shown"
+msgstr "உறுப்பினர்கள் காட்டப்படுகின்றனர்"
+
+msgid "All members"
+msgstr "அனைத்து உறுப்பினர்களும்"
+
+msgid "Administrators"
+msgstr "நிர்வாகிகள்"
+
+msgid "Cards"
+msgstr "அட்டைகள்"
+
+msgid "Table"
+msgstr "அட்டவணை"
+
+msgid "Engagement"
+msgstr "ஈடுபாடு"
+
+msgid "Saved"
+msgstr "சேமிக்கப்பட்டது"
+
+msgid "Joined"
+msgstr "சேர்ந்த தேதி"
+
+msgid "Suspended"
+msgstr "இடைநிறுத்தப்பட்டது"
+
+msgid "Restore User"
+msgstr "பயனரை மீட்டமை"
+
+msgid "Block Access"
+msgstr "அணுகலைத் தடு"
+
+msgid "System Master (Protected)"
+msgstr "முதன்மை நிர்வாகி (பாதுகாக்கப்பட்டது)"
+
+msgid "Restricted"
+msgstr "கட்டுப்படுத்தப்பட்டது"

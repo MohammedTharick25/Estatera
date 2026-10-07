@@ -13,7 +13,7 @@ export default function Footer() {
         <div>
           <p className="editorial-label mb-4 text-[#e7c47e]">Estatera</p>
           <h3 className="display-face mb-4 text-4xl font-bold text-white">
-            Places made meaningful.
+            {t`Places made meaningful.`}
           </h3>
           <p className="text-sm leading-relaxed">
             {t`Discover verified premium lands and architecturally stunning homes designed for your future.`}
@@ -54,7 +54,7 @@ export default function Footer() {
                 to="/profile"
                 className="flex items-center gap-2 hover:text-white transition"
               >
-                <User size={16} /> Profile
+                <User size={16} /> {t`Profile`}
               </Link>
             </li>
           </ul>
