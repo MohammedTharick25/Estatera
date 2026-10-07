@@ -100,8 +100,40 @@ app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/visits", require("./routes/visitRoutes"));
 app.use("/api/admin", require("./routes/adminRoutes"));
 
-app.get("/health", (req, res) => {
+app.get("/health", (_req, res) => {
   res.status(200).send("Server is awake");
+});
+
+app.get("/ready", (_req, res) => {
+  const databaseReady = mongoose.connection.readyState === 1;
+  res.status(databaseReady ? 200 : 503).json({
+    ready: databaseReady,
+    database: databaseReady ? "connected" : "unavailable",
+  });
+});
+
+app.use((req, res) => {
+  res.status(404).json({ error: "Route not found." });
+});
+
+app.use((err, req, res, next) => {
+  console.error("Unhandled request error:", {
+    method: req.method,
+    path: req.path,
+    error: err.stack || err.message || err,
+  });
+  if (res.headersSent) return next(err);
+
+  const status =
+    Number.isInteger(err.status) && err.status >= 400 && err.status < 500
+      ? err.status
+      : 500;
+  res.status(status).json({
+    error:
+      status >= 500
+        ? "An unexpected server error occurred."
+        : "The request could not be processed.",
+  });
 });
 
 // Database

@@ -1,4 +1,4 @@
-const CACHE_NAME = "estatera-v4";
+const CACHE_NAME = "estatera-v5";
 const APP_SHELL = ["/", "/manifest.json", "/estatera-app-icon.svg"];
 
 self.addEventListener("install", (event) => {
@@ -20,22 +20,48 @@ self.addEventListener("fetch", (event) => {
   // External maps and all API calls must be handled by the browser/network.
   if (requestUrl.origin !== self.location.origin || requestUrl.pathname.startsWith("/api/")) return;
 
-  const responsePromise = fetch(event.request);
-  const cachePromise = responsePromise.then(
-    (response) => {
-      if (!response.ok) return;
+  let cacheWritePromise = Promise.resolve();
+  const responsePromise = fetch(event.request).then((response) => {
+    const cacheControl = response.headers.get("Cache-Control") || "";
+    const canCache =
+      response.ok &&
+      response.type === "basic" &&
+      !response.bodyUsed &&
+      !/\b(?:no-store|private)\b/i.test(cacheControl);
+
+    if (!canCache) return response;
+
+    try {
       const responseCopy = response.clone();
-      return caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseCopy));
-    },
-    () => undefined,
-  );
+      cacheWritePromise = caches
+        .open(CACHE_NAME)
+        .then((cache) => cache.put(event.request, responseCopy));
+    } catch (error) {
+      cacheWritePromise = Promise.reject(error);
+    }
+
+    return response;
+  });
 
   event.waitUntil(
-    cachePromise.catch((error) => {
-      console.error("Service worker failed to cache a response:", error);
-    }),
+    responsePromise
+      .then(() => cacheWritePromise, () => undefined)
+      .catch((error) => {
+        console.error("Service worker failed to cache a response:", error);
+      }),
   );
   event.respondWith(
-    responsePromise.catch(async () => (await caches.match(event.request)) || (event.request.mode === "navigate" ? caches.match("/") : Response.error())),
+    responsePromise.catch(async () => {
+      try {
+        const cached = await caches.match(event.request);
+        if (cached) return cached;
+        if (event.request.mode === "navigate") {
+          return (await caches.match("/")) || Response.error();
+        }
+      } catch (error) {
+        console.error("Service worker failed to load a cached response:", error);
+      }
+      return Response.error();
+    }),
   );
 });

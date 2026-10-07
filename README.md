@@ -234,6 +234,7 @@ VITE_API_URL=https://your-backend.onrender.com
 ## Operational reminders
 
 - Restart the backend after changing backend code or `.env` settings.
+- Monitor `/health` for server liveness and `/ready` for MongoDB-backed readiness; `/ready` returns HTTP 503 when MongoDB is unavailable.
 - Sign out and sign in after the improved device-session label is deployed; existing sessions retain their old browser data.
 - A purchase celebration is only triggered when an admin selects **Purchase Confirmed** for the correct customer visit.
 - New notification records reflect current logic; historical records are intentionally preserved.
@@ -241,4 +242,3 @@ VITE_API_URL=https://your-backend.onrender.com
 ## Contact
 
 For property guidance, call or WhatsApp **Estatera** at **+91 97916 74849**.
-

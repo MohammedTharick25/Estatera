@@ -179,7 +179,7 @@ export default function Profile() {
       setPreviewImage(null);
       toast.success(t`Profile updated successfully.`);
     } catch (err) {
-      toast.error(t`Profile update failed`);
+      toast.error(err.response?.data?.error || t`Profile update failed`);
     } finally {
       setLoading(false);
     }
